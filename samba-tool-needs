@@ -33,6 +33,29 @@ awk "/sharename/{flag=1;next}/\\[/{flag=0}flag" /etc/samba/smb.conf
 restart server (systemd and sysVinit
 service smbd restart
 
+to disable service
+systemd (check if systemctl is present, not systemd running)
+systemctl disable smbd
+systemctl disable nmbd
+systemctl mask smbd
+systemctl mask nmbd
+
+sysvinit
+update-rc.d nmbd remove 
+update-rc.d smbd remove
+
+to enable
+
+systemd (check if systemctl is present, not systemd running)
+systemctl unmask smbd
+systemctl unmask nmbd
+systemctl enable smbd
+systemctl enable nmbd
+
+sysvinit
+update-rc.d nmbd defaults 
+update-rc.d smbd defaults
+
 create users
 smbpasswd -L -a username (asks for user password twice)
 

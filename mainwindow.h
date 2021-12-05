@@ -58,12 +58,15 @@ private slots:
     void on_buttonHelp_clicked();
     void on_buttonBack_clicked();
 
+    void on_pushButtonRemoveUser_clicked();
+
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
     QProcess proc;
     QSettings settings;
     QStringList listUsers();
+    void refreshUserList();
 };
 
 

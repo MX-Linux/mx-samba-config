@@ -47,7 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
     setup();
-    ui->listWidgetUsers->addItems(listUsers());
+    refreshUserList();
 }
 
 MainWindow::~MainWindow()
@@ -144,6 +144,12 @@ QStringList MainWindow::listUsers()
     return list;
 }
 
+void MainWindow::refreshUserList()
+{
+    ui->listWidgetUsers->clear();
+    ui->listWidgetUsers->addItems(listUsers());
+}
+
 
 // About button clicked
 void MainWindow::on_buttonAbout_clicked()
@@ -167,3 +173,12 @@ void MainWindow::on_buttonHelp_clicked()
     displayDoc(url, tr("%1 Help").arg(this->windowTitle()));
 }
 
+void MainWindow::on_pushButtonRemoveUser_clicked()
+{
+    QString user= ui->listWidgetUsers->currentItem()->text();
+    if (user.isEmpty())
+        return;
+    if (!cmd.run("pdbedit --delete " +  user))
+       qDebug() << "Cannot delete user" << user;
+    refreshUserList();
+}

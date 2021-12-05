@@ -1,0 +1,7 @@
+mx-samba-config		usr/bin
+mx-samba-config.conf	etc
+mx-samba-config.desktop	usr/share/applications
+mx-samba-config.png		usr/share/icons/hicolor/48x48/apps
+mx-samba-config.png		usr/share/pixmaps
+help			usr/share/doc/mx-samba-config
+translations/*.qm	usr/share/mx-samba-config/locale

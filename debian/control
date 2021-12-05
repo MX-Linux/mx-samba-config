@@ -1,0 +1,12 @@
+Source: mx-samba-config
+Section: admin
+Priority: optional
+Maintainer: Adrian <adrian@mxlinux.org>
+Build-Depends: debhelper (>=10), qtbase5-dev, qttools5-dev-tools
+Standards-Version: 3.9.8
+
+Package: mx-samba-config
+Architecture: any
+Depends: xdg-utils | mx-viewer, ${misc:Depends}, ${shlibs:Depends}
+Description: mx-samba-config
+ mx-samba-config

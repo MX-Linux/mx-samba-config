@@ -9,10 +9,10 @@ ARRAY=($NAME_SPACES)
 TITLE_NAME="${ARRAY[@]^}"
 
 # Rename files
-rename "s/mx-samba-config/$NAME/" *
-rename "s/mx-samba-config/$NAME/" translations/*
+rename "s/CUSTOMPROGRAMNAME/$NAME/" *
+rename "s/CUSTOMPROGRAMNAME/$NAME/" translations/*
 
 # Rename strings
-find . -type f -exec sed -i "s/mx-samba-config/$NAME/g" {} +
-find . -type f -exec sed -i "s/MX Samba Config/$TITLE_NAME/g" {} +
+find . -type f -exec sed -i "s/CUSTOMPROGRAMNAME/$NAME/g" {} +
+find . -type f -exec sed -i "s/Custom_Program_Name/$TITLE_NAME/g" {} +
 

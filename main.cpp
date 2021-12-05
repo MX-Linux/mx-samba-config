@@ -56,12 +56,12 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-//    if (getuid() == 0) {
+    if (getuid() == 0) {
         qDebug().noquote() << app.applicationName() << QObject::tr("version:") << app.applicationVersion();
         MainWindow w;
         w.show();
         return app.exec();
-//    } else {
-//        system("su-to-root -X -c " + QApplication::applicationFilePath().toUtf8() + "&");
-//    }
+    } else {
+        system("su-to-root -X -c " + QApplication::applicationFilePath().toUtf8() + "&");
+    }
 }

@@ -28,6 +28,7 @@
 #include <QProcess>
 #include <QSettings>
 
+#include "cmd.h"
 
 namespace Ui {
 class MainWindow;
@@ -59,8 +60,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Cmd cmd;
     QProcess proc;
     QSettings settings;
+    QStringList listUsers();
 };
 
 

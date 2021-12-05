@@ -47,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
     setup();
+    ui->listWidgetUsers->addItems(listUsers());
 }
 
 MainWindow::~MainWindow()
@@ -127,6 +128,20 @@ void MainWindow::on_buttonBack_clicked()
 {
     this->setWindowTitle("MX Samba Config");
     ui->outputBox->clear();
+}
+
+QStringList MainWindow::listUsers()
+{
+    QString output;
+    if (!cmd.run("pdbedit --list", output, false)) {
+        qDebug() << "Error listing users";
+        return QStringList();
+    }
+    QStringList list;
+    for (const QString &item : output.split("\n"))
+        list << item.section(":", 0, 0);
+    list.sort();
+    return list;
 }
 
 

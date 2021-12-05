@@ -21,8 +21,8 @@
  **********************************************************************/
 
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QFileDialog>
+#include <QScreen>
 #include <QScrollBar>
 #include <QTextStream>
 
@@ -56,7 +56,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::centerWindow()
 {
-    QRect screenGeometry = QApplication::desktop()->screenGeometry();
+    QRect screenGeometry = qApp->screens().first()->geometry();
     int x = (screenGeometry.width()-this->width()) / 2;
     int y = (screenGeometry.height()-this->height()) / 2;
     this->move(x, y);
@@ -68,10 +68,7 @@ void MainWindow::setup()
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("MX Samba Config");
     this->adjustSize();
-    ui->buttonBack->setHidden(true);;
-    ui->stackedWidget->setCurrentIndex(0);
     ui->buttonCancel->setEnabled(true);
-    ui->buttonNext->setEnabled(true);
 }
 
 // cleanup environment when window is closed
@@ -98,7 +95,7 @@ void MainWindow::setConnections()
     proc.disconnect();
     connect(&proc, &QProcess::readyReadStandardOutput, this, &MainWindow::updateOutput);
     connect(&proc, &QProcess::started, this, &MainWindow::cmdStart);
-    connect(&proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &MainWindow::cmdDone);
+    connect(&proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
 void MainWindow::updateOutput()
@@ -120,35 +117,15 @@ void MainWindow::progress(int counter, int duration) // processes tick emited by
 // Next button clicked
 void MainWindow::on_buttonNext_clicked()
 {
-    // on first page
-    if (ui->stackedWidget->currentIndex() == 0) {
-        ui->buttonBack->setHidden(false);
-        ui->buttonBack->setEnabled(true);
-        ui->buttonNext->setEnabled(false);
-        ui->outputLabel->clear();
-        ui->stackedWidget->setCurrentWidget(ui->outputPage);
-
-        setConnections();
-        Cmd cmd;
-        qDebug() << cmd.getCmdOut("");
-        //qDebug() << getCmdOut(proc, "find / -iname '*user'");
-        qDebug() << "DONE";
-
-
-    // on output page
-    } else if (ui->stackedWidget->currentWidget() == ui->outputPage) {
-
-    } else {
-        qApp->quit();
-    }
+    setConnections();
+    Cmd cmd;
+    qDebug() << cmd.getCmdOut("");
+    qDebug() << "DONE";
 }
 
 void MainWindow::on_buttonBack_clicked()
 {
     this->setWindowTitle("MX Samba Config");
-    ui->stackedWidget->setCurrentIndex(0);
-    ui->buttonNext->setEnabled(true);
-    ui->buttonBack->setDisabled(true);
     ui->outputBox->clear();
 }
 

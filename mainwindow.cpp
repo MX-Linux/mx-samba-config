@@ -51,6 +51,7 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
     refreshUserList();
+    refreshShareList();
 }
 
 MainWindow::~MainWindow()
@@ -116,6 +117,35 @@ QStringList MainWindow::listUsers()
         list << item.section(":", 0, 0);
     list.sort();
     return list;
+}
+
+void MainWindow::refreshShareList()
+{
+    QString output;
+    if (!cmd.run("net usershare info", output)) {
+        qDebug() << "Error listing shares";
+        return;
+    }
+    QStringList listShares{output.split("\n\n")};
+    qDebug() << listShares;
+    for (const QString &share : listShares) {
+        QStringList list = share.split("\n");
+        if (list.isEmpty())
+            continue;
+        QStringList fixed_list;
+        list.first().remove(QRegularExpression("^\\[")).remove(QRegularExpression("]$"));
+        if (!list.at(1).isEmpty())
+            list[1].remove(QRegularExpression("^path="));
+        if (!list.at(2).isEmpty())
+            list[2].remove(QRegularExpression("^comment="));
+        if (!list.at(3).isEmpty())
+            list[3].remove(QRegularExpression("^usershare_acl="));
+        if (!list.at(4).isEmpty())
+            list[4].remove(QRegularExpression("^guest_ok="));
+        ui->treeWidgetShares->insertTopLevelItem(0, new QTreeWidgetItem(list));
+    }
+    for (auto i = 0; ui->treeWidgetShares->columnCount() < i; ++i)
+        ui->treeWidgetShares->resizeColumnToContents(i);
 }
 
 void MainWindow::refreshUserList()

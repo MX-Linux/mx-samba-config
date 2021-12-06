@@ -65,7 +65,33 @@
           </widget>
          </item>
          <item row="1" column="0" rowspan="3">
-          <widget class="QListView" name="listViewShares"/>
+          <widget class="QTreeWidget" name="treeWidgetShares">
+           <column>
+            <property name="text">
+             <string>Share Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Path</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Comment</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Permissions</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Guest OK</string>
+            </property>
+           </column>
+          </widget>
          </item>
         </layout>
        </item>

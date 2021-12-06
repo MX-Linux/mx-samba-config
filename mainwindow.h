@@ -65,6 +65,7 @@ private:
     QProcess proc;
     QSettings settings;
     QStringList listUsers();
+    void refreshShareList();
     void refreshUserList();
 };
 

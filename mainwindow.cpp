@@ -214,14 +214,48 @@ void MainWindow::on_pushButtonAddUser_clicked()
             return;
         }
         if (password->text() != password2->text()) {
-            QMessageBox::critical(this, tr("Error"), tr("Password don't match, please enter again."));
+            QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        const QString &cmdstr = QString("echo -ne '%1\n%1'|smbpasswd -a -s %2").arg(password->text()).arg(username->text());
+        const QString &cmdstr = QString("echo -ne '%1\n%1'|smbpasswd -as %2").arg(password->text()).arg(username->text());
         if (!cmd.run(cmdstr, true)) {
             QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
             return;
         }
     }
     refreshUserList();
+}
+
+void MainWindow::on_pushButtonUserPassword_clicked()
+{
+    if (!ui->listWidgetUsers->currentItem())
+        return;
+    QDialog dialog(this);
+    QFormLayout form(&dialog);
+    form.addRow(new QLabel(tr("Change the password for \'%1\'").arg(ui->listWidgetUsers->currentItem()->text())));
+
+    QLineEdit *password = new QLineEdit(&dialog);
+    QLineEdit *password2 = new QLineEdit(&dialog);
+    password->setEchoMode(QLineEdit::Password);
+    password2->setEchoMode(QLineEdit::Password);
+    form.addRow(tr("Password:"), password);
+    form.addRow(tr("Confirm password:"), password2);
+
+    QDialogButtonBox buttonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, &dialog);
+    form.addRow(&buttonBox);
+
+    QObject::connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    QObject::connect(&buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+
+    if (dialog.exec() == QDialog::Accepted) {
+        if (password->text() != password2->text()) {
+            QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
+            return;
+        }
+        const QString &cmdstr = QString("echo -ne '%1\n%1'|smbpasswd -U %2").arg(password->text()).arg(ui->listWidgetUsers->currentItem()->text());
+        if (!cmd.run(cmdstr, true)) {
+            QMessageBox::critical(this, tr("Error"), tr("Could not change password."));
+            return;
+        }
+    }
 }

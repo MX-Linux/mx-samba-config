@@ -1,9 +1,10 @@
 /**********************************************************************
  *  main.cpp
  **********************************************************************
- * Copyright (C) 2018 MX Authors
+ * Copyright (C) 2021 MX Authors
  *
- * Authors: Adrian
+ * Authors: Adrian <adrian@mxlinux.org>
+ *          Dolphin_Oracle
  *          MX Linux <http://mxlinux.org>
  *
  * This is free software: you can redistribute it and/or modify

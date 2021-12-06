@@ -217,7 +217,7 @@ void MainWindow::on_pushButtonAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Password don't match, please enter again."));
             return;
         }
-        const QString &cmdstr = QString("echo -ne \"%1\n%1\" |smbpasswd -a -s %2").arg(password->text()).arg(username->text());
+        const QString &cmdstr = QString("echo -ne '%1\n%1'|smbpasswd -a -s %2").arg(password->text()).arg(username->text());
         if (!cmd.run(cmdstr, true)) {
             QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
             return;

@@ -119,21 +119,6 @@ void MainWindow::progress(int counter, int duration) // processes tick emited by
     ui->progressBar->setValue(counter % (duration + 1));
 }
 
-// Next button clicked
-void MainWindow::on_buttonNext_clicked()
-{
-    setConnections();
-    Cmd cmd;
-    qDebug() << cmd.getCmdOut("");
-    qDebug() << "DONE";
-}
-
-void MainWindow::on_buttonBack_clicked()
-{
-    this->setWindowTitle("MX Samba Config");
-    ui->outputBox->clear();
-}
-
 QStringList MainWindow::listUsers()
 {
     QString output;

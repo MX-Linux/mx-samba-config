@@ -52,9 +52,7 @@ private slots:
     void cmdDone();
     void cmdStart();
     void on_buttonAbout_clicked();
-    void on_buttonBack_clicked();
     void on_buttonHelp_clicked();
-    void on_buttonNext_clicked();
     void on_pushButtonAddUser_clicked();
     void on_pushButtonRemoveUser_clicked();
     void on_pushButtonRestartSamba_clicked();

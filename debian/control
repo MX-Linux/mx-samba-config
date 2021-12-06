@@ -7,6 +7,9 @@ Standards-Version: 3.9.8
 
 Package: mx-samba-config
 Architecture: any
-Depends: xdg-utils | mx-viewer, ${misc:Depends}, ${shlibs:Depends}
+Depends: xdg-utils | mx-viewer, 
+         samba,
+         ${misc:Depends}, 
+         ${shlibs:Depends}
 Description: mx-samba-config
  mx-samba-config

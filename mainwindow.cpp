@@ -121,11 +121,14 @@ QStringList MainWindow::listUsers()
 
 void MainWindow::refreshShareList()
 {
+    ui->treeWidgetShares->clear();
     QString output;
     if (!cmd.run("net usershare info", output)) {
         qDebug() << "Error listing shares";
         return;
     }
+    if (output.isEmpty())
+        return;
     QStringList listShares{output.split("\n\n")};
     qDebug() << listShares;
     for (const QString &share : listShares) {
@@ -269,4 +272,16 @@ void MainWindow::on_pushButtonRestartSamba_clicked()
 {
     if (!cmd.run("service smbd restart"))
         QMessageBox::critical(this, tr("Error"), tr("Could not restart Samba."));
+}
+
+void MainWindow::on_pushButtonRemoveShare_clicked()
+{
+    if (!ui->treeWidgetShares->currentItem())
+        return;
+    QString share = ui->treeWidgetShares->selectedItems().at(0)->text(0);
+    if (share.isEmpty())
+        return;
+    if (!cmd.run("net usershare delete " +  share))
+       qDebug() << "Cannot delete share" << share;
+    refreshShareList();
 }

@@ -27,19 +27,19 @@
 #include <QDialog>
 
 namespace Ui {
-class editshare;
+class EditShare;
 }
 
-class editshare : public QDialog
+class EditShare : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit editshare(QWidget *parent = nullptr);
-    ~editshare();
+    explicit EditShare(QWidget *parent = nullptr);
+    ~EditShare();
 
 private:
-    Ui::editshare *ui;
+    Ui::EditShare *ui;
 };
 
 #endif // EDITSHARE_H

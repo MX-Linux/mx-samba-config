@@ -33,6 +33,7 @@
 #include "about.h"
 #include "cmd.h"
 #include "mainwindow.h"
+#include "ui_editshare.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -284,4 +285,15 @@ void MainWindow::on_pushButtonRemoveShare_clicked()
     if (!cmd.run("net usershare delete " +  share))
        qDebug() << "Cannot delete share" << share;
     refreshShareList();
+}
+
+void MainWindow::on_pushButtonEditShare_clicked()
+{
+
+}
+
+void MainWindow::on_pushButtonShare_clicked()
+{
+    EditShare *editshare = new EditShare;
+    editshare->exec();
 }

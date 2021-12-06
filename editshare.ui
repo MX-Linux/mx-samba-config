@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>editshare</class>
- <widget class="QDialog" name="editshare">
+ <class>EditShare</class>
+ <widget class="QDialog" name="EditShare">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -254,7 +254,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>editshare</receiver>
+   <receiver>EditShare</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -270,7 +270,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>editshare</receiver>
+   <receiver>EditShare</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

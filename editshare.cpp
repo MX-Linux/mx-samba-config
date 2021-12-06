@@ -24,14 +24,15 @@
 #include "editshare.h"
 #include "ui_editshare.h"
 
-editshare::editshare(QWidget *parent) :
+EditShare::EditShare(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::editshare)
+    ui(new Ui::EditShare)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::WindowStaysOnTopHint);
 }
 
-editshare::~editshare()
+EditShare::~EditShare()
 {
     delete ui;
 }

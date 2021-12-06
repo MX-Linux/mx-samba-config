@@ -1,9 +1,10 @@
 /**********************************************************************
  *  mainwindow.h
  **********************************************************************
- * Copyright (C) 2018 MX Authors
+ * Copyright (C) 2021 MX Authors
  *
- * Authors: Adrian
+ * Authors: Adrian <adrian@mxlinux.org>
+ *          Dolphin_Oracle
  *          MX Linux <http://mxlinux.org>
  *
  * This is free software: you can redistribute it and/or modify
@@ -48,17 +49,17 @@ public slots:
 
 private slots:
     void cleanup();
-    void cmdStart();
     void cmdDone();
-    void setConnections();
-    void progress(int elapsed, int duration); // updates progressBar when tick signal is emited
-    void updateOutput();
-    void on_buttonNext_clicked();
+    void cmdStart();
     void on_buttonAbout_clicked();
-    void on_buttonHelp_clicked();
     void on_buttonBack_clicked();
-
+    void on_buttonHelp_clicked();
+    void on_buttonNext_clicked();
+    void on_pushButtonAddUser_clicked();
     void on_pushButtonRemoveUser_clicked();
+    void progress(int elapsed, int duration); // updates progressBar when tick signal is emited
+    void setConnections();
+    void updateOutput();
 
 private:
     Ui::MainWindow *ui;

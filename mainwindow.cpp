@@ -22,7 +22,10 @@
  **********************************************************************/
 
 #include <QDebug>
+#include <QDialogButtonBox>
 #include <QFileDialog>
+#include <QFormLayout>
+#include <QInputDialog>
 #include <QScreen>
 #include <QScrollBar>
 #include <QTextStream>
@@ -134,7 +137,7 @@ void MainWindow::on_buttonBack_clicked()
 QStringList MainWindow::listUsers()
 {
     QString output;
-    if (!cmd.run("pdbedit --list", output, false)) {
+    if (!cmd.run("pdbedit --list", output, true)) {
         qDebug() << "Error listing users";
         return QStringList();
     }
@@ -159,7 +162,7 @@ void MainWindow::on_buttonAbout_clicked()
     displayAboutMsgBox( tr("About %1") + "MX Samba Config",
                        "<p align=\"center\"><b><h2>MX Samba Config</h2></b></p><p align=\"center\">" +
                        tr("Version: ") + qApp->applicationVersion() + "</p><p align=\"center\"><h3>" +
-                       tr("Description goes here") +
+                       tr("Program for configuring Samba shares and users.") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>",
                         "/usr/share/doc/mx-samba-config/license.html", tr("%1 License").arg(this->windowTitle()));
@@ -176,10 +179,49 @@ void MainWindow::on_buttonHelp_clicked()
 
 void MainWindow::on_pushButtonRemoveUser_clicked()
 {
-    QString user= ui->listWidgetUsers->currentItem()->text();
-    if (user.isEmpty())
+    if (!ui->listWidgetUsers->currentItem())
         return;
+    const QString &user = ui->listWidgetUsers->currentItem()->text();
     if (!cmd.run("pdbedit --delete " +  user))
        qDebug() << "Cannot delete user" << user;
+    refreshUserList();
+}
+
+void MainWindow::on_pushButtonAddUser_clicked()
+{
+    QDialog dialog(this);
+    QFormLayout form(&dialog);
+    form.addRow(new QLabel(tr("Enter the username and password:")));
+
+    QLineEdit *username = new QLineEdit(&dialog);
+    QLineEdit *password = new QLineEdit(&dialog);
+    QLineEdit *password2 = new QLineEdit(&dialog);
+    password->setEchoMode(QLineEdit::Password);
+    password2->setEchoMode(QLineEdit::Password);
+    form.addRow(tr("Username:"), username);
+    form.addRow(tr("Password:"), password);
+    form.addRow(tr("Confirm password:"), password2);
+
+    QDialogButtonBox buttonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, &dialog);
+    form.addRow(&buttonBox);
+
+    QObject::connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    QObject::connect(&buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+
+    if (dialog.exec() == QDialog::Accepted) {
+        if (username->text().isEmpty()) {
+            QMessageBox::critical(this, tr("Error"), tr("Empty username, please enter a name."));
+            return;
+        }
+        if (password->text() != password2->text()) {
+            QMessageBox::critical(this, tr("Error"), tr("Password don't match, please enter again."));
+            return;
+        }
+        const QString &cmdstr = QString("echo -ne \"%1\n%1\" |smbpasswd -a -s %2").arg(password->text()).arg(username->text());
+        if (!cmd.run(cmdstr, true)) {
+            QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
+            return;
+        }
+    }
     refreshUserList();
 }

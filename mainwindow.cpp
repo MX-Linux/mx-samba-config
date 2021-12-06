@@ -264,3 +264,9 @@ void MainWindow::on_pushButtonUserPassword_clicked()
         }
     }
 }
+
+void MainWindow::on_pushButtonRestartSamba_clicked()
+{
+    if (!cmd.run("service smbd restart"))
+        QMessageBox::critical(this, tr("Error"), tr("Could not restart Samba."));
+}

@@ -57,6 +57,7 @@ private slots:
     void on_buttonNext_clicked();
     void on_pushButtonAddUser_clicked();
     void on_pushButtonRemoveUser_clicked();
+    void on_pushButtonRestartSamba_clicked();
     void on_pushButtonUserPassword_clicked();
     void progress(int elapsed, int duration); // updates progressBar when tick signal is emited
     void setConnections();

@@ -43,12 +43,10 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void centerWindow();
-    void setup();
 
 public slots:
 
 private slots:
-    void cleanup();
     void cmdDone();
     void cmdStart();
     void on_buttonAbout_clicked();

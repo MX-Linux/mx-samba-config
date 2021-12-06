@@ -50,7 +50,6 @@ MainWindow::MainWindow(QWidget *parent) :
             centerWindow();
         }
     }
-    setup();
     refreshUserList();
 }
 
@@ -66,21 +65,6 @@ void MainWindow::centerWindow()
     int x = (screenGeometry.width()-this->width()) / 2;
     int y = (screenGeometry.height()-this->height()) / 2;
     this->move(x, y);
-}
-
-// setup versious items first time program runs
-void MainWindow::setup()
-{
-    connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
-    this->setWindowTitle("MX Samba Config");
-    this->adjustSize();
-    ui->buttonCancel->setEnabled(true);
-}
-
-// cleanup environment when window is closed
-void MainWindow::cleanup()
-{
-
 }
 
 void MainWindow::cmdStart()

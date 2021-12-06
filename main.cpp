@@ -35,8 +35,8 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    app.setWindowIcon(QIcon("/usr/share/pixmaps/mx-samba-config.png"));
-    app.setApplicationName("mx-samba-config");
+    app.setOrganizationName("MX-Linux");
+    app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
 
     QTranslator qtTran;
     if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))

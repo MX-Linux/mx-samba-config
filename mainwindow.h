@@ -52,12 +52,12 @@ private slots:
     void cmdStart();
     void on_buttonAbout_clicked();
     void on_buttonHelp_clicked();
+    void on_pushAddShare_clicked();
     void on_pushButtonAddUser_clicked();
-    void on_pushButtonEditShare_clicked();
     void on_pushButtonRemoveShare_clicked();
     void on_pushButtonRemoveUser_clicked();
     void on_pushButtonRestartSamba_clicked();
-    void on_pushButtonShare_clicked();
+    void on_pushEditShare_clicked();
     void on_pushButtonUserPassword_clicked();
     void progress(int elapsed, int duration); // updates progressBar when tick signal is emited
     void setConnections();
@@ -65,8 +65,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Ui::EditShare *editshare;
     Cmd cmd;
+    EditShare *editshare;
     QProcess proc;
     QSettings settings;
     QStringList listUsers();

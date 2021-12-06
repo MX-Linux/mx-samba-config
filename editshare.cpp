@@ -21,6 +21,8 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
+#include <QFileDialog>
+
 #include "editshare.h"
 #include "ui_editshare.h"
 
@@ -35,4 +37,12 @@ EditShare::EditShare(QWidget *parent) :
 EditShare::~EditShare()
 {
     delete ui;
+}
+
+void EditShare::on_toolButtonChooseDirectory_clicked()
+{
+    QFileDialog dialog;
+    QString selected = dialog.getExistingDirectory(this, tr("Select directory to share"), QString(), QFileDialog::ShowDirsOnly);
+    if (!selected.isEmpty())
+        ui->lineEditSharePath->setText(selected);
 }

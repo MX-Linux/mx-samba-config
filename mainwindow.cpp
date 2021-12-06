@@ -253,8 +253,8 @@ void MainWindow::on_pushButtonUserPassword_clicked()
     QDialogButtonBox buttonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, &dialog);
     form.addRow(&buttonBox);
 
-    QObject::connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
-    QObject::connect(&buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+    connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    connect(&buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
 
     if (dialog.exec() == QDialog::Accepted) {
         if (password->text() != password2->text()) {
@@ -287,13 +287,31 @@ void MainWindow::on_pushButtonRemoveShare_clicked()
     refreshShareList();
 }
 
-void MainWindow::on_pushButtonEditShare_clicked()
+void MainWindow::on_pushEditShare_clicked()
 {
+    if (!ui->treeWidgetShares->currentItem())
+        return;
+    EditShare *editshare = new EditShare();
+    editshare->ui->lineEditShareName->setText(ui->treeWidgetShares->selectedItems().at(0)->text(0));
+    if (editshare->exec() == QDialog::Accepted) {
 
+    }
+    refreshShareList();
 }
 
-void MainWindow::on_pushButtonShare_clicked()
+void MainWindow::on_pushAddShare_clicked()
 {
     EditShare *editshare = new EditShare;
-    editshare->exec();
+    if (editshare->exec() == QDialog::Accepted) {
+        if (editshare->ui->lineEditShareName->text().isEmpty() || !QFileInfo::exists(editshare->ui->lineEditSharePath->text())) {
+            qDebug() << "Error, could not add share. Empty share name";
+            return;
+        }
+        if (!QFileInfo::exists(editshare->ui->lineEditSharePath->text())) {
+            qDebug() << "Path:" << editshare->ui->lineEditSharePath->text() << "doesn't exist.";
+            return;
+        }
+        cmd.run("net usershare add " + editshare->ui->lineEditShareName->text() + " " + editshare->ui->lineEditSharePath->text());
+    }
+    refreshShareList();
 }

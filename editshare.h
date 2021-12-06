@@ -37,9 +37,9 @@ class EditShare : public QDialog
 public:
     explicit EditShare(QWidget *parent = nullptr);
     ~EditShare();
-
-private:
     Ui::EditShare *ui;
+private slots:
+    void on_toolButtonChooseDirectory_clicked();
 };
 
 #endif // EDITSHARE_H

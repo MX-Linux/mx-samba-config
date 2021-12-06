@@ -21,10 +21,11 @@ example:
     read only = no
     writeable = yes
     browseable = yes
+    guest ok = yes
     valid users = one, two, three, four
 
 
-list shars
+list shares
 grep ^\\ /etc/samba/smb.conf |grep ^\\[ |grep -v \; |grep -v homes | grep -v print |grep -v global
 
 list items in profile

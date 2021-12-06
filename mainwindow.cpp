@@ -213,11 +213,16 @@ void MainWindow::on_pushButtonAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Empty username, please enter a name."));
             return;
         }
+        QString cmdstr = QString("grep -q '^%1:' /etc/passwd").arg(username->text());
+        if (!cmd.run(cmdstr, true)) {
+            QMessageBox::critical(this, tr("Error"), tr("Username not found on the system, make sure you enter a valid username."));
+            return;
+        }
         if (password->text() != password2->text()) {
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        const QString &cmdstr = QString("echo -ne '%1\n%1'|smbpasswd -as %2").arg(password->text()).arg(username->text());
+        cmdstr = QString("echo -ne '%1\n%1'|smbpasswd -as %2").arg(password->text()).arg(username->text());
         if (!cmd.run(cmdstr, true)) {
             QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
             return;

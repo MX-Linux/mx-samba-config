@@ -47,14 +47,14 @@
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QPushButton" name="pushButtonEditShare">
+          <widget class="QPushButton" name="pushEditShare">
            <property name="text">
             <string>Edit</string>
            </property>
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QPushButton" name="pushButtonRemoveShare">
+          <widget class="QPushButton" name="pushRemoveShare">
            <property name="text">
             <string>Remove</string>
            </property>

@@ -69,6 +69,22 @@ void MainWindow::centerWindow()
     this->move(x, y);
 }
 
+void MainWindow::addEditShares(EditShare *editshare)
+{
+    if (editshare->exec() == QDialog::Accepted) {
+        if (editshare->ui->lineEditShareName->text().isEmpty() || !QFileInfo::exists(editshare->ui->lineEditSharePath->text())) {
+            qDebug() << "Error, could not add share. Empty share name";
+            return;
+        }
+        if (!QFileInfo::exists(editshare->ui->lineEditSharePath->text())) {
+            qDebug() << "Path:" << editshare->ui->lineEditSharePath->text() << "doesn't exist.";
+            return;
+        }
+        cmd.run("net usershare add " + editshare->ui->lineEditShareName->text() + " " + editshare->ui->lineEditSharePath->text());
+        refreshShareList();
+    }
+}
+
 void MainWindow::cmdStart()
 {
     setCursor(QCursor(Qt::BusyCursor));
@@ -114,6 +130,8 @@ QStringList MainWindow::listUsers()
         return QStringList();
     }
     QStringList list;
+    if (output.isEmpty())
+        return QStringList();
     for (const QString &item : output.split("\n"))
         list << item.section(":", 0, 0);
     list.sort();
@@ -155,7 +173,9 @@ void MainWindow::refreshShareList()
 void MainWindow::refreshUserList()
 {
     ui->listWidgetUsers->clear();
-    ui->listWidgetUsers->addItems(listUsers());
+    QStringList users = listUsers();
+    if (!users.isEmpty())
+        ui->listWidgetUsers->addItems(users);
 }
 
 
@@ -275,7 +295,7 @@ void MainWindow::on_pushButtonRestartSamba_clicked()
         QMessageBox::critical(this, tr("Error"), tr("Could not restart Samba."));
 }
 
-void MainWindow::on_pushButtonRemoveShare_clicked()
+void MainWindow::on_pushRemoveShare_clicked()
 {
     if (!ui->treeWidgetShares->currentItem())
         return;
@@ -293,25 +313,12 @@ void MainWindow::on_pushEditShare_clicked()
         return;
     EditShare *editshare = new EditShare();
     editshare->ui->lineEditShareName->setText(ui->treeWidgetShares->selectedItems().at(0)->text(0));
-    if (editshare->exec() == QDialog::Accepted) {
-
-    }
-    refreshShareList();
+    editshare->ui->lineEditSharePath->setText(ui->treeWidgetShares->selectedItems().at(0)->text(1));
+    addEditShares(editshare);
 }
 
 void MainWindow::on_pushAddShare_clicked()
 {
     EditShare *editshare = new EditShare;
-    if (editshare->exec() == QDialog::Accepted) {
-        if (editshare->ui->lineEditShareName->text().isEmpty() || !QFileInfo::exists(editshare->ui->lineEditSharePath->text())) {
-            qDebug() << "Error, could not add share. Empty share name";
-            return;
-        }
-        if (!QFileInfo::exists(editshare->ui->lineEditSharePath->text())) {
-            qDebug() << "Path:" << editshare->ui->lineEditSharePath->text() << "doesn't exist.";
-            return;
-        }
-        cmd.run("net usershare add " + editshare->ui->lineEditShareName->text() + " " + editshare->ui->lineEditSharePath->text());
-    }
-    refreshShareList();
+    addEditShares(editshare);
 }

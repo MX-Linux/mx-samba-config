@@ -39,7 +39,7 @@ public:
     ~EditShare();
     Ui::EditShare *ui;
 private slots:
-    void on_toolButtonChooseDirectory_clicked();
+    void on_pushChooseDirectory_clicked();
 };
 
 #endif // EDITSHARE_H

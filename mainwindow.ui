@@ -21,7 +21,7 @@
      </property>
      <widget class="QWidget" name="tabWidgetPage1">
       <attribute name="title">
-       <string>Shares</string>
+       <string>&amp;Shares</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="1" column="0">
@@ -49,14 +49,14 @@
          <item row="3" column="1">
           <widget class="QPushButton" name="pushEditShare">
            <property name="text">
-            <string>Edit</string>
+            <string>&amp;Edit</string>
            </property>
           </widget>
          </item>
          <item row="2" column="1">
           <widget class="QPushButton" name="pushRemoveShare">
            <property name="text">
-            <string>Remove</string>
+            <string>&amp;Remove</string>
            </property>
           </widget>
          </item>
@@ -69,7 +69,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Add</string>
+            <string>&amp;Add</string>
            </property>
           </widget>
          </item>
@@ -105,7 +105,7 @@
         </layout>
        </item>
        <item row="2" column="0">
-        <widget class="QPushButton" name="pushButtonRestartSamba">
+        <widget class="QPushButton" name="pushRestartSamba">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -113,7 +113,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Restart Samba</string>
+          <string>Res&amp;tart Samba</string>
          </property>
         </widget>
        </item>
@@ -121,15 +121,15 @@
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Users</string>
+       <string>&amp;Users</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="1" column="1">
-          <widget class="QPushButton" name="pushButtonAddUser">
+          <widget class="QPushButton" name="pushAddUser">
            <property name="text">
-            <string>Add</string>
+            <string>&amp;Add</string>
            </property>
           </widget>
          </item>
@@ -141,16 +141,16 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QPushButton" name="pushButtonRemoveUser">
+          <widget class="QPushButton" name="pushRemoveUser">
            <property name="text">
-            <string>Remove</string>
+            <string>&amp;Remove</string>
            </property>
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QPushButton" name="pushButtonUserPassword">
+          <widget class="QPushButton" name="pushUserPassword">
            <property name="text">
-            <string>Password</string>
+            <string>&amp;Password</string>
            </property>
           </widget>
          </item>
@@ -176,7 +176,7 @@
      </widget>
      <widget class="QWidget" name="tabWidgetPage2">
       <attribute name="title">
-       <string>Output</string>
+       <string>&amp;Output</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -243,7 +243,7 @@
       </spacer>
      </item>
      <item row="0" column="1">
-      <widget class="QPushButton" name="buttonHelp">
+      <widget class="QPushButton" name="pushHelp">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -254,7 +254,7 @@
         <string>Display help </string>
        </property>
        <property name="text">
-        <string>Help</string>
+        <string>&amp;Help</string>
        </property>
        <property name="icon">
         <iconset theme="help-contents">
@@ -266,7 +266,7 @@
       </widget>
      </item>
      <item row="0" column="0">
-      <widget class="QPushButton" name="buttonAbout">
+      <widget class="QPushButton" name="pushAbout">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -277,7 +277,7 @@
         <string>About this application</string>
        </property>
        <property name="text">
-        <string>About...</string>
+        <string>&amp;About...</string>
        </property>
        <property name="icon">
         <iconset theme="help-about">
@@ -292,7 +292,7 @@
       </widget>
      </item>
      <item row="0" column="8">
-      <widget class="QPushButton" name="buttonCancel">
+      <widget class="QPushButton" name="pushCancel">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -303,7 +303,7 @@
         <string>Quit application</string>
        </property>
        <property name="text">
-        <string>Close</string>
+        <string>&amp;Close</string>
        </property>
        <property name="icon">
         <iconset theme="window-close">
@@ -359,19 +359,35 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>treeWidgetShares</tabstop>
+  <tabstop>pushAddShare</tabstop>
+  <tabstop>pushRemoveShare</tabstop>
+  <tabstop>pushEditShare</tabstop>
+  <tabstop>pushRestartSamba</tabstop>
+  <tabstop>listWidgetUsers</tabstop>
+  <tabstop>pushAddUser</tabstop>
+  <tabstop>pushRemoveUser</tabstop>
+  <tabstop>pushUserPassword</tabstop>
+  <tabstop>pushAbout</tabstop>
+  <tabstop>pushHelp</tabstop>
+  <tabstop>pushCancel</tabstop>
+  <tabstop>outputBox</tabstop>
+ </tabstops>
  <resources>
   <include location="images.qrc"/>
  </resources>
  <connections>
   <connection>
-   <sender>buttonCancel</sender>
+   <sender>pushCancel</sender>
    <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>723</x>
-     <y>519</y>
+     <x>641</x>
+     <y>567</y>
     </hint>
     <hint type="destinationlabel">
      <x>388</x>

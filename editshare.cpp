@@ -39,10 +39,10 @@ EditShare::~EditShare()
     delete ui;
 }
 
-void EditShare::on_toolButtonChooseDirectory_clicked()
+void EditShare::on_pushChooseDirectory_clicked()
 {
     QFileDialog dialog;
     QString selected = dialog.getExistingDirectory(this, tr("Select directory to share"), QString(), QFileDialog::ShowDirsOnly);
     if (!selected.isEmpty())
-        ui->lineEditSharePath->setText(selected);
+        ui->textSharePath->setText(selected);
 }

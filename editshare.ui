@@ -7,248 +7,186 @@
     <x>0</x>
     <y>0</y>
     <width>412</width>
-    <height>508</height>
+    <height>292</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>460</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEditShareName">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>20</y>
-     <width>113</width>
-     <height>30</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelShareName">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>20</y>
-     <width>111</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Share Name</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelPath">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>70</y>
-     <width>63</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Path</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEditSharePath">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>60</y>
-     <width>113</width>
-     <height>30</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QToolButton" name="toolButtonChooseDirectory">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>60</y>
-     <width>26</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>...</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelBrowseable">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>110</y>
-     <width>91</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Browseable</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxBrowseable">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>100</y>
-     <width>111</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>Yes</string>
-    </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="textShareName"/>
    </item>
-   <item>
-    <property name="text">
-     <string>No</string>
-    </property>
+   <item row="3" column="0">
+    <widget class="QLabel" name="labelBrowseable">
+     <property name="text">
+      <string>Browseable</string>
+     </property>
+    </widget>
    </item>
-  </widget>
-  <widget class="QComboBox" name="comboBoxWriteable">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>140</y>
-     <width>111</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>Yes</string>
-    </property>
+   <item row="1" column="0">
+    <widget class="QLabel" name="labelPath">
+     <property name="text">
+      <string>Path</string>
+     </property>
+    </widget>
    </item>
-   <item>
-    <property name="text">
-     <string>No</string>
-    </property>
+   <item row="1" column="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
    </item>
-  </widget>
-  <widget class="QLabel" name="labelWriteable">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>150</y>
-     <width>91</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Writeable</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelReadOnly">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>190</y>
-     <width>91</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Read Only</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxGuestOK_2">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>180</y>
-     <width>111</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>No</string>
-    </property>
+   <item row="7" column="0">
+    <widget class="QLabel" name="labelValidUsers">
+     <property name="text">
+      <string>Valid Users</string>
+     </property>
+    </widget>
    </item>
-   <item>
-    <property name="text">
-     <string>Yes</string>
-    </property>
+   <item row="5" column="1">
+    <widget class="QComboBox" name="comboReadOnly">
+     <item>
+      <property name="text">
+       <string>No</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yes</string>
+      </property>
+     </item>
+    </widget>
    </item>
-  </widget>
-  <widget class="QLabel" name="labelGuestOK">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>230</y>
-     <width>91</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Guest OK</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxGuestOK">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>220</y>
-     <width>111</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>Yes</string>
-    </property>
+   <item row="8" column="0" colspan="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
    </item>
-   <item>
-    <property name="text">
-     <string>No</string>
-    </property>
+   <item row="5" column="0">
+    <widget class="QLabel" name="labelReadOnly">
+     <property name="text">
+      <string>Read Only</string>
+     </property>
+    </widget>
    </item>
-  </widget>
-  <widget class="QLabel" name="labelValidUsers">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>280</y>
-     <width>91</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Valid Users</string>
-   </property>
-  </widget>
-  <widget class="QListWidget" name="listWidgetValidUsers">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>260</y>
-     <width>191</width>
-     <height>192</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>Everyone</string>
-    </property>
+   <item row="6" column="1">
+    <widget class="QComboBox" name="comboGuestOK">
+     <item>
+      <property name="text">
+       <string>Yes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>No</string>
+      </property>
+     </item>
+    </widget>
    </item>
-  </widget>
+   <item row="7" column="1" colspan="2">
+    <widget class="QListWidget" name="listWidgetValidUsers">
+     <item>
+      <property name="text">
+       <string>Everyone</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="comboBrowseable">
+     <item>
+      <property name="text">
+       <string>Yes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>No</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="comboWriteable">
+     <item>
+      <property name="text">
+       <string>Yes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>No</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="labelShareName">
+     <property name="text">
+      <string>Share Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="textSharePath"/>
+   </item>
+   <item row="1" column="2">
+    <widget class="QToolButton" name="pushChooseDirectory">
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="labelGuestOK">
+     <property name="text">
+      <string>Guest OK</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="labelWriteable">
+     <property name="text">
+      <string>Writeable</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="labelComment">
+     <property name="text">
+      <string>Comment</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="textComment"/>
+   </item>
+  </layout>
  </widget>
+ <tabstops>
+  <tabstop>textShareName</tabstop>
+  <tabstop>textSharePath</tabstop>
+  <tabstop>pushChooseDirectory</tabstop>
+  <tabstop>textComment</tabstop>
+  <tabstop>comboBrowseable</tabstop>
+  <tabstop>comboWriteable</tabstop>
+  <tabstop>comboReadOnly</tabstop>
+  <tabstop>comboGuestOK</tabstop>
+  <tabstop>listWidgetValidUsers</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -258,8 +196,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>217</x>
+     <y>259</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>

@@ -51,15 +51,15 @@ private slots:
     void addEditShares(EditShare*);
     void cmdDone();
     void cmdStart();
-    void on_buttonAbout_clicked();
-    void on_buttonHelp_clicked();
+    void on_pushAbout_clicked();
     void on_pushAddShare_clicked();
-    void on_pushButtonAddUser_clicked();
-    void on_pushButtonRemoveUser_clicked();
-    void on_pushButtonRestartSamba_clicked();
-    void on_pushButtonUserPassword_clicked();
+    void on_pushAddUser_clicked();
     void on_pushEditShare_clicked();
+    void on_pushHelp_clicked();
     void on_pushRemoveShare_clicked();
+    void on_pushRemoveUser_clicked();
+    void on_pushRestartSamba_clicked();
+    void on_pushUserPassword_clicked();
     void progress(int elapsed, int duration); // updates progressBar when tick signal is emited
     void setConnections();
     void updateOutput();

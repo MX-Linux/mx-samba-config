@@ -72,15 +72,19 @@ void MainWindow::centerWindow()
 void MainWindow::addEditShares(EditShare *editshare)
 {
     if (editshare->exec() == QDialog::Accepted) {
-        if (editshare->ui->lineEditShareName->text().isEmpty() || !QFileInfo::exists(editshare->ui->lineEditSharePath->text())) {
+        if (editshare->ui->textShareName->text().isEmpty() || !QFileInfo::exists(editshare->ui->textSharePath->text())) {
             qDebug() << "Error, could not add share. Empty share name";
             return;
         }
-        if (!QFileInfo::exists(editshare->ui->lineEditSharePath->text())) {
-            qDebug() << "Path:" << editshare->ui->lineEditSharePath->text() << "doesn't exist.";
+        if (!QFileInfo::exists(editshare->ui->textSharePath->text())) {
+            qDebug() << "Path:" << editshare->ui->textSharePath->text() << "doesn't exist.";
             return;
         }
-        cmd.run("runuser -u $(logname) net usershare add " + editshare->ui->lineEditShareName->text() + " " + editshare->ui->lineEditSharePath->text());
+        cmd.run("runuser -u $(logname) net usershare add " + editshare->ui->textShareName->text() + " "
+            + editshare->ui->textSharePath->text()
+            + " \"" + (editshare->ui->textComment->text().isEmpty() ? "" : editshare->ui->textComment->text()) + "\""
+            + " Everyone:r"
+            + " guest_ok=" + (editshare->ui->comboGuestOK->currentText() == tr("Yes") ? "y" : "n"));
         refreshShareList();
     }
 }
@@ -178,9 +182,7 @@ void MainWindow::refreshUserList()
         ui->listWidgetUsers->addItems(users);
 }
 
-
-// About button clicked
-void MainWindow::on_buttonAbout_clicked()
+void MainWindow::on_pushAbout_clicked()
 {
     this->hide();
     displayAboutMsgBox( tr("About %1") + "MX Samba Config",
@@ -194,14 +196,13 @@ void MainWindow::on_buttonAbout_clicked()
     this->show();
 }
 
-// Help button clicked
-void MainWindow::on_buttonHelp_clicked()
+void MainWindow::on_pushHelp_clicked()
 {
     QString url = "google.com";
     displayDoc(url, tr("%1 Help").arg(this->windowTitle()));
 }
 
-void MainWindow::on_pushButtonRemoveUser_clicked()
+void MainWindow::on_pushRemoveUser_clicked()
 {
     if (!ui->listWidgetUsers->currentItem())
         return;
@@ -211,7 +212,7 @@ void MainWindow::on_pushButtonRemoveUser_clicked()
     refreshUserList();
 }
 
-void MainWindow::on_pushButtonAddUser_clicked()
+void MainWindow::on_pushAddUser_clicked()
 {
     QDialog dialog(this);
     QFormLayout form(&dialog);
@@ -255,7 +256,7 @@ void MainWindow::on_pushButtonAddUser_clicked()
     refreshUserList();
 }
 
-void MainWindow::on_pushButtonUserPassword_clicked()
+void MainWindow::on_pushUserPassword_clicked()
 {
     if (!ui->listWidgetUsers->currentItem())
         return;
@@ -289,7 +290,7 @@ void MainWindow::on_pushButtonUserPassword_clicked()
     }
 }
 
-void MainWindow::on_pushButtonRestartSamba_clicked()
+void MainWindow::on_pushRestartSamba_clicked()
 {
     if (!cmd.run("service smbd restart"))
         QMessageBox::critical(this, tr("Error"), tr("Could not restart Samba."));
@@ -312,8 +313,10 @@ void MainWindow::on_pushEditShare_clicked()
     if (!ui->treeWidgetShares->currentItem())
         return;
     EditShare *editshare = new EditShare();
-    editshare->ui->lineEditShareName->setText(ui->treeWidgetShares->selectedItems().at(0)->text(0));
-    editshare->ui->lineEditSharePath->setText(ui->treeWidgetShares->selectedItems().at(0)->text(1));
+    editshare->ui->textShareName->setText(ui->treeWidgetShares->selectedItems().at(0)->text(0));
+    editshare->ui->textSharePath->setText(ui->treeWidgetShares->selectedItems().at(0)->text(1));
+    editshare->ui->textComment->setText(ui->treeWidgetShares->selectedItems().at(0)->text(2));
+    editshare->ui->comboGuestOK->setCurrentIndex(ui->treeWidgetShares->selectedItems().at(0)->text(4) == "y" ? 0 : 1);
     addEditShares(editshare);
 }
 

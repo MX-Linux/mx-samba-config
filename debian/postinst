@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remove" ] ; then
+
+    echo "Adding sambashare group"
+    groupadd -f sambashare
+    gpasswd -M $(getent group users | cut -d: -f4) sambashare
+    
+fi
+
+#DEBHELPER#

@@ -144,7 +144,7 @@ void MainWindow::buildUserList(EditShare *editshare)
         hbox->addWidget(radio);
         connect(radio, &QRadioButton::pressed, radio, [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
 
-        radio = new QRadioButton(tr("Full Access"));
+        radio = new QRadioButton(tr("&Full Access"));
         radio->setObjectName("*FullAccess*" + user);
         hbox->addWidget(radio);
         connect(radio, &QRadioButton::pressed, radio, [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});

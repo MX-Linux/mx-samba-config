@@ -82,11 +82,24 @@ void MainWindow::addEditShares(EditShare *editshare)
             qDebug() << "Path:" << editshare->ui->textSharePath->text() << "doesn't exist.";
             return;
         }
+        QStringList userList = cmd.getCmdOut("getent group users | cut -d: -f4").split(",");
+        userList.insert(0, tr("Everyone"));
+        QString user_permissions;
+        for (const QString &user : userList) {
+            if (editshare->findChild<QRadioButton *>("*Deny*" + user)->isChecked())
+                user_permissions += user + ":d";
+            else if (editshare->findChild<QRadioButton *>("*ReadOnly*" + user)->isChecked())
+                user_permissions += user + ":r";
+            else if (editshare->findChild<QRadioButton *>("*FullAccess*" + user)->isChecked())
+                user_permissions += user + ":f";
+            user_permissions += ",";
+        }
+        user_permissions.remove(QRegularExpression(",$"));
+
         cmd.run("runuser -u $(logname) net usershare add " + editshare->ui->textShareName->text() + " "
             + editshare->ui->textSharePath->text()
             + " \"" + (editshare->ui->textComment->text().isEmpty() ? "" : editshare->ui->textComment->text()) + "\""
-            + " Everyone:r"
-            + " guest_ok=" + (editshare->ui->comboGuestOK->currentText() == tr("Yes") ? "y" : "n"));
+            + " " + user_permissions + " guest_ok=" + (editshare->ui->comboGuestOK->currentText() == tr("Yes") ? "y" : "n"));
         refreshShareList();
     }
 }
@@ -118,8 +131,8 @@ void MainWindow::buildUserList(EditShare *editshare)
         groupBox->setObjectName(user);
         QHBoxLayout *hbox = new QHBoxLayout;
 
-        QRadioButton *radio = new QRadioButton(tr("&None"));
-        radio->setObjectName("*None*" + user);
+        QRadioButton *radio = new QRadioButton(tr("&Deny"));
+        radio->setObjectName("*Deny*" + user);
         radio->setChecked(true);
         hbox->addWidget(radio);
 

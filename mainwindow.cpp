@@ -326,6 +326,23 @@ void MainWindow::on_pushEditShare_clicked()
     editshare->ui->textSharePath->setText(ui->treeWidgetShares->selectedItems().at(0)->text(1));
     editshare->ui->textComment->setText(ui->treeWidgetShares->selectedItems().at(0)->text(2));
     editshare->ui->comboGuestOK->setCurrentIndex(ui->treeWidgetShares->selectedItems().at(0)->text(4) == "y" ? 0 : 1);
+    QString permissions = ui->treeWidgetShares->selectedItems().at(0)->text(3);
+    QStringList permission_list;
+    if (!permissions.isEmpty())
+        permission_list = permissions.split(",");
+
+    for (const QString &item : permission_list) {
+        QString user = item.section(":", 0, 0);
+        QString permission = item.section(":", 0, 1);
+        if (permission == "d")
+            editshare->findChild<QRadioButton *>("*Deny*" + user)->setChecked(true);
+        else if (permission == "r")
+            editshare->findChild<QRadioButton *>("*ReadOnly*" + user)->setChecked(true);
+        else if (permission == "f")
+            editshare->findChild<QRadioButton *>("*FullAccess*" + user)->setChecked(true);
+        else
+            QMessageBox::critical(this, tr("Error"), "Error: trying to process permissions: "  + item);
+    }
     addEditShares(editshare);
 }
 

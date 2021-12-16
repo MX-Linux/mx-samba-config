@@ -86,15 +86,17 @@ void MainWindow::addEditShares(EditShare *editshare)
         userList.insert(0, tr("Everyone"));
         QString user_permissions;
         for (const QString &user : userList) {
+            if (!user_permissions.isEmpty())
+                user_permissions += ",";
             if (editshare->findChild<QRadioButton *>("*Deny*" + user)->isChecked())
                 user_permissions += user + ":d";
             else if (editshare->findChild<QRadioButton *>("*ReadOnly*" + user)->isChecked())
                 user_permissions += user + ":r";
             else if (editshare->findChild<QRadioButton *>("*FullAccess*" + user)->isChecked())
                 user_permissions += user + ":f";
-            user_permissions += ",";
+            else // if it doesn't find any check boxes remove the , from the end
+                user_permissions.remove(QRegularExpression(",$"));
         }
-        user_permissions.remove(QRegularExpression(",$"));
 
         cmd.run("runuser -u $(logname) net usershare add " + editshare->ui->textShareName->text() + " "
             + editshare->ui->textSharePath->text()
@@ -133,15 +135,19 @@ void MainWindow::buildUserList(EditShare *editshare)
 
         QRadioButton *radio = new QRadioButton(tr("&Deny"));
         radio->setObjectName("*Deny*" + user);
-        radio->setChecked(true);
         hbox->addWidget(radio);
+        radio->setAutoExclusive(false);
+        connect(radio, &QRadioButton::pressed, radio, [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
 
         radio = new QRadioButton(tr("&Read Only"));
         radio->setObjectName("*ReadOnly*" + user);
         hbox->addWidget(radio);
+        connect(radio, &QRadioButton::pressed, radio, [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
+
         radio = new QRadioButton(tr("Full Access"));
         radio->setObjectName("*FullAccess*" + user);
         hbox->addWidget(radio);
+        connect(radio, &QRadioButton::pressed, radio, [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
 
         hbox->addStretch(1);
         groupBox->setLayout(hbox);

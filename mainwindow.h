@@ -49,8 +49,6 @@ public slots:
 
 private slots:
     void addEditShares(EditShare*);
-    void cmdDone();
-    void cmdStart();
     void on_pushAbout_clicked();
     void on_pushAddShare_clicked();
     void on_pushAddUser_clicked();
@@ -60,9 +58,6 @@ private slots:
     void on_pushRemoveUser_clicked();
     void on_pushRestartSamba_clicked();
     void on_pushUserPassword_clicked();
-    void progress(int elapsed, int duration); // updates progressBar when tick signal is emited
-    void setConnections();
-    void updateOutput();
 
 private:
     Ui::MainWindow *ui;

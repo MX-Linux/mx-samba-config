@@ -89,42 +89,6 @@ void MainWindow::addEditShares(EditShare *editshare)
     }
 }
 
-void MainWindow::cmdStart()
-{
-    setCursor(QCursor(Qt::BusyCursor));
-}
-
-
-void MainWindow::cmdDone()
-{
-    ui->progressBar->setValue(ui->progressBar->maximum());
-    setCursor(QCursor(Qt::ArrowCursor));
-}
-
-// set proc and timer connections
-void MainWindow::setConnections()
-{
-    proc.disconnect();
-    connect(&proc, &QProcess::readyReadStandardOutput, this, &MainWindow::updateOutput);
-    connect(&proc, &QProcess::started, this, &MainWindow::cmdStart);
-    connect(&proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::cmdDone);
-}
-
-void MainWindow::updateOutput()
-{
-    QString out = proc.readAll();
-    qDebug() << out;
-    ui->outputBox->insertPlainText(out);
-    QScrollBar *sb = ui->outputBox->verticalScrollBar();
-    sb->setValue(sb->maximum());
-    qApp->processEvents();
-}
-
-void MainWindow::progress(int counter, int duration) // processes tick emited by Cmd to be used by a progress bar
-{
-    ui->progressBar->setMaximum(duration);
-    ui->progressBar->setValue(counter % (duration + 1));
-}
 
 QStringList MainWindow::listUsers()
 {

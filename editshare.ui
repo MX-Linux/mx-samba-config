@@ -20,14 +20,20 @@
    <item row="3" column="0">
     <widget class="QLabel" name="labelBrowseable">
      <property name="text">
-      <string>Browseable</string>
+      <string>&amp;Browseable</string>
+     </property>
+     <property name="buddy">
+      <cstring>comboBrowseable</cstring>
      </property>
     </widget>
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="labelPath">
      <property name="text">
-      <string>Path</string>
+      <string>&amp;Path</string>
+     </property>
+     <property name="buddy">
+      <cstring>textSharePath</cstring>
      </property>
     </widget>
    </item>
@@ -47,7 +53,10 @@
    <item row="7" column="0">
     <widget class="QLabel" name="labelValidUsers">
      <property name="text">
-      <string>Valid Users</string>
+      <string>&amp;Valid Users</string>
+     </property>
+     <property name="buddy">
+      <cstring>listWidgetValidUsers</cstring>
      </property>
     </widget>
    </item>
@@ -78,7 +87,10 @@
    <item row="5" column="0">
     <widget class="QLabel" name="labelReadOnly">
      <property name="text">
-      <string>Read Only</string>
+      <string>&amp;Read Only</string>
+     </property>
+     <property name="buddy">
+      <cstring>comboReadOnly</cstring>
      </property>
     </widget>
    </item>
@@ -136,7 +148,10 @@
    <item row="0" column="0">
     <widget class="QLabel" name="labelShareName">
      <property name="text">
-      <string>Share Name</string>
+      <string>Share &amp;Name</string>
+     </property>
+     <property name="buddy">
+      <cstring>textShareName</cstring>
      </property>
     </widget>
    </item>
@@ -153,21 +168,30 @@
    <item row="6" column="0">
     <widget class="QLabel" name="labelGuestOK">
      <property name="text">
-      <string>Guest OK</string>
+      <string>&amp;Guest OK</string>
+     </property>
+     <property name="buddy">
+      <cstring>comboGuestOK</cstring>
      </property>
     </widget>
    </item>
    <item row="4" column="0">
     <widget class="QLabel" name="labelWriteable">
      <property name="text">
-      <string>Writeable</string>
+      <string>&amp;Writeable</string>
+     </property>
+     <property name="buddy">
+      <cstring>comboWriteable</cstring>
      </property>
     </widget>
    </item>
    <item row="2" column="0">
     <widget class="QLabel" name="labelComment">
      <property name="text">
-      <string>Comment</string>
+      <string>&amp;Comment</string>
+     </property>
+     <property name="buddy">
+      <cstring>textComment</cstring>
      </property>
     </widget>
    </item>

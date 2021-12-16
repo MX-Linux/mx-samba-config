@@ -75,11 +75,11 @@ void MainWindow::addEditShares(EditShare *editshare)
 {
     if (editshare->exec() == QDialog::Accepted) {
         if (editshare->ui->textShareName->text().isEmpty() || !QFileInfo::exists(editshare->ui->textSharePath->text())) {
-            qDebug() << "Error, could not add share. Empty share name";
+            QMessageBox::critical(this, tr("Error"), tr("Error, could not add share. Empty share name"));
             return;
         }
         if (!QFileInfo::exists(editshare->ui->textSharePath->text())) {
-            qDebug() << "Path:" << editshare->ui->textSharePath->text() << "doesn't exist.";
+            QMessageBox::critical(this, tr("Error"), QString("Path: %1 doesn't exist.").arg(editshare->ui->textSharePath->text()));
             return;
         }
         QStringList userList = cmd.getCmdOut("getent group users | cut -d: -f4").split(",");
@@ -109,7 +109,7 @@ QStringList MainWindow::listUsers()
 {
     QString output;
     if (!cmd.run("pdbedit --list", output, true)) {
-        qDebug() << "Error listing users";
+        QMessageBox::critical(this, tr("Error"), tr("Error listing users"));
         return QStringList();
     }
     QStringList list;
@@ -155,7 +155,7 @@ void MainWindow::refreshShareList()
     ui->treeWidgetShares->clear();
     QString output;
     if (!cmd.run("runuser -u $(logname) net usershare info", output)) {
-        qDebug() << "Error listing shares";
+        QMessageBox::critical(this, tr("Error"), tr("Error listing shares"));
         return;
     }
     if (output.isEmpty())
@@ -216,7 +216,7 @@ void MainWindow::on_pushRemoveUser_clicked()
         return;
     const QString &user = ui->listWidgetUsers->currentItem()->text();
     if (!cmd.run("pdbedit --delete " +  user))
-       qDebug() << "Cannot delete user" << user;
+        QMessageBox::critical(this, tr("Error"), tr("Cannot delete user: ") + user);
     refreshUserList();
 }
 
@@ -312,7 +312,7 @@ void MainWindow::on_pushRemoveShare_clicked()
     if (share.isEmpty())
         return;
     if (!cmd.run("runuser -u $(logname) net usershare delete " +  share))
-       qDebug() << "Cannot delete share" << share;
+        QMessageBox::critical(this, tr("Error"), tr("Cannot delete share: ") + share);
     refreshShareList();
 }
 

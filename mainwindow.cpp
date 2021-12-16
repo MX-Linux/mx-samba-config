@@ -118,15 +118,15 @@ void MainWindow::buildUserList(EditShare *editshare)
         QHBoxLayout *hbox = new QHBoxLayout;
 
         QRadioButton *radio = new QRadioButton(tr("&None"));
-        radio->setObjectName("None");
+        radio->setObjectName("*None*" + user);
         radio->setChecked(true);
         hbox->addWidget(radio);
 
         radio = new QRadioButton(tr("&Read Only"));
-        radio->setObjectName("ReadOnly");
+        radio->setObjectName("*ReadOnly*" + user);
         hbox->addWidget(radio);
         radio = new QRadioButton(tr("Full Access"));
-        radio->setObjectName("FullAccess");
+        radio->setObjectName("*FullAccess*" + user);
         hbox->addWidget(radio);
 
         hbox->addStretch(1);

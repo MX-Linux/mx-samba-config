@@ -112,6 +112,7 @@ void MainWindow::buildUserList(EditShare *editshare)
 {
     QLayout *layout = editshare->ui->frameUsers->layout();
     QStringList userList = cmd.getCmdOut("getent group users | cut -d: -f4").split(",");
+    userList.insert(0, tr("Everyone"));
     for (const QString &user : userList) {
         QGroupBox *groupBox = new QGroupBox(user);
         groupBox->setObjectName(user);

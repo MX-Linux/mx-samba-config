@@ -25,7 +25,9 @@
 #include <QDialogButtonBox>
 #include <QFileDialog>
 #include <QFormLayout>
+#include <QGroupBox>
 #include <QInputDialog>
+#include <QRadioButton>
 #include <QScreen>
 #include <QScrollBar>
 #include <QTextStream>
@@ -104,6 +106,34 @@ QStringList MainWindow::listUsers()
         list << item.section(":", 0, 0);
     list.sort();
     return list;
+}
+
+void MainWindow::buildUserList(EditShare *editshare)
+{
+    QLayout *layout = editshare->ui->frameUsers->layout();
+    QStringList userList = cmd.getCmdOut("getent group users | cut -d: -f4").split(",");
+    for (const QString &user : userList) {
+        QGroupBox *groupBox = new QGroupBox(user);
+        groupBox->setObjectName(user);
+        QHBoxLayout *hbox = new QHBoxLayout;
+
+        QRadioButton *radio = new QRadioButton(tr("&None"));
+        radio->setObjectName("None");
+        radio->setChecked(true);
+        hbox->addWidget(radio);
+
+        radio = new QRadioButton(tr("&Read Only"));
+        radio->setObjectName("ReadOnly");
+        hbox->addWidget(radio);
+        radio = new QRadioButton(tr("Full Access"));
+        radio->setObjectName("FullAccess");
+        hbox->addWidget(radio);
+
+        hbox->addStretch(1);
+        groupBox->setLayout(hbox);
+        layout->addWidget(groupBox);
+    }
+    layout->addItem(new QSpacerItem(0, 10, QSizePolicy::Ignored, QSizePolicy::Expanding));
 }
 
 void MainWindow::refreshShareList()
@@ -276,7 +306,8 @@ void MainWindow::on_pushEditShare_clicked()
 {
     if (!ui->treeWidgetShares->currentItem())
         return;
-    EditShare *editshare = new EditShare();
+    EditShare *editshare = new EditShare;
+    buildUserList(editshare);
     editshare->ui->textShareName->setText(ui->treeWidgetShares->selectedItems().at(0)->text(0));
     editshare->ui->textSharePath->setText(ui->treeWidgetShares->selectedItems().at(0)->text(1));
     editshare->ui->textComment->setText(ui->treeWidgetShares->selectedItems().at(0)->text(2));
@@ -287,5 +318,6 @@ void MainWindow::on_pushEditShare_clicked()
 void MainWindow::on_pushAddShare_clicked()
 {
     EditShare *editshare = new EditShare;
+    buildUserList(editshare);
     addEditShares(editshare);
 }

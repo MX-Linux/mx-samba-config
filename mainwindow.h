@@ -62,10 +62,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
-    EditShare *editshare;
-    QProcess proc;
     QSettings settings;
     QStringList listUsers();
+    void buildUserList(EditShare*);
     void refreshShareList();
     void refreshUserList();
 };

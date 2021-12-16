@@ -6,103 +6,54 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>412</width>
-    <height>321</height>
+    <width>318</width>
+    <height>364</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="4" column="0">
-    <widget class="QLabel" name="labelReadOnly">
+   <item row="0" column="0">
+    <widget class="QLabel" name="labelShareName">
      <property name="text">
-      <string>&amp;Read Only</string>
+      <string>Share &amp;Name</string>
      </property>
      <property name="buddy">
-      <cstring>comboReadOnly</cstring>
+      <cstring>textShareName</cstring>
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
-    <widget class="QLineEdit" name="textSharePath"/>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="labelValidUsers">
-     <property name="text">
-      <string>&amp;Valid Users</string>
-     </property>
-     <property name="buddy">
-      <cstring>listWidgetValidUsers</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2">
+   <item row="1" column="3">
     <widget class="QToolButton" name="pushChooseDirectory">
      <property name="text">
       <string>...</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="1">
-    <widget class="QComboBox" name="comboReadOnly">
-     <item>
-      <property name="text">
-       <string>No</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Yes</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QComboBox" name="comboWriteable">
-     <item>
-      <property name="text">
-       <string>Yes</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>No</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="textComment"/>
-   </item>
-   <item row="1" column="3">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="labelWriteable">
+   <item row="1" column="0">
+    <widget class="QLabel" name="labelPath">
      <property name="text">
-      <string>&amp;Writeable</string>
+      <string>&amp;Path</string>
      </property>
      <property name="buddy">
-      <cstring>comboWriteable</cstring>
+      <cstring>textSharePath</cstring>
      </property>
     </widget>
    </item>
-   <item row="6" column="1" colspan="2">
-    <widget class="QListWidget" name="listWidgetValidUsers">
+   <item row="1" column="2">
+    <widget class="QLineEdit" name="textSharePath"/>
+   </item>
+   <item row="3" column="2">
+    <widget class="QComboBox" name="comboGuestOK">
      <item>
       <property name="text">
-       <string>Everyone</string>
+       <string>Yes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>No</string>
       </property>
      </item>
     </widget>
@@ -117,30 +68,10 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="labelPath">
-     <property name="text">
-      <string>&amp;Path</string>
-     </property>
-     <property name="buddy">
-      <cstring>textSharePath</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
+   <item row="0" column="2">
     <widget class="QLineEdit" name="textShareName"/>
    </item>
-   <item row="7" column="0" colspan="3">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
+   <item row="3" column="0">
     <widget class="QLabel" name="labelGuestOK">
      <property name="text">
       <string>&amp;Guest OK</string>
@@ -150,28 +81,46 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="labelShareName">
-     <property name="text">
-      <string>Share &amp;Name</string>
+   <item row="2" column="2">
+    <widget class="QLineEdit" name="textComment"/>
+   </item>
+   <item row="6" column="0" colspan="6">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
      </property>
-     <property name="buddy">
-      <cstring>textShareName</cstring>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>
-   <item row="5" column="1">
-    <widget class="QComboBox" name="comboGuestOK">
-     <item>
-      <property name="text">
-       <string>Yes</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>No</string>
-      </property>
-     </item>
+   <item row="4" column="0" colspan="6">
+    <widget class="QFrame" name="frameUsers">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Access rights for valid users</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::RichText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
@@ -179,12 +128,8 @@
  <tabstops>
   <tabstop>textShareName</tabstop>
   <tabstop>textSharePath</tabstop>
-  <tabstop>pushChooseDirectory</tabstop>
   <tabstop>textComment</tabstop>
-  <tabstop>comboWriteable</tabstop>
-  <tabstop>comboReadOnly</tabstop>
   <tabstop>comboGuestOK</tabstop>
-  <tabstop>listWidgetValidUsers</tabstop>
  </tabstops>
  <resources/>
  <connections>

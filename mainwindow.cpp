@@ -80,7 +80,7 @@ void MainWindow::addEditShares(EditShare *editshare)
             qDebug() << "Path:" << editshare->ui->lineEditSharePath->text() << "doesn't exist.";
             return;
         }
-        cmd.run("net usershare add " + editshare->ui->lineEditShareName->text() + " " + editshare->ui->lineEditSharePath->text());
+        cmd.run("runuser -u $(logname) net usershare add " + editshare->ui->lineEditShareName->text() + " " + editshare->ui->lineEditSharePath->text());
         refreshShareList();
     }
 }
@@ -142,7 +142,7 @@ void MainWindow::refreshShareList()
 {
     ui->treeWidgetShares->clear();
     QString output;
-    if (!cmd.run("net usershare info", output)) {
+    if (!cmd.run("runuser -u $(logname) net usershare info", output)) {
         qDebug() << "Error listing shares";
         return;
     }
@@ -302,7 +302,7 @@ void MainWindow::on_pushRemoveShare_clicked()
     QString share = ui->treeWidgetShares->selectedItems().at(0)->text(0);
     if (share.isEmpty())
         return;
-    if (!cmd.run("net usershare delete " +  share))
+    if (!cmd.run("runuser -u $(logname) net usershare delete " +  share))
        qDebug() << "Cannot delete share" << share;
     refreshShareList();
 }

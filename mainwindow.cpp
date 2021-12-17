@@ -89,13 +89,11 @@ void MainWindow::addEditShares(EditShare *editshare)
             if (!user_permissions.isEmpty())
                 user_permissions += ",";
             if (editshare->findChild<QRadioButton *>("*Deny*" + user)->isChecked())
-                user_permissions += user + ":d";
+                user_permissions += user + ":D";
             else if (editshare->findChild<QRadioButton *>("*ReadOnly*" + user)->isChecked())
-                user_permissions += user + ":r";
+                user_permissions += user + ":R";
             else if (editshare->findChild<QRadioButton *>("*FullAccess*" + user)->isChecked())
-                user_permissions += user + ":f";
-            else // if it doesn't find any check boxes remove the , from the end
-                user_permissions.remove(QRegularExpression(",$"));
+                user_permissions += user + ":F";
         }
 
         cmd.run("runuser -u $(logname) net usershare add " + editshare->ui->textShareName->text() + " "
@@ -338,13 +336,15 @@ void MainWindow::on_pushEditShare_clicked()
         permission_list = permissions.split(",");
 
     for (const QString &item : permission_list) {
+        if (item.isEmpty())
+            continue;
         QString user = item.section(":", 0, 0);
-        QString permission = item.section(":", 0, 1);
-        if (permission == "d")
+        QString permission = item.section(":", 1, 1);
+        if (permission.toUpper() == "D")
             editshare->findChild<QRadioButton *>("*Deny*" + user)->setChecked(true);
-        else if (permission == "r")
+        else if (permission.toUpper() == "R")
             editshare->findChild<QRadioButton *>("*ReadOnly*" + user)->setChecked(true);
-        else if (permission == "f")
+        else if (permission.toUpper() == "F")
             editshare->findChild<QRadioButton *>("*FullAccess*" + user)->setChecked(true);
         else
             QMessageBox::critical(this, tr("Error"), "Error: trying to process permissions: "  + item);

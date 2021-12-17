@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Wed, 20 Dec 2017 15:22:57 -0500
+Source: mx-samba-config
+Architecture: source
+Version: 0.17.12
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-samba-config (0.17.12) mx; urgency=medium
+ .
+   * initial release
+Checksums-Sha1:
+ 034430d1b51f0952e5a984f2dc424ee6b5235b72 588 mx-samba-config_0.17.12.dsc
+ 61b42742ae68c52003842c071f80677dcd592c1a 17368 mx-samba-config_0.17.12.tar.xz
+ 4889983c19ebb0e6b0f0b420420196baaa698e3c 10005 mx-samba-config_0.17.12_i386.buildinfo
+Checksums-Sha256:
+ 96de775617fe6361e7d16fba07ea69273d8fdcf1dae899cdc03d81af0a148d5c 588 mx-samba-config_0.17.12.dsc
+ 29fa7060c6fe8d65e0b05284d024127251c31068768f41121eb41df4421c948e 17368 mx-samba-config_0.17.12.tar.xz
+ db55723e5c0946bde93a604a134e5b541010a8b90c4fd55e1d4a6bc33979daa5 10005 mx-samba-config_0.17.12_i386.buildinfo
+Files:
+ 09f1fde4d707f483e8ba6b34f009d64c 588 admin optional mx-samba-config_0.17.12.dsc
+ 885aeffe801d7660d09baab41c4a497f 17368 admin optional mx-samba-config_0.17.12.tar.xz
+ 5a90081f297bfa84dbc86a48d57dcc88 10005 admin optional mx-samba-config_0.17.12_i386.buildinfo

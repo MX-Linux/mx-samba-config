@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 16 Dec 2021 19:14:52 -0500
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: source amd64
+Version: 0.21.12
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-samba-config - mx-samba-config
+Changes:
+ mx-samba-config (0.21.12) mx; urgency=medium
+ .
+   * Initial build
+Checksums-Sha1:
+ 849980884d7690f93aaa72153af9994c07091b43 1150 mx-samba-config_0.21.12.dsc
+ ee4f9e0e9a1826f0bc526a9ecca5300aaf2ee138 17332 mx-samba-config_0.21.12.tar.xz
+ ef12c894732b386655b59f45716e446f6e3dbda4 10788 mx-samba-config_0.21.12_amd64.buildinfo
+ 7400c163259caf8e07d0492db3151d6d4a67df73 42612 mx-samba-config_0.21.12_amd64.deb
+Checksums-Sha256:
+ 0acf0f5737396b9c33a2bdb5298280a58d902669cb7c76749f65ab370391a309 1150 mx-samba-config_0.21.12.dsc
+ beb4d385beb273caeaafefec9e71352f4c191b88a2ba0cab473dfeab412bcb55 17332 mx-samba-config_0.21.12.tar.xz
+ 95fb1ca03ce4bbb02f2fd1e7dccdbe67a7887ce824e289deb37b92594ab8a41a 10788 mx-samba-config_0.21.12_amd64.buildinfo
+ 6bbb7c2b4b3c8bb72217847eb548a35f38c464ecd4ae423aecb1187ddcda55b0 42612 mx-samba-config_0.21.12_amd64.deb
+Files:
+ 5b8f693bcf2f705b92b3393027ab8c35 1150 admin optional mx-samba-config_0.21.12.dsc
+ 9febd6f83e77e93a51881436e905c042 17332 admin optional mx-samba-config_0.21.12.tar.xz
+ df9504cea493c5a80e14fefba608ff16 10788 admin optional mx-samba-config_0.21.12_amd64.buildinfo
+ b23fddc3d48bcfd0aa06b10894c3b349 42612 admin optional mx-samba-config_0.21.12_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmG72JsTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumN3BCACzwfRhG6DAz6pA7gntNylFus/Uf3kk
+MPXTyTrhURcPuAa9yvcTrSXBdfJMQRhiDDHGbcxdwhJpj6YL6hWKx9F42Fu/x2aQ
+qi/ZQcfCGE4UpCgHVqIzFsutO2mfdNv2w5MSnSTw8rqBM1oESyHyQibn80+ElDSy
+oTEMwToU8+lUYnxaOrYXCL1IKqrRbD437kdqMr/JXFX3zXyg7bb5uywd407e/Olm
+NPgqsOfpkVkKHXsS6exNDlw5U/+ieRIv39hWaI1gJBb0URUVQ+/9MKWpYtjaaoTz
+PU11Y5U3FykjPktj35m2k+pctTs20Ua0gfqVIGA33oCT8ygoEQQHnVJd
+=fJ70
+-----END PGP SIGNATURE-----

@@ -187,6 +187,7 @@ void MainWindow::refreshShareList()
     }
     for (auto i = 0; ui->treeWidgetShares->columnCount() < i; ++i)
         ui->treeWidgetShares->resizeColumnToContents(i);
+    connect(ui->treeWidgetShares, &QTreeWidget::itemDoubleClicked, this, &MainWindow::on_pushEditShare_clicked);
 }
 
 void MainWindow::refreshUserList()

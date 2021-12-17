@@ -214,7 +214,7 @@ void MainWindow::on_pushAbout_clicked()
 
 void MainWindow::on_pushHelp_clicked()
 {
-    QString url = "google.com";
+    QString url = "https://mxlinux.org/wiki/help-files/help-mx-samba-config/";
     displayDoc(url, tr("%1 Help").arg(this->windowTitle()));
 }
 

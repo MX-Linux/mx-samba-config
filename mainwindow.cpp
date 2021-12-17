@@ -185,7 +185,7 @@ void MainWindow::refreshShareList()
             list[4].remove(QRegularExpression("^guest_ok="));
         ui->treeWidgetShares->insertTopLevelItem(0, new QTreeWidgetItem(list));
     }
-    for (auto i = 0; ui->treeWidgetShares->columnCount() < i; ++i)
+    for (auto i = 0; ui->treeWidgetShares->columnCount() > i; ++i)
         ui->treeWidgetShares->resizeColumnToContents(i);
     connect(ui->treeWidgetShares, &QTreeWidget::itemDoubleClicked, this, &MainWindow::on_pushEditShare_clicked, Qt::UniqueConnection);
 }

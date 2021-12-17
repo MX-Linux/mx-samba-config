@@ -89,13 +89,14 @@ void MainWindow::addEditShares(EditShare *editshare)
             if (!permissions.isEmpty())
                 permissions += ",";
             if (editshare->findChild<QRadioButton *>("*Deny*" + user)->isChecked())
-                permissions += user + ":D";
+                permissions += user + ":d";
             else if (editshare->findChild<QRadioButton *>("*ReadOnly*" + user)->isChecked())
-                permissions += user + ":R";
+                permissions += user + ":r";
             else if (editshare->findChild<QRadioButton *>("*FullAccess*" + user)->isChecked())
-                permissions += user + ":F";
+                permissions += user + ":f";
             permissions.remove(QRegularExpression(",$"));
         }
+        qDebug() << "PERM" <<permissions;
 
         cmd.run("runuser -u $(logname) net usershare add \"" + editshare->ui->textShareName->text() + "\" "
             + "\"" + editshare->ui->textSharePath->text() + "\" "
@@ -347,11 +348,11 @@ void MainWindow::on_pushEditShare_clicked()
             user = user.section("\\", 1, 1);
         QString permission = item.section(":", 1, 1);
         QRadioButton *button;
-        if (permission.toUpper() == "D") {
+        if (permission.toLower() == "d") {
             button = editshare->findChild<QRadioButton *>("*Deny*" + user);
-        } else if (permission.toUpper() == "R") {
+        } else if (permission.toLower() == "r") {
             button = editshare->findChild<QRadioButton *>("*ReadOnly*" + user);
-        } else if (permission.toUpper() == "F") {
+        } else if (permission.toLower() == "f") {
             button = editshare->findChild<QRadioButton *>("*FullAccess*" + user);
         } else {
             QMessageBox::critical(this, tr("Error"), "Error: trying to process permissions: "  + item);

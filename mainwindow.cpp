@@ -343,6 +343,8 @@ void MainWindow::on_pushEditShare_clicked()
         if (item.isEmpty())
             continue;
         QString user = item.section(":", 0, 0);
+        if (user.contains("\\"))
+            user = user.section("\\", 1, 1);
         QString permission = item.section(":", 1, 1);
         QRadioButton *button;
         if (permission.toUpper() == "D") {

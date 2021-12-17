@@ -84,22 +84,23 @@ void MainWindow::addEditShares(EditShare *editshare)
         }
         QStringList userList = cmd.getCmdOut("getent group users | cut -d: -f4").split(",");
         userList.insert(0, tr("Everyone"));
-        QString user_permissions;
+        QString permissions;
         for (const QString &user : userList) {
-            if (!user_permissions.isEmpty())
-                user_permissions += ",";
+            if (!permissions.isEmpty())
+                permissions += ",";
             if (editshare->findChild<QRadioButton *>("*Deny*" + user)->isChecked())
-                user_permissions += user + ":D";
+                permissions += user + ":D";
             else if (editshare->findChild<QRadioButton *>("*ReadOnly*" + user)->isChecked())
-                user_permissions += user + ":R";
+                permissions += user + ":R";
             else if (editshare->findChild<QRadioButton *>("*FullAccess*" + user)->isChecked())
-                user_permissions += user + ":F";
+                permissions += user + ":F";
+            permissions.remove(QRegularExpression(",$"));
         }
 
-        cmd.run("runuser -u $(logname) net usershare add " + editshare->ui->textShareName->text() + " "
-            + editshare->ui->textSharePath->text()
-            + " \"" + (editshare->ui->textComment->text().isEmpty() ? "" : editshare->ui->textComment->text()) + "\""
-            + " " + user_permissions + " guest_ok=" + (editshare->ui->comboGuestOK->currentText() == tr("Yes") ? "y" : "n"));
+        cmd.run("runuser -u $(logname) net usershare add \"" + editshare->ui->textShareName->text() + "\" "
+            + "\"" + editshare->ui->textSharePath->text() + "\" "
+            + "\"" + (editshare->ui->textComment->text().isEmpty() ? "" : editshare->ui->textComment->text()) + "\""
+            + " " + permissions + " guest_ok=" + (editshare->ui->comboGuestOK->currentText() == tr("Yes") ? "y" : "n"));
         refreshShareList();
     }
 }
@@ -134,7 +135,6 @@ void MainWindow::buildUserList(EditShare *editshare)
         QRadioButton *radio = new QRadioButton(tr("&Deny"));
         radio->setObjectName("*Deny*" + user);
         hbox->addWidget(radio);
-        radio->setAutoExclusive(false);
         connect(radio, &QRadioButton::pressed, radio, [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
 
         radio = new QRadioButton(tr("&Read Only"));
@@ -176,8 +176,10 @@ void MainWindow::refreshShareList()
             list[1].remove(QRegularExpression("^path="));
         if (!list.at(2).isEmpty())
             list[2].remove(QRegularExpression("^comment="));
-        if (!list.at(3).isEmpty())
+        if (!list.at(3).isEmpty()) {
             list[3].remove(QRegularExpression("^usershare_acl="));
+            list[3].remove(QRegularExpression(",$"));
+        }
         if (!list.at(4).isEmpty())
             list[4].remove(QRegularExpression("^guest_ok="));
         ui->treeWidgetShares->insertTopLevelItem(0, new QTreeWidgetItem(list));

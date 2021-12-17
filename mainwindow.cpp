@@ -320,7 +320,7 @@ void MainWindow::on_pushRemoveShare_clicked()
     QString share = ui->treeWidgetShares->selectedItems().at(0)->text(0);
     if (share.isEmpty())
         return;
-    if (!cmd.run("runuser -u $(logname) net usershare delete " +  share))
+    if (!cmd.run("runuser -u $(logname) net usershare delete \"" +  share + "\""))
         QMessageBox::critical(this, tr("Error"), tr("Cannot delete share: ") + share);
     refreshShareList();
 }

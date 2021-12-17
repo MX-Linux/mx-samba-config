@@ -308,6 +308,8 @@ void MainWindow::on_pushRestartSamba_clicked()
 {
     if (!cmd.run("service smbd restart"))
         QMessageBox::critical(this, tr("Error"), tr("Could not restart Samba."));
+    else
+        QMessageBox::information(this, tr("Success"), tr("Samba restarted successfully."));
 }
 
 void MainWindow::on_pushRemoveShare_clicked()

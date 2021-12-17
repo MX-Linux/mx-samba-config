@@ -74,7 +74,7 @@ void MainWindow::centerWindow()
 void MainWindow::addEditShares(EditShare *editshare)
 {
     if (editshare->exec() == QDialog::Accepted) {
-        if (editshare->ui->textShareName->text().isEmpty() || !QFileInfo::exists(editshare->ui->textSharePath->text())) {
+        if (editshare->ui->textShareName->text().isEmpty()) {
             QMessageBox::critical(this, tr("Error"), tr("Error, could not add share. Empty share name"));
             return;
         }

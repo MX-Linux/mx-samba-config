@@ -342,14 +342,18 @@ void MainWindow::on_pushEditShare_clicked()
             continue;
         QString user = item.section(":", 0, 0);
         QString permission = item.section(":", 1, 1);
-        if (permission.toUpper() == "D")
-            editshare->findChild<QRadioButton *>("*Deny*" + user)->setChecked(true);
-        else if (permission.toUpper() == "R")
-            editshare->findChild<QRadioButton *>("*ReadOnly*" + user)->setChecked(true);
-        else if (permission.toUpper() == "F")
-            editshare->findChild<QRadioButton *>("*FullAccess*" + user)->setChecked(true);
-        else
+        QRadioButton *button;
+        if (permission.toUpper() == "D") {
+            button = editshare->findChild<QRadioButton *>("*Deny*" + user);
+        } else if (permission.toUpper() == "R") {
+            button = editshare->findChild<QRadioButton *>("*ReadOnly*" + user);
+        } else if (permission.toUpper() == "F") {
+            button = editshare->findChild<QRadioButton *>("*FullAccess*" + user);
+        } else {
             QMessageBox::critical(this, tr("Error"), "Error: trying to process permissions: "  + item);
+            return;
+        }
+        if (button) button->setChecked(true);
     }
     addEditShares(editshare);
 }

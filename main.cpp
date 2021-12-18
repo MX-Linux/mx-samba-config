@@ -51,19 +51,14 @@ int main(int argc, char *argv[])
     if (appTran.load(app.applicationName() + "_" + QLocale::system().name(), "/usr/share/" + app.applicationName() + "/locale"))
         app.installTranslator(&appTran);
 
-    // root guard
-    if (system("logname |grep -q ^root$") == 0) {
-        QMessageBox::critical(nullptr, QObject::tr("Error"),
-                              QObject::tr("You seem to be logged in as root, please log out and log in as normal user to use this program."));
-        exit(EXIT_FAILURE);
-    }
-
-    if (getuid() == 0) {
-        qDebug().noquote() << app.applicationName() << QObject::tr("version:") << app.applicationVersion();
+    if (getuid() != 0) {
         MainWindow w;
         w.show();
         return app.exec();
     } else {
-        system("su-to-root -X -c " + QApplication::applicationFilePath().toUtf8() + "&");
+        QApplication::beep();
+        QMessageBox::critical(nullptr, QString(),
+                              QApplication::tr("You must run this program as normal user."));
+        return EXIT_FAILURE;
     }
 }

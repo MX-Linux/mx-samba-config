@@ -98,7 +98,7 @@ void MainWindow::addEditShares(EditShare *editshare)
         }
         qDebug() << "PERM" <<permissions;
 
-        cmd.run("runuser -u $(logname) net usershare add \"" + editshare->ui->textShareName->text() + "\" "
+        cmd.run("net usershare add \"" + editshare->ui->textShareName->text() + "\" "
             + "\"" + editshare->ui->textSharePath->text() + "\" "
             + "\"" + (editshare->ui->textComment->text().isEmpty() ? "" : editshare->ui->textComment->text()) + "\""
             + " " + permissions + " guest_ok=" + (editshare->ui->comboGuestOK->currentText() == tr("Yes") ? "y" : "n"));
@@ -110,7 +110,7 @@ void MainWindow::addEditShares(EditShare *editshare)
 QStringList MainWindow::listUsers()
 {
     QString output;
-    if (!cmd.run("pdbedit --list", output, true)) {
+    if (!cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-list-users", output, true)) {
         QMessageBox::critical(this, tr("Error"), tr("Error listing users"));
         return QStringList();
     }
@@ -159,7 +159,7 @@ void MainWindow::refreshShareList()
 {
     ui->treeWidgetShares->clear();
     QString output;
-    if (!cmd.run("runuser -u $(logname) net usershare info", output)) {
+    if (!cmd.run("net usershare info", output)) {
         QMessageBox::critical(this, tr("Error"), tr("Error listing shares"));
         return;
     }
@@ -223,7 +223,7 @@ void MainWindow::on_pushRemoveUser_clicked()
     if (!ui->listWidgetUsers->currentItem())
         return;
     const QString &user = ui->listWidgetUsers->currentItem()->text();
-    if (!cmd.run("pdbedit --delete " +  user))
+    if (!cmd.run("mx-pkexec pdbedit --delete " +  user))
         QMessageBox::critical(this, tr("Error"), tr("Cannot delete user: ") + user);
     refreshUserList();
 }
@@ -263,7 +263,7 @@ void MainWindow::on_pushAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        cmdstr = QString("echo -ne '%1\n%1'|smbpasswd -as %2").arg(password->text()).arg(username->text());
+        cmdstr = QString("echo -ne '%1\n%1'|mx-pkexec smbpasswd -as %2").arg(password->text()).arg(username->text());
         if (!cmd.run(cmdstr, true)) {
             QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
             return;
@@ -298,20 +298,12 @@ void MainWindow::on_pushUserPassword_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        const QString &cmdstr = QString("echo -ne '%1\n%1'|smbpasswd -U %2").arg(password->text()).arg(ui->listWidgetUsers->currentItem()->text());
+        const QString &cmdstr = QString("echo -ne '%1\n%1'|mx-pkexec smbpasswd -U %2").arg(password->text()).arg(ui->listWidgetUsers->currentItem()->text());
         if (!cmd.run(cmdstr, true)) {
             QMessageBox::critical(this, tr("Error"), tr("Could not change password."));
             return;
         }
     }
-}
-
-void MainWindow::on_pushRestartSamba_clicked()
-{
-    if (!cmd.run("service smbd restart"))
-        QMessageBox::critical(this, tr("Error"), tr("Could not restart Samba."));
-    else
-        QMessageBox::information(this, tr("Success"), tr("Samba restarted successfully."));
 }
 
 void MainWindow::on_pushRemoveShare_clicked()
@@ -321,7 +313,7 @@ void MainWindow::on_pushRemoveShare_clicked()
     QString share = ui->treeWidgetShares->selectedItems().at(0)->text(0);
     if (share.isEmpty())
         return;
-    if (!cmd.run("runuser -u $(logname) net usershare delete \"" +  share + "\""))
+    if (!cmd.run("net usershare delete \"" +  share + "\""))
         QMessageBox::critical(this, tr("Error"), tr("Cannot delete share: ") + share);
     refreshShareList();
 }

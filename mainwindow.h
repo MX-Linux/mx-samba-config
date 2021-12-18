@@ -56,7 +56,6 @@ private slots:
     void on_pushHelp_clicked();
     void on_pushRemoveShare_clicked();
     void on_pushRemoveUser_clicked();
-    void on_pushRestartSamba_clicked();
     void on_pushUserPassword_clicked();
 
 private:

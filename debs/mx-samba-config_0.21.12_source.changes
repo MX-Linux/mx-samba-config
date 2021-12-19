@@ -12,14 +12,14 @@ Changes:
  .
    * Initial build
 Checksums-Sha1:
- 1ec8e20c21aa10c029d179d0586b91e6cac46387 588 mx-samba-config_0.21.12.dsc
- fc60a3b85f7a8db7ba46594e90f9bedd09c685cb 17328 mx-samba-config_0.21.12.tar.xz
- 2d5be4ccae91120572b4a696f12186e8476501cc 10029 mx-samba-config_0.21.12_i386.buildinfo
+ 504027d941b8dd9b9b3d96e73d5ef249799766e9 588 mx-samba-config_0.21.12.dsc
+ 751931be86465efc9e1caf14bda360aa50836c7a 17288 mx-samba-config_0.21.12.tar.xz
+ 8632069b1106fa1ec9c50984a664efc2b478e4ab 10029 mx-samba-config_0.21.12_i386.buildinfo
 Checksums-Sha256:
- c943e172f04d05bae1107e8c2804497ec8e76b19ddb622b6b368bc2f9528f730 588 mx-samba-config_0.21.12.dsc
- fbd62cb4b281af70e393c475cb0d442f1425fa48cbae531aac0573d3dc694b41 17328 mx-samba-config_0.21.12.tar.xz
- b7362cbac3ecbb68e4b22d80206c78423fee939c8301101e80e01322b4c45e51 10029 mx-samba-config_0.21.12_i386.buildinfo
+ 890604c98f59acd21bc566c7c8a93c18a5a5d8574e708cdd7427ead644004c68 588 mx-samba-config_0.21.12.dsc
+ eadd206e2e681fd8cae006330ea100d6422f20a0d2e723c8f7e87b37e4088be1 17288 mx-samba-config_0.21.12.tar.xz
+ e68e07956ae9cf5dd63641f30a305b09f63e7ff685e4daccde542f72d15859ba 10029 mx-samba-config_0.21.12_i386.buildinfo
 Files:
- 51cfeca96a5e282be4895aaf1ceeb660 588 admin optional mx-samba-config_0.21.12.dsc
- a0a91a84bc8531a126171ff54ddf09cd 17328 admin optional mx-samba-config_0.21.12.tar.xz
- 09de69ac6aefe9bd97db6df175930078 10029 admin optional mx-samba-config_0.21.12_i386.buildinfo
+ 0949406340ddbaca64a59e26ebfaf371 588 admin optional mx-samba-config_0.21.12.dsc
+ 278759912117a21072a1cce628cbe5b7 17288 admin optional mx-samba-config_0.21.12.tar.xz
+ e8627b5e29ff8388cbec3560b04f0831 10029 admin optional mx-samba-config_0.21.12_i386.buildinfo

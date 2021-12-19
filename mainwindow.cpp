@@ -158,13 +158,16 @@ void MainWindow::buildUserList(EditShare *editshare)
 void MainWindow::refreshShareList()
 {
     ui->treeWidgetShares->clear();
+    ui->labelSambaSharesFound->hide();
     QString output;
     if (!cmd.run("net usershare info", output)) {
         QMessageBox::critical(this, tr("Error"), tr("Error listing shares"));
         return;
     }
-    if (output.isEmpty())
+    if (output.isEmpty()) {
+        ui->labelSambaSharesFound->show();
         return;
+    }
     QStringList listShares{output.split("\n\n")};
     qDebug() << listShares;
     for (const QString &share : listShares) {

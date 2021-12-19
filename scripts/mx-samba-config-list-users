@@ -2,5 +2,5 @@
 
 #list users for mx-samba-config
 
-pdbedit --list
+/usr/bin/pdbedit --list
 

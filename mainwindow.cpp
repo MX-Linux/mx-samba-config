@@ -193,9 +193,12 @@ void MainWindow::refreshShareList()
 void MainWindow::refreshUserList()
 {
     ui->listWidgetUsers->clear();
+    ui->labelUserNotFound->hide();
     QStringList users = listUsers();
     if (!users.isEmpty())
         ui->listWidgetUsers->addItems(users);
+    if (users.isEmpty())
+        ui->labelUserNotFound->show();
 }
 
 void MainWindow::on_pushAbout_clicked()

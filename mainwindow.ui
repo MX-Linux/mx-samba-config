@@ -37,7 +37,7 @@
           <widget class="QTreeWidget" name="treeWidgetShares">
            <column>
             <property name="text">
-             <string>Share Name</string>
+             <string>Name</string>
             </property>
            </column>
            <column>

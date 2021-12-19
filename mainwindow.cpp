@@ -256,7 +256,7 @@ void MainWindow::on_pushAddUser_clicked()
         }
         QString cmdstr = QString("grep -q '^%1:' /etc/passwd").arg(username->text());
         if (!cmd.run(cmdstr, true)) {
-            QMessageBox::critical(this, tr("Error"), tr("Username not found on the system, make sure you enter a valid username."));
+            QMessageBox::critical(this, tr("Error"), tr("Matching linux user not found on system, make sure you enter a valid username."));
             return;
         }
         if (password->text() != password2->text()) {

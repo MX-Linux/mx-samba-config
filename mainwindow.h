@@ -58,6 +58,11 @@ private slots:
     void on_pushRemoveUser_clicked();
     void on_pushUserPassword_clicked();
 
+    void on_buttonStartStopSamba_clicked();
+
+
+    void on_buttonEnableDisableSamba_clicked();
+
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
@@ -66,6 +71,11 @@ private:
     void buildUserList(EditShare*);
     void refreshShareList();
     void refreshUserList();
+    void checksamba();
+    void enablesamba();
+    void disablesamba();
+    void startsamba();
+    void stopsamba();
 };
 
 

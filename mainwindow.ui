@@ -23,109 +23,141 @@
       <attribute name="title">
        <string>&amp;Shares</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_5">
+      <layout class="QGridLayout" name="gridLayout_6">
        <item row="0" column="0">
-        <widget class="QLabel" name="labelShares">
-         <property name="text">
-          <string>Shares</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <layout class="QGridLayout" name="gridLayout_2">
-         <item row="0" column="1">
-          <layout class="QGridLayout" name="gridLayout">
-           <item row="0" column="0">
-            <widget class="QPushButton" name="pushAddShare">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>&amp;Add</string>
-             </property>
-            </widget>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="1" column="0" colspan="3">
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="1">
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="pushAddShare">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>&amp;Add</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="pushRemoveShare">
+               <property name="text">
+                <string>&amp;Remove</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QPushButton" name="pushEditShare">
+               <property name="text">
+                <string>&amp;Edit</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item row="1" column="0">
-            <widget class="QPushButton" name="pushRemoveShare">
-             <property name="text">
-              <string>&amp;Remove</string>
+           <item row="3" column="0">
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
              </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::MinimumExpanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="1">
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="0" rowspan="2">
+            <widget class="QTreeWidget" name="treeWidgetShares">
+             <column>
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Path</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Comment</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Permissions</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Guest OK</string>
+              </property>
+             </column>
             </widget>
            </item>
            <item row="2" column="0">
-            <widget class="QPushButton" name="pushEditShare">
+            <widget class="QLabel" name="labelSambaSharesFound">
              <property name="text">
-              <string>&amp;Edit</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;No samba user shares found&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
           </layout>
          </item>
-         <item row="3" column="0">
-          <spacer name="verticalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelEnableSamba">
+           <property name="text">
+            <string>Automatic Samba Startup</string>
            </property>
-           <property name="sizeType">
-            <enum>QSizePolicy::MinimumExpanding</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="1" column="1">
-          <spacer name="verticalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="0" rowspan="2">
-          <widget class="QTreeWidget" name="treeWidgetShares">
-           <column>
-            <property name="text">
-             <string>Name</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Path</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Comment</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Permissions</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Guest OK</string>
-            </property>
-           </column>
           </widget>
          </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="labelSambaSharesFound">
+         <item row="4" column="1" colspan="2">
+          <widget class="QPushButton" name="buttonStartStopSamba">
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;No samba user shares found&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>Start Samba</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelShares">
+           <property name="text">
+            <string>Shares</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="labelSambaStatus">
+           <property name="text">
+            <string>Samba is running</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="2">
+          <widget class="QPushButton" name="buttonEnableDisableSamba">
+           <property name="text">
+            <string>Enable</string>
            </property>
           </widget>
          </item>

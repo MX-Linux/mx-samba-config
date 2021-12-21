@@ -210,10 +210,10 @@ void MainWindow::checksamba()
     if (QFileInfo("/usr/sbin/smbd").exists()) {
         if (cmd.run("pgrep smbd", true)) {
             ui->buttonStartStopSamba->setText(tr("Sto&p Samba"));
-            ui->labelSambaStatus->setText(tr("Samba is running"));
+            ui->textSambaStatus->setText(tr("Samba is running"));
         } else {
             ui->buttonStartStopSamba->setText(tr("Star&t Samba"));
-            ui->labelSambaStatus->setText(tr("Samba is not running"));
+            ui->textSambaStatus->setText(tr("Samba is not running"));
         }
     } else {
         QMessageBox::critical(this, tr("Error"), tr("Samba not installed"));
@@ -229,11 +229,11 @@ void MainWindow::checksamba()
     }
 
     if (enabled) {
-        ui->labelServiceStatus->setText("Samba autostart is enabled");
+        ui->textServiceStatus->setText("Samba autostart is enabled");
         ui->buttonEnableDisableSamba->setText(tr("&Disable Automatic Samba Startup"));
 
     } else {
-        ui->labelServiceStatus->setText("Samba autostart is disabled");
+        ui->textServiceStatus->setText("Samba autostart is disabled");
         ui->buttonEnableDisableSamba->setText(tr("&Enable Automatic Samba Startup"));
      }
 }
@@ -407,7 +407,6 @@ void MainWindow::on_pushEditShare_clicked()
 
     if (!cmd.run("pgrep smbd", true)) {
         QMessageBox::critical(this, tr("Error"), "Samba service is not running. Please start Samba before adding or editing shares");
-        ui->tabWidget->setCurrentWidget(ui->tabService);
         return;
     }
 
@@ -449,7 +448,6 @@ void MainWindow::on_pushAddShare_clicked()
 {
     if (!cmd.run("pgrep smbd", true)) {
         QMessageBox::critical(this, tr("Error"), "Samba service is not running. Please start Samba before adding or editing shares");
-        ui->tabWidget->setCurrentWidget(ui->tabService);
         return;
     }
     EditShare *editshare = new EditShare;

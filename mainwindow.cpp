@@ -207,12 +207,12 @@ void MainWindow::refreshUserList()
 
 void MainWindow::checksamba()
 {
-    if ( QFileInfo("/usr/sbin/smbd").exists()){
-        if (cmd.run("pgrep smbd", true )) {
-            ui->buttonStartStopSamba->setText(tr("Stop Samba"));
+    if (QFileInfo("/usr/sbin/smbd").exists()) {
+        if (cmd.run("pgrep smbd", true)) {
+            ui->buttonStartStopSamba->setText(tr("Sto&p Samba"));
             ui->labelSambaStatus->setText(tr("Samba is running"));
         } else {
-            ui->buttonStartStopSamba->setText(tr("Start Samba"));
+            ui->buttonStartStopSamba->setText(tr("Star&t Samba"));
             ui->labelSambaStatus->setText(tr("Samba is not running"));
         }
     } else {
@@ -220,23 +220,22 @@ void MainWindow::checksamba()
         return;
     }
     bool enabled = false;
-    if ( cmd.getCmdOut("pgrep --oldest systemd") == "1"){
-        if ( cmd.getCmdOut("LANG=C systemctl is-enabled smbd") == "enabled"){
+    if (cmd.getCmdOut("pgrep --oldest systemd", true) == "1") {
+        if (cmd.getCmdOut("LANG=C systemctl is-enabled smbd") == "enabled")
             enabled = true;
-        }
     } else {
-        if (cmd.getCmdOut("grep grep -q smbd /etc/init.d/.depend.start && echo $?") == "0"){
+        if (cmd.run("grep -q smbd /etc/init.d/.depend.start", true))
             enabled = true;
-        }
     }
 
-    if (enabled){
-        ui->buttonEnableDisableSamba->setText(tr("Enabled"));
+    if (enabled) {
+        ui->labelServiceStatus->setText("Samba autostart is enabled");
+        ui->buttonEnableDisableSamba->setText(tr("&Disable Automatic Samba Startup"));
+
     } else {
-        ui->buttonEnableDisableSamba->setText(tr("Disabled"));
-    }
-
-
+        ui->labelServiceStatus->setText("Samba autostart is disabled");
+        ui->buttonEnableDisableSamba->setText(tr("&Enable Automatic Samba Startup"));
+     }
 }
 
 void MainWindow::disablesamba()
@@ -262,21 +261,20 @@ void MainWindow::stopsamba()
 
 void MainWindow::on_buttonEnableDisableSamba_clicked()
 {
-    if (ui->buttonEnableDisableSamba->text() == tr("Enabled")){
-        disablesamba();
-    } else {
+    if (ui->buttonEnableDisableSamba->text() == tr("&Enable Automatic Samba Startup"))
         enablesamba();
-    }
+    else
+        disablesamba();
     checksamba();
 }
 
 void MainWindow::on_buttonStartStopSamba_clicked()
 {
-    if (ui->buttonStartStopSamba->text() == tr("Start Samba")){
+    if (ui->buttonStartStopSamba->text() == tr("Star&t Samba"))
         startsamba();
-    } else {
+    else
         stopsamba();
-    }
+
     checksamba();
     refreshShareList();
     refreshUserList();
@@ -406,6 +404,13 @@ void MainWindow::on_pushEditShare_clicked()
 {
     if (!ui->treeWidgetShares->currentItem())
         return;
+
+    if (!cmd.run("pgrep smbd", true)) {
+        QMessageBox::critical(this, tr("Error"), "Samba service is not running. Please start Samba before adding or editing shares");
+        ui->tabWidget->setCurrentWidget(ui->tabService);
+        return;
+    }
+
     EditShare *editshare = new EditShare;
     buildUserList(editshare);
     editshare->ui->textShareName->setText(ui->treeWidgetShares->selectedItems().at(0)->text(0));
@@ -442,6 +447,11 @@ void MainWindow::on_pushEditShare_clicked()
 
 void MainWindow::on_pushAddShare_clicked()
 {
+    if (!cmd.run("pgrep smbd", true)) {
+        QMessageBox::critical(this, tr("Error"), "Samba service is not running. Please start Samba before adding or editing shares");
+        ui->tabWidget->setCurrentWidget(ui->tabService);
+        return;
+    }
     EditShare *editshare = new EditShare;
     buildUserList(editshare);
     addEditShares(editshare);

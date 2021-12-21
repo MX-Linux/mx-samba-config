@@ -1,0 +1,67 @@
+#!/bin/bash
+
+#root level functions requiring password for mx-samba-config
+
+#disable/enable on both systemd and sysV
+
+enablesamba()
+{
+if [ -x /usr/sbin/update-rc.d ]; then
+    update-rc.d smbd remove
+    update-rc.d nmbd remove
+    update-rc.d smbd defaults
+    update-rc.d nmbd defaults
+fi
+if [ -x /usr/bin/systemctl ]; then
+    systemctl unmask smbd
+    systemctl unmask nmbd
+    systemctl enable smbd
+    systemctl enable nmbd	
+fi
+}
+
+
+disablesamba()
+{
+if [ -x /usr/sbin/update-rc.d ]; then
+    update-rc.d smbd remove
+    update-rc.d nmbd remove
+fi
+if [ -x /usr/bin/systemctl ]; then    
+    systemctl disable smbd
+    systemctl disable nmbd
+    systemctl mask smbd
+    systemctl mask nmbd
+fi
+}
+
+
+#service works for starting and stopping on both sysV and systemd
+startsamba()
+{
+service smbd start	
+	
+}
+
+stopsamba()
+{
+service smbd stop
+
+}
+
+
+main()
+{
+case $1 in
+    startsamba)  startsamba
+                 ;;
+    stopsamba)  stopsamba
+                 ;;
+    enablesamba)  enablesamba
+                 ;;      
+    disablesamba)  disablesamba
+                 ;;         
+esac
+}
+
+main $1

@@ -55,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     refreshUserList();
     refreshShareList();
+    checksamba();
 }
 
 MainWindow::~MainWindow()
@@ -202,6 +203,83 @@ void MainWindow::refreshUserList()
         ui->listWidgetUsers->addItems(users);
     if (users.isEmpty())
         ui->labelUserNotFound->show();
+}
+
+void MainWindow::checksamba()
+{
+    if ( QFileInfo("/usr/sbin/smbd").exists()){
+        if (cmd.run("pgrep smbd", true )) {
+            ui->buttonStartStopSamba->setText(tr("Stop Samba"));
+            ui->labelSambaStatus->setText(tr("Samba is running"));
+        } else {
+            ui->buttonStartStopSamba->setText(tr("Start Samba"));
+            ui->labelSambaStatus->setText(tr("Samba is not running"));
+        }
+    } else {
+        QMessageBox::critical(this, tr("Error"), tr("Samba not installed"));
+        return;
+    }
+    bool enabled = false;
+    if ( cmd.getCmdOut("pgrep --oldest systemd") == "1"){
+        if ( cmd.getCmdOut("LANG=C systemctl is-enabled smbd") == "enabled"){
+            enabled = true;
+        }
+    } else {
+        if (cmd.getCmdOut("grep grep -q smbd /etc/init.d/.depend.start && echo $?") == "0"){
+            enabled = true;
+        }
+    }
+
+    if (enabled){
+        ui->buttonEnableDisableSamba->setText(tr("Enabled"));
+    } else {
+        ui->buttonEnableDisableSamba->setText(tr("Disabled"));
+    }
+
+
+}
+
+void MainWindow::disablesamba()
+{
+    cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib disablesamba");
+}
+
+void MainWindow::enablesamba()
+{
+    cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib enablesamba");
+
+}
+
+void MainWindow::startsamba()
+{
+    cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib startsamba");
+}
+
+void MainWindow::stopsamba()
+{
+    cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib stopsamba");
+}
+
+void MainWindow::on_buttonEnableDisableSamba_clicked()
+{
+    if (ui->buttonEnableDisableSamba->text() == tr("Enabled")){
+        disablesamba();
+    } else {
+        enablesamba();
+    }
+    checksamba();
+}
+
+void MainWindow::on_buttonStartStopSamba_clicked()
+{
+    if (ui->buttonStartStopSamba->text() == tr("Start Samba")){
+        startsamba();
+    } else {
+        stopsamba();
+    }
+    checksamba();
+    refreshShareList();
+    refreshUserList();
 }
 
 void MainWindow::on_pushAbout_clicked()
@@ -368,3 +446,6 @@ void MainWindow::on_pushAddShare_clicked()
     buildUserList(editshare);
     addEditShares(editshare);
 }
+
+
+

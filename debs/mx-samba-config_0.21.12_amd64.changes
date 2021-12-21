@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Format: 1.8
 Date: Thu, 16 Dec 2021 19:14:52 -0500
 Source: mx-samba-config
@@ -15,17 +18,29 @@ Changes:
  .
    * Initial build
 Checksums-Sha1:
- 2772393d7556b9607e5c9d5f3960e1678d2af52b 588 mx-samba-config_0.21.12.dsc
- 9bf3a2f3cbc7ff2f4c42e9e427c70a630d1efcf9 17272 mx-samba-config_0.21.12.tar.xz
- f33c77026f8d50492b77ffdf29ff82ed22a0c4c3 10223 mx-samba-config_0.21.12_amd64.buildinfo
- 2e91ae27b4cea5a14e55af29eb0f25fdb9655444 43052 mx-samba-config_0.21.12_amd64.deb
+ 3c64fe4da0e60da48da454ed433255657b4b37d6 1150 mx-samba-config_0.21.12.dsc
+ 50a297a19664d1309686ec7f197957f212e50f57 18344 mx-samba-config_0.21.12.tar.xz
+ b7b97187ab5b3e26d5fe11204eb9d27f012e0466 10788 mx-samba-config_0.21.12_amd64.buildinfo
+ 55ad22bed9ac45447f623190707518c9466a063e 45104 mx-samba-config_0.21.12_amd64.deb
 Checksums-Sha256:
- 62b61a70ff1153d03742a911813274bf898b4957ec1dffa950f891a7e9751fe0 588 mx-samba-config_0.21.12.dsc
- ae131f6fed3c241d1e71d81b3b4f346511786f2711646b29d39c7ff094173ff8 17272 mx-samba-config_0.21.12.tar.xz
- 1f7fa2baec3a6e6653b8d95fbb4bea62ca2916c9764d87a664378e011613968d 10223 mx-samba-config_0.21.12_amd64.buildinfo
- d18bd697607c5380cb4ace85d3f59fc6fd18be5e0fffad2c9dfa0efe3231f090 43052 mx-samba-config_0.21.12_amd64.deb
+ 7724d2c9ed1e708fd4522372725ca25efa753e87cda42dab6adcff91e45580b4 1150 mx-samba-config_0.21.12.dsc
+ 36baa4756c546c4a2aba1e6c98a1f336755c359b06bafd5628669c247640fd9e 18344 mx-samba-config_0.21.12.tar.xz
+ 938eb3f6098e9abc40121dae6bfaa3cdf2adec2c2143a8bdd181fbbe1ceff340 10788 mx-samba-config_0.21.12_amd64.buildinfo
+ e792d2380f8892faf4b7890158cf5ace2e8a7580ad87faca12c0e99c4ca445b5 45104 mx-samba-config_0.21.12_amd64.deb
 Files:
- d23839213b84db90b959a1f94f2bce9a 588 admin optional mx-samba-config_0.21.12.dsc
- 2d3f683e43258463f81c3b23c97ee908 17272 admin optional mx-samba-config_0.21.12.tar.xz
- fec8c71b773d88e350b190a047507042 10223 admin optional mx-samba-config_0.21.12_amd64.buildinfo
- 77ad55078b73ae74ef18b77954eaf3f2 43052 admin optional mx-samba-config_0.21.12_amd64.deb
+ 09f8f3e72fc5db64c629f04612499566 1150 admin optional mx-samba-config_0.21.12.dsc
+ 364889cd6767edf1de83a8498af06fda 18344 admin optional mx-samba-config_0.21.12.tar.xz
+ dd70e1c3013b591fe5573c70511aca27 10788 admin optional mx-samba-config_0.21.12_amd64.buildinfo
+ 367822645708799182c7f995a604885b 45104 admin optional mx-samba-config_0.21.12_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHBON4THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumARhB/9H47e89cVhDRonWlll5LiiMYjEUUC/
++IYfJ1W3lDaESeof64JuFvN1R+Hr2QvUv683EkUzwXnn031kWUuoS8p7r6qp6O/E
+8eBO5KgZxOWF6pYOhjmVWQpHbJ9xdIIG5+Vv9f2xezaGmbhGg8zLgLnEIzpaM2cT
+1A1B4LCC4I3hIsz9ZJmBizDATAl049hlr2aoqfei02/DHSaEKsCHRMSbOF1fqDwA
+BQOfk7mGGIEEnEtsFomPhfITd7V4auKKKy118GugPdB9zrKsHcoWhYI9sw/u285W
+LjOThJfhKcSyU0iti9yIeOUiVnL8JSfLXmZ+V3Ixdg8AsyzGyH5wjvs0
+=dG/G
+-----END PGP SIGNATURE-----

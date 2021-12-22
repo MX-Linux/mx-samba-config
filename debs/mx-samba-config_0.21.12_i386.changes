@@ -15,11 +15,11 @@ Changes:
  .
    * Initial build
 Checksums-Sha1:
- fa24ab4ce88a5a17114f1f7e2ce1d6337c514b01 10029 mx-samba-config_0.21.12_i386.buildinfo
- edf777ba43e8f700a60494ac446735064e104197 46592 mx-samba-config_0.21.12_i386.deb
+ 8c1ad9d66666c2ad4d23b9066d6b15f17ab7cf7f 10029 mx-samba-config_0.21.12_i386.buildinfo
+ a076053f93dfa7519696c69c1ba946b565c28faf 46776 mx-samba-config_0.21.12_i386.deb
 Checksums-Sha256:
- d797c157c13c12d252b476d97796c086a52b5df1f30b61fa0489d7e4d256161e 10029 mx-samba-config_0.21.12_i386.buildinfo
- 44aa3a07d2550f6af68d830823bba0b0d6f2b9551b63929c9871b8cd8e486a90 46592 mx-samba-config_0.21.12_i386.deb
+ e95ec5894484eb763105b07ba319db263d8d506b4e279fa26fa70158b284dd94 10029 mx-samba-config_0.21.12_i386.buildinfo
+ c7a70796d2f2142346c4942c9ae3fe7415ed7206dedb0d1b44a5fbd627b92537 46776 mx-samba-config_0.21.12_i386.deb
 Files:
- 5368425bfcf01e1569037ed13ec4eb9f 10029 admin optional mx-samba-config_0.21.12_i386.buildinfo
- fb9b0dc6098c746024f70e457957a14f 46592 admin optional mx-samba-config_0.21.12_i386.deb
+ 29a859a08f7075a65811b6097f04e956 10029 admin optional mx-samba-config_0.21.12_i386.buildinfo
+ d5aafc619facb6f1a78284e72dab5142 46776 admin optional mx-samba-config_0.21.12_i386.deb

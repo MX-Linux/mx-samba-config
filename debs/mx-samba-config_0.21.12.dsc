@@ -12,20 +12,20 @@ Build-Depends: debhelper (>= 10), qtbase5-dev, qttools5-dev-tools
 Package-List:
  mx-samba-config deb admin optional arch=any
 Checksums-Sha1:
- 97c800666dd8b3316d16d1caf14304ea21ad4fb3 18388 mx-samba-config_0.21.12.tar.xz
+ d2ade23f4d026679f40c3fa0ff163c5d288f3364 18560 mx-samba-config_0.21.12.tar.xz
 Checksums-Sha256:
- 54296c66f0cf9cae4db5caece886547dd9ad468dfe14ecfe84cdfa03d689fbc7 18388 mx-samba-config_0.21.12.tar.xz
+ 3745d821d211abfeb859942683603b7c180c85e6714c2b2cca8bee46567e3285 18560 mx-samba-config_0.21.12.tar.xz
 Files:
- a3e784d31d6e09d950dca4d90f22827c 18388 mx-samba-config_0.21.12.tar.xz
+ b9fff682597539810dd2f664e8d1b96f 18560 mx-samba-config_0.21.12.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHBXToTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHLACACUSZhMdf2pYvCqcu+Cekkkib3xzUnX
-TTjs7WGrZc9aBqNMjGNRKYfWCKO/E/jVCciQVclW0UpzW8gPYRDZDPK7FZ3akZfl
-ORyU02IREqD3VcnPr5cGWaPflH6JSP9BOtI+zriWwUB0cjgqc0nOEN5cYQpS793G
-19L5WeS0MRN8nFgdQE7tR33F5rSe09eF2PYnn/FrQdQv9KX1aUqT5TKe4R/1T/Bb
-504evjsgJZETNBGqHWudU37s6bWkiNZU6HhhKO5UGSQP8BrszVbRYHBb4Yi0PEGT
-5xEBnJsKIKtdhg+PFKDLbdfxvQs5vzUad/bwBCFwiGxJS/18qvFLRkdA
-=WyPg
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHCkn0THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPQtB/9McqRYEO9eWoKJLMETlgcic3bDoqtt
+KMsW1NljKnukoSbOYNVm1PtzFyHZFTMSjX4Q294/0fyJoLfsgbIyGTAoNUEAysDw
+AOTvX5otQNEMpey3angIq8FJ9OemqOaCKRtk1UbMqT6KJQDRLi8a+gN3zqxRtmoh
+6s8fl3v1ZwNBqWhHbavjuEO1CfIO4XndKokkVmbOKNV4epsb2tJU0ZRry7YFn1IC
+EWSSPacA9K1coiv8YB+qRDyZSDoVKPbjtJi+D9E7kVki9DvksVjO6FSGWWSWz9et
+EauTn5fNVepLG9xvHtYlt1m7apPAelCATCjhYfNERPcVY0EcruJOocTP
+=lMD5
 -----END PGP SIGNATURE-----

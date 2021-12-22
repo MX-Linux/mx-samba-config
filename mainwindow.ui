@@ -213,25 +213,10 @@
       <number>0</number>
      </property>
      <layout class="QGridLayout" name="gridLayout_6">
-      <item row="0" column="0">
-       <widget class="QLineEdit" name="textSambaStatus">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="acceptDrops">
-         <bool>false</bool>
-        </property>
-        <property name="autoFillBackground">
-         <bool>true</bool>
-        </property>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="buttonEnableDisableSamba">
         <property name="text">
-         <string>Samba is running</string>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
+         <string>&amp;Enable Automatic Samba Startup</string>
         </property>
        </widget>
       </item>
@@ -244,11 +229,20 @@
       </item>
       <item row="1" column="0">
        <widget class="QLineEdit" name="textServiceStatus">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
         </property>
         <property name="acceptDrops">
          <bool>false</bool>
@@ -264,10 +258,34 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QPushButton" name="buttonEnableDisableSamba">
+      <item row="0" column="0">
+       <widget class="QLineEdit" name="textSambaStatus">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
         <property name="text">
-         <string>&amp;Enable Automatic Samba Startup</string>
+         <string>Samba is running</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -435,12 +453,17 @@
   <tabstop>pushAddShare</tabstop>
   <tabstop>pushRemoveShare</tabstop>
   <tabstop>pushEditShare</tabstop>
-  <tabstop>listWidgetUsers</tabstop>
-  <tabstop>pushAddUser</tabstop>
-  <tabstop>pushRemoveUser</tabstop>
+  <tabstop>textSambaStatus</tabstop>
+  <tabstop>textServiceStatus</tabstop>
+  <tabstop>buttonStartStopSamba</tabstop>
+  <tabstop>buttonEnableDisableSamba</tabstop>
   <tabstop>pushAbout</tabstop>
   <tabstop>pushHelp</tabstop>
   <tabstop>pushCancel</tabstop>
+  <tabstop>listWidgetUsers</tabstop>
+  <tabstop>pushAddUser</tabstop>
+  <tabstop>pushRemoveUser</tabstop>
+  <tabstop>pushUserPassword</tabstop>
  </tabstops>
  <resources>
   <include location="images.qrc"/>

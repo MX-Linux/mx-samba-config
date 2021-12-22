@@ -234,7 +234,7 @@ void MainWindow::checksamba()
 
     } else {
         ui->textServiceStatus->setText("Samba autostart is disabled");
-        ui->buttonEnableDisableSamba->setText(tr("&Enable Automatic Samba Startup"));
+        ui->buttonEnableDisableSamba->setText(tr("E&nable Automatic Samba Startup"));
      }
 }
 
@@ -261,7 +261,7 @@ void MainWindow::stopsamba()
 
 void MainWindow::on_buttonEnableDisableSamba_clicked()
 {
-    if (ui->buttonEnableDisableSamba->text() == tr("&Enable Automatic Samba Startup"))
+    if (ui->buttonEnableDisableSamba->text() == tr("E&nable Automatic Samba Startup"))
         enablesamba();
     else
         disablesamba();

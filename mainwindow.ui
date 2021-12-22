@@ -216,7 +216,7 @@
       <item row="1" column="1">
        <widget class="QPushButton" name="buttonEnableDisableSamba">
         <property name="text">
-         <string>&amp;Enable Automatic Samba Startup</string>
+         <string>E&amp;nable Automatic Samba Startup</string>
         </property>
        </widget>
       </item>
@@ -324,7 +324,7 @@
         <string>About this application</string>
        </property>
        <property name="text">
-        <string>&amp;About...</string>
+        <string>A&amp;bout...</string>
        </property>
        <property name="icon">
         <iconset theme="help-about">

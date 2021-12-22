@@ -18,29 +18,29 @@ Changes:
  .
    * Initial build
 Checksums-Sha1:
- 72478d4e550456eba01d45defa2d22086e2cc87d 1150 mx-samba-config_0.21.12.dsc
- d2ade23f4d026679f40c3fa0ff163c5d288f3364 18560 mx-samba-config_0.21.12.tar.xz
- 9feed1701abb09149ea79b30ed6f966bfe61a8e4 10788 mx-samba-config_0.21.12_amd64.buildinfo
- f4e1171c4d8034d0b42fb72f9f6f6f3638ede985 45340 mx-samba-config_0.21.12_amd64.deb
+ bd188ee2026e02ea8a3ee425a728e6e468d58dc2 1150 mx-samba-config_0.21.12.dsc
+ 69801c4239a44d211e9fb4547a3879998f2d41da 18572 mx-samba-config_0.21.12.tar.xz
+ 89b1dd00d3a0889cbb33c3a4cd1fa6f75eaf16c8 10788 mx-samba-config_0.21.12_amd64.buildinfo
+ f93958a76da1ee8512e06f9c4b078a67aa4b40f3 45272 mx-samba-config_0.21.12_amd64.deb
 Checksums-Sha256:
- b325140ddc0793d2115f1f1cea78a3f7e379bd25d8b2f9faff9169d09b9579da 1150 mx-samba-config_0.21.12.dsc
- 3745d821d211abfeb859942683603b7c180c85e6714c2b2cca8bee46567e3285 18560 mx-samba-config_0.21.12.tar.xz
- 64dcfff930c13184a85072503f36c891cdb55d4a9e017429761fa0e5bbd93a55 10788 mx-samba-config_0.21.12_amd64.buildinfo
- 072e469c2d0805593268e3b6f4781febc9e2b2f99bdcc6509a80f4a3f25e0898 45340 mx-samba-config_0.21.12_amd64.deb
+ 84e37b62755671be26e8d9dbcb9dcdac1bcd0cbda5924ddcf5449cba573c11c6 1150 mx-samba-config_0.21.12.dsc
+ da3fdb3f486d1a8866d152b5f7dce14a69b9815ca7da960105669cfdd4a680bf 18572 mx-samba-config_0.21.12.tar.xz
+ 6560a2a52341b7053f2ac5e998441ceac429b6072fcb2a6b6192b5e924785229 10788 mx-samba-config_0.21.12_amd64.buildinfo
+ 7eafaf9be05dddd859e2094bc83b6c8eab1be0dcb66ba36dc7523993eb1422f4 45272 mx-samba-config_0.21.12_amd64.deb
 Files:
- 56223373bd17d3754753efa20a6750ba 1150 admin optional mx-samba-config_0.21.12.dsc
- b9fff682597539810dd2f664e8d1b96f 18560 admin optional mx-samba-config_0.21.12.tar.xz
- 28178085490db253c2b82669e2362d7b 10788 admin optional mx-samba-config_0.21.12_amd64.buildinfo
- 21febed085f29c7821a90840c069bc2d 45340 admin optional mx-samba-config_0.21.12_amd64.deb
+ 0619ddd4b640cd1e0e76d8d040a8016f 1150 admin optional mx-samba-config_0.21.12.dsc
+ 28d18e247977d546ab50e0d29961aeb4 18572 admin optional mx-samba-config_0.21.12.tar.xz
+ ddd4cdba427bdc3e0f9afbc0b41daaec 10788 admin optional mx-samba-config_0.21.12_amd64.buildinfo
+ fb7c854fc7f63592a82e71452929ecf1 45272 admin optional mx-samba-config_0.21.12_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHCkqUTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumF6tB/wLDHkTBcLwI1AXlIdaiHJZPph5+Yf1
-z3ttHWklJNCRLs6CoBjTF/PI9jCjZpepfCZerYjIPNfXpZuu1DizYraVZNCMhZox
-L2q5254OdBWPAh87sAivoGUSB1ET6gOAT+fne14wO9I/IncR0EXZnSVjEgr7MLqf
-/942Tqc39Si/wl1qFK+lDLEv571ZLPhsK+ZOcBuo+cHSOExpIOf0P+I2UfJmeTIf
-Nj05z5YzdOXZ0SU/jaj46O+8IvEBFMhKUAKakYNXvNUvqc9xI5nE9xeAhtLtvIf7
-O6/0v5z7wpA4wf9Omp+Oi5dxu3j/SHrqFODsVYkL2UtnaLypY8jB9eaY
-=dsPb
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHCk8YTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLsCB/9qhbXK88Gq8pBMcYE3d9v6BMorcoGv
+GedCDqyMxUOa2vSkrtXsVVNeTZk4MhUMDQwQ9MaS9OidmkhHfT/gZNN32d9mFcyG
+3ZnUEWAxIB+HNJBTD7CS2X4jUr9ux0kGEg5pT9GDQ13DiYKJfTNdS5tDo542M9Mr
+RFk49EBE+c4nVi7S6RFZo7rcXGo14a7tEUNKz/TBqwHm1Cic3hEYqrKo2l+XJESm
+c8rFgKU3tnAqD+xRWCxR2+8J31d0oF9ujU41LZHUlh2nhhkjG4lvkAuwh28yiAJG
+ZEUSr9hZO2Fv1AD6smZQVR6NSW5lnhVF6mJcsaNGQ3QlWluaiogn19gc
+=pXjm
 -----END PGP SIGNATURE-----

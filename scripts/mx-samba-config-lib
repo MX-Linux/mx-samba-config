@@ -35,17 +35,43 @@ if [ -x /usr/bin/systemctl ]; then
 fi
 }
 
+addsambauser()
+{
+	
+echo -ne "$pass\n$pass" | smbpasswd -as "$user"
+exit $?
+
+}
+
+removesambauser()
+{
+
+pdbedit --delete "$user"
+exit $?
+	
+}
+
+changesambapasswd()
+{
+	
+echo -ne "$pass\n$pass" | smbpasswd -U "$user"
+exit $?
+	
+}
+
 
 #service works for starting and stopping on both sysV and systemd
 startsamba()
 {
 service smbd start	
+exit $?
 	
 }
 
 stopsamba()
 {
 service smbd stop
+exit $?
 
 }
 
@@ -60,8 +86,19 @@ case $1 in
     enablesamba)  enablesamba
                  ;;      
     disablesamba)  disablesamba
-                 ;;         
+                 ;;
+    addsambauser)  user="$3"
+                   pass="$2"
+                   addsambauser   
+                   ;;  
+    removesambauser)  user="$2"
+                      removesambauser   
+                   ;;    
+    changesambapasswd)  user="$3"
+                   pass="$2"
+                   changesambapasswd   
+                   ;;  
 esac
 }
 
-main $1
+main "$@"

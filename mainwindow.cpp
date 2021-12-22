@@ -305,7 +305,7 @@ void MainWindow::on_pushRemoveUser_clicked()
     if (!ui->listWidgetUsers->currentItem())
         return;
     const QString &user = ui->listWidgetUsers->currentItem()->text();
-    if (!cmd.run("mx-pkexec pdbedit --delete " +  user))
+    if (!cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib removesambauser " +  user))
         QMessageBox::critical(this, tr("Error"), tr("Cannot delete user: ") + user);
     refreshUserList();
 }
@@ -345,7 +345,7 @@ void MainWindow::on_pushAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        cmdstr = QString("echo -ne '%1\n%1'|mx-pkexec smbpasswd -as %2").arg(password->text()).arg(username->text());
+        cmdstr = QString("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib addsambauser %1 %2").arg(password->text()).arg(username->text());
         if (!cmd.run(cmdstr, true)) {
             QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
             return;
@@ -380,7 +380,7 @@ void MainWindow::on_pushUserPassword_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        const QString &cmdstr = QString("echo -ne '%1\n%1'|mx-pkexec smbpasswd -U %2").arg(password->text()).arg(ui->listWidgetUsers->currentItem()->text());
+        const QString &cmdstr = QString("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib changesambapasswd %1 %2").arg(password->text()).arg(ui->listWidgetUsers->currentItem()->text());
         if (!cmd.run(cmdstr, true)) {
             QMessageBox::critical(this, tr("Error"), tr("Could not change password."));
             return;

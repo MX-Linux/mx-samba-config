@@ -63,7 +63,19 @@ exit $?
 #service works for starting and stopping on both sysV and systemd
 startsamba()
 {
-service smbd start	
+
+if [ -x /usr/bin/systemctl ]; then
+    MASKED=$(systemctl is-enabled smbd)
+    systemctl unmask smbd
+    systemctl unmask nmbd
+fi
+service smbd start
+service nmbd start	
+if [[ -x /usr/bin/systemctl && $MASKED == "masked" ]]; then
+    systemctl mask smbd
+    systemctl mask nmbd
+fi 
+
 exit $?
 	
 }

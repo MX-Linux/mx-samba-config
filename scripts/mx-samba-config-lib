@@ -83,6 +83,7 @@ exit $?
 stopsamba()
 {
 service smbd stop
+service nmbd stop
 exit $?
 
 }

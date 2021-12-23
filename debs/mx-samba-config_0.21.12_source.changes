@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Format: 1.8
 Date: Thu, 16 Dec 2021 19:14:52 -0500
 Source: mx-samba-config
@@ -12,14 +15,26 @@ Changes:
  .
    * Initial build
 Checksums-Sha1:
- 16303a82be8227497ff198f5d59b5f2c0a5ddcd4 588 mx-samba-config_0.21.12.dsc
- e4a161a31d13cf824ed717a6d21c652c5dea7a10 18604 mx-samba-config_0.21.12.tar.xz
- 20de3663d7da59883557db3c684ba1a39dbe66c0 10029 mx-samba-config_0.21.12_i386.buildinfo
+ a34eb567735a33fa81891a7d5b66de847affbfdb 1150 mx-samba-config_0.21.12.dsc
+ 59117d183733dafadd5a381c1499bd792f2a0c75 18620 mx-samba-config_0.21.12.tar.xz
+ b246a1ebe94e88c292dd7806d207882f9207d8eb 10788 mx-samba-config_0.21.12_amd64.buildinfo
 Checksums-Sha256:
- d1521fd28f3edd2f0b12b84ec8aa2e0216970ed8bb251ca7eda9b8cbd250e3c7 588 mx-samba-config_0.21.12.dsc
- 22f3c51517b688b40b49d0a3a7e1513b62b7b340c04e466cfb5c691bf87c3c60 18604 mx-samba-config_0.21.12.tar.xz
- 5b5d82d4eb4008723fc06ac50e76051d8bd87f5bb3429e1df0c4129f3b34211b 10029 mx-samba-config_0.21.12_i386.buildinfo
+ 2dc083461635f480d5d5b809ec64afd37af5adffa607a909d7c72c19b3ca2782 1150 mx-samba-config_0.21.12.dsc
+ 30bd4f5ca5737bcc869ff213326a96066f7a0c524019cbcb6ee89004e373e5b4 18620 mx-samba-config_0.21.12.tar.xz
+ 8cb8469578ef5e7083b14ce6f8846b2ae933bdbc2a41c123b2e129b7883275de 10788 mx-samba-config_0.21.12_amd64.buildinfo
 Files:
- 671ca0bc1e42b943a54b7ea718386a18 588 admin optional mx-samba-config_0.21.12.dsc
- 6afdb77e8fbaeab2cf8d4077800b01af 18604 admin optional mx-samba-config_0.21.12.tar.xz
- 8e18e371af5b7196f5a1840bab588f42 10029 admin optional mx-samba-config_0.21.12_i386.buildinfo
+ 3055f184988bd0f10404a0ddb78a3c1d 1150 admin optional mx-samba-config_0.21.12.dsc
+ b9529d95912f3b2c28e1b5f315da7dfd 18620 admin optional mx-samba-config_0.21.12.tar.xz
+ f4e0a201bc6a7be39446e3cf53ee7a61 10788 admin optional mx-samba-config_0.21.12_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHEszMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumA6dB/4jcNlhoCEweWGmLP9lTzG451RTFMk6
+iupxFfVDxFu7PiulS31aFkSkpYT721b8RZNagiqBTq5H04TUY1aYU3qAlbz0PBeN
+QtnlkG2OajP6vzxXB/jE4h74V0Ohl5huQBSRV6mWURdE73O4hgC0J9vJn7UXwPRz
+MzzF3fYaeToET27NAPk5Ka6Mvrj91U0bch5hoTpo6CV2vBwf9+pVmTVzaU2yn8DS
+1mq2AyxL1MnqEIQ1xRzwOEenAeABrzaQ+rOTrdUs7IBJFmAXp6umIKUREA+gArHA
+2xqEz6LpPS4jE9451voJmqDKH4MLgqOZCv7aOcAu6IyE1p76LcgY91Ic
+=zhXZ
+-----END PGP SIGNATURE-----

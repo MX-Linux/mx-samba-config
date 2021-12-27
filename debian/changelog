@@ -1,3 +1,9 @@
+mx-samba-config (0.21.12.01) mx; urgency=medium
+
+  * Version bump. Changes listed in github repo
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 26 Dec 2021 21:06:18 -0500
+
 mx-samba-config (0.21.12) mx; urgency=medium
 
   * Initial build

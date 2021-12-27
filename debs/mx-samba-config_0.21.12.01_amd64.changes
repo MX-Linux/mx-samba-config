@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 26 Dec 2021 21:06:18 -0500
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: source amd64
+Version: 0.21.12.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-samba-config - mx-samba-config
+Changes:
+ mx-samba-config (0.21.12.01) mx; urgency=medium
+ .
+   * Version bump. Changes listed in github repo
+Checksums-Sha1:
+ b364cb53d3a196eb3db4dd56f0264f62140bb401 1162 mx-samba-config_0.21.12.01.dsc
+ 8dce31d83b54c9293a624fb2905a650be8c58761 18680 mx-samba-config_0.21.12.01.tar.xz
+ 1387e153b0c0837f3432a51ca0d92601375dfd4e 10812 mx-samba-config_0.21.12.01_amd64.buildinfo
+ 3f3c8e78245c3df0a45cf3fcc901c60da718b85c 45400 mx-samba-config_0.21.12.01_amd64.deb
+Checksums-Sha256:
+ 83d64ec3affbfb5006c6abc6d1b6aaa7b7929d675c31cc6786f12214ed86bccc 1162 mx-samba-config_0.21.12.01.dsc
+ 5171dac06a9fdb6a92536d78a99db4a69268388aaa9c2d7d2408a970cde6cf3c 18680 mx-samba-config_0.21.12.01.tar.xz
+ a288b34a3002f7f53872d553bf45c96d025d7d067148b3a26960698421ca63f0 10812 mx-samba-config_0.21.12.01_amd64.buildinfo
+ 7e2890a7f513518826a17ffbd063f75b9dbe14647dd5ea95937f6ea1eb5e1077 45400 mx-samba-config_0.21.12.01_amd64.deb
+Files:
+ f5f521d06ffbd004aeea866115f7d7c4 1162 admin optional mx-samba-config_0.21.12.01.dsc
+ 5a0cc76de07ac15c2095a4fc9372885f 18680 admin optional mx-samba-config_0.21.12.01.tar.xz
+ 401c13e7eea4d86fac45bd46fe237f9f 10812 admin optional mx-samba-config_0.21.12.01_amd64.buildinfo
+ 0697a24cb5296658d17ee1a11773679c 45400 admin optional mx-samba-config_0.21.12.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHJICQTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJYtB/4l7ShAVs7ajOQKEimquVf+04rInM8o
+5Ha4onPY3FaCeHLH3q50ngLFpdOutT99+Tko+tuvWB9A54lPK82ceIBfokJk0g+M
+0Jguc5xWrAPbmgR1J1/SL7svulH8MayMpxPu2ukjJugsUoT5XvMvt/xaVZ1AaTLg
+4MdoRxnmQ1G8gsz5kB8ez62reOCty4ZohKxx6/WCn3/1gpxLkypOG6QyhgT3PEaN
+VUii3w/utClxTKDJiv9Koi31bp033z1jrlXaYtRGazW+Ct0zUB7NUtbjk43QcK4o
+GHQc0uouIuEbMW3m02E38C3rXuOwid2IwGvOBvp+QfFEwR/qrJ+3Bx1X
+=U/ZX
+-----END PGP SIGNATURE-----

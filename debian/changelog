@@ -1,3 +1,9 @@
+mx-samba-config (0.21.12.03) mx; urgency=medium
+
+  * Add busy indicator when starting/stopping/enabling Samba
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 30 Dec 2021 18:27:46 -0500
+
 mx-samba-config (0.21.12.02) mx; urgency=medium
 
   * Check if user is part of smabashare group (needed for MX-19 and RPi versions)

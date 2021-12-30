@@ -138,17 +138,20 @@ void MainWindow::buildUserList(EditShare *editshare)
         QRadioButton *radio = new QRadioButton(tr("&Deny"));
         radio->setObjectName("*Deny*" + user);
         hbox->addWidget(radio);
-        connect(radio, &QRadioButton::pressed, radio, [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
+        connect(radio, &QRadioButton::pressed, radio,
+                [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
 
         radio = new QRadioButton(tr("&Read Only"));
         radio->setObjectName("*ReadOnly*" + user);
         hbox->addWidget(radio);
-        connect(radio, &QRadioButton::pressed, radio, [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
+        connect(radio, &QRadioButton::pressed, radio,
+                [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
 
         radio = new QRadioButton(tr("&Full Access"));
         radio->setObjectName("*FullAccess*" + user);
         hbox->addWidget(radio);
-        connect(radio, &QRadioButton::pressed, radio, [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
+        connect(radio, &QRadioButton::pressed, radio,
+                [radio](){if(radio->isChecked()) radio->setAutoExclusive(false); else radio->setAutoExclusive(true);});
 
         hbox->addStretch(1);
         groupBox->setLayout(hbox);
@@ -219,7 +222,7 @@ void MainWindow::checkSambashareGroup()
 void MainWindow::checksamba()
 {
     if (QFileInfo("/usr/sbin/smbd").exists()) {
-        if (cmd.run("pgrep smbd", true)) {
+        if (system("pgrep smbd") == 0) {
             ui->buttonStartStopSamba->setText(tr("Sto&p Samba"));
             ui->textSambaStatus->setText(tr("Samba is running"));
         } else {
@@ -231,18 +234,17 @@ void MainWindow::checksamba()
         return;
     }
     bool enabled = false;
-    if (cmd.getCmdOut("pgrep --oldest systemd", true) == "1") {
-        if (cmd.getCmdOut("LANG=C systemctl is-enabled smbd") == "enabled")
+    if (system("pgrep --oldest systemd | grep -qw 1") == 0) {
+        if (system("LANG=C systemctl is-enabled smbd | grep enabled") == 0)
             enabled = true;
     } else {
-        if (cmd.run("grep -q smbd /etc/init.d/.depend.start", true))
+        if (system("grep -q smbd /etc/init.d/.depend.start") == 0)
             enabled = true;
     }
 
     if (enabled) {
         ui->textServiceStatus->setText("Samba autostart is enabled");
         ui->buttonEnableDisableSamba->setText(tr("&Disable Automatic Samba Startup"));
-
     } else {
         ui->textServiceStatus->setText("Samba autostart is disabled");
         ui->buttonEnableDisableSamba->setText(tr("E&nable Automatic Samba Startup"));
@@ -251,23 +253,30 @@ void MainWindow::checksamba()
 
 void MainWindow::disablesamba()
 {
+    setCursor(QCursor(Qt::BusyCursor));
     cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib disablesamba");
+    setCursor(QCursor(Qt::ArrowCursor));
 }
 
 void MainWindow::enablesamba()
 {
+    setCursor(QCursor(Qt::BusyCursor));
     cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib enablesamba");
-
+    setCursor(QCursor(Qt::ArrowCursor));
 }
 
 void MainWindow::startsamba()
 {
+    setCursor(QCursor(Qt::BusyCursor));
     cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib startsamba");
+    setCursor(QCursor(Qt::ArrowCursor));
 }
 
 void MainWindow::stopsamba()
 {
+    setCursor(QCursor(Qt::BusyCursor));
     cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib stopsamba");
+    setCursor(QCursor(Qt::ArrowCursor));
 }
 
 void MainWindow::on_buttonEnableDisableSamba_clicked()
@@ -348,15 +357,17 @@ void MainWindow::on_pushAddUser_clicked()
             return;
         }
         QString cmdstr = QString("grep -q '^%1:' /etc/passwd").arg(username->text());
-        if (!cmd.run(cmdstr, true)) {
-            QMessageBox::critical(this, tr("Error"), tr("Matching linux user not found on system, make sure you enter a valid username."));
+        if (system(cmdstr.toUtf8()) != 0) {
+            QMessageBox::critical(this, tr("Error"), tr("Matching linux user not found on system, "
+                                                        "make sure you enter a valid username."));
             return;
         }
         if (password->text() != password2->text()) {
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        cmdstr = QString("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib addsambauser %1 %2").arg(password->text()).arg(username->text());
+        cmdstr = QString("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib addsambauser %1 %2")
+                .arg(password->text()).arg(username->text());
         if (!cmd.run(cmdstr, true)) {
             QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
             return;
@@ -391,7 +402,8 @@ void MainWindow::on_pushUserPassword_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        const QString &cmdstr = QString("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib changesambapasswd %1 %2").arg(password->text()).arg(ui->listWidgetUsers->currentItem()->text());
+        const QString &cmdstr = QString("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib changesambapasswd %1 %2")
+                .arg(password->text()).arg(ui->listWidgetUsers->currentItem()->text());
         if (!cmd.run(cmdstr, true)) {
             QMessageBox::critical(this, tr("Error"), tr("Could not change password."));
             return;
@@ -406,7 +418,7 @@ void MainWindow::on_pushRemoveShare_clicked()
     QString share = ui->treeWidgetShares->selectedItems().at(0)->text(0);
     if (share.isEmpty())
         return;
-    if (!cmd.run("net usershare delete \"" +  share + "\""))
+    if (system("net usershare delete \"" +  share.toUtf8() + "\"") != 0)
         QMessageBox::critical(this, tr("Error"), tr("Cannot delete share: ") + share);
     refreshShareList();
 }
@@ -416,8 +428,9 @@ void MainWindow::on_pushEditShare_clicked()
     if (!ui->treeWidgetShares->currentItem())
         return;
 
-    if (!cmd.run("pgrep smbd", true)) {
-        QMessageBox::critical(this, tr("Error"), "Samba service is not running. Please start Samba before adding or editing shares");
+    if (system("pgrep smbd") != 0) {
+        QMessageBox::critical(this, tr("Error"),
+                              tr("Samba service is not running. Please start Samba before adding or editing shares"));
         return;
     }
 
@@ -457,8 +470,9 @@ void MainWindow::on_pushEditShare_clicked()
 
 void MainWindow::on_pushAddShare_clicked()
 {
-    if (!cmd.run("pgrep smbd", true)) {
-        QMessageBox::critical(this, tr("Error"), "Samba service is not running. Please start Samba before adding or editing shares");
+    if (system("pgrep smbd") != 0) {
+        QMessageBox::critical(this, tr("Error"),
+                              tr("Samba service is not running. Please start Samba before adding or editing shares"));
         return;
     }
     EditShare *editshare = new EditShare;

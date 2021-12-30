@@ -1,3 +1,9 @@
+mx-samba-config (0.21.12.02) mx; urgency=medium
+
+  * Check if user is part of smabashare group (needed for MX-19 and RPi versions)
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 30 Dec 2021 12:00:13 -0500
+
 mx-samba-config (0.21.12.01) mx; urgency=medium
 
   * Version bump. Changes listed in github repo

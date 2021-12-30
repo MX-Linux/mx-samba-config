@@ -208,8 +208,7 @@ void MainWindow::refreshUserList()
 
 void MainWindow::checkSambashareGroup()
 {
-    QString groups = cmd.getCmdOut("groups", true);
-    if (!groups.contains("sambashare")) {
+    if (system("groups | grep -q sambashare") != 0) {
         QMessageBox::critical(this, tr("Error"),
                               tr("Your user doesn't belong to 'sambashare' group  "
                                  "if you just installed the app you might need to restart the system first."));

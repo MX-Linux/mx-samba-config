@@ -53,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
             centerWindow();
         }
     }
+    checkSambashareGroup();
     refreshUserList();
     refreshShareList();
     checksamba();
@@ -203,6 +204,17 @@ void MainWindow::refreshUserList()
         ui->listWidgetUsers->addItems(users);
     if (users.isEmpty())
         ui->labelUserNotFound->show();
+}
+
+void MainWindow::checkSambashareGroup()
+{
+    QString groups = cmd.getCmdOut("groups", true);
+    if (!groups.contains("sambashare")) {
+        QMessageBox::critical(this, tr("Error"),
+                              tr("Your user doesn't belong to 'sambashare' group  "
+                                 "if you just installed the app you might need to restart the system first."));
+        exit(EXIT_FAILURE);
+    }
 }
 
 void MainWindow::checksamba()

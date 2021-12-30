@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Thu, 30 Dec 2021 18:27:46 -0500
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: i386
+Version: 0.21.12.03
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-samba-config - mx-samba-config
+Changes:
+ mx-samba-config (0.21.12.03) mx; urgency=medium
+ .
+   * Add busy indicator when starting/stopping/enabling Samba
+Checksums-Sha1:
+ d5fd40159c6ef2a32ea8d32dfd717b9d5d07ec4b 10044 mx-samba-config_0.21.12.03_i386.buildinfo
+ 251e821480b8cb404718bdf2381f25cabd29bf45 47040 mx-samba-config_0.21.12.03_i386.deb
+Checksums-Sha256:
+ 838354e206192f5b8353b92aaaee89cc94098a0975b72ef175cd5de300a923f0 10044 mx-samba-config_0.21.12.03_i386.buildinfo
+ a49aed57f401b8468929a372e8d580584d43df0d17caf2abbb487af9dcf64934 47040 mx-samba-config_0.21.12.03_i386.deb
+Files:
+ 3b0cbd016002c1690c143b135c4477ae 10044 admin optional mx-samba-config_0.21.12.03_i386.buildinfo
+ a644694626a2f5c696875dcfb1306426 47040 admin optional mx-samba-config_0.21.12.03_i386.deb

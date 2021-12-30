@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 30 Dec 2021 18:27:46 -0500
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: source amd64
+Version: 0.21.12.03
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-samba-config - mx-samba-config
+Changes:
+ mx-samba-config (0.21.12.03) mx; urgency=medium
+ .
+   * Add busy indicator when starting/stopping/enabling Samba
+Checksums-Sha1:
+ afcab61e6d3970ff49102ea36b07151df5d6da58 1162 mx-samba-config_0.21.12.03.dsc
+ 9098e9484d342b4aa6f24d5d0d5993bd6b4decd5 18920 mx-samba-config_0.21.12.03.tar.xz
+ 870e0893425eb9caf4f17303bd6ff3b0f0b010d9 10812 mx-samba-config_0.21.12.03_amd64.buildinfo
+ 9bc16270e80cde5299c21cfb1fdf90598e9f93ba 45732 mx-samba-config_0.21.12.03_amd64.deb
+Checksums-Sha256:
+ 6abf7bf484b338f033f1467229b52212509b5d1cd185bfd3264aefbaada082fb 1162 mx-samba-config_0.21.12.03.dsc
+ c85ebbc2c3e8a8f4de3acb76ebdf65853666ea33d201fb6a239ef5c1ce24a50c 18920 mx-samba-config_0.21.12.03.tar.xz
+ df99b913eee04ed1a5f8120942d799472650fba165311b79ee20c141b1eab8e3 10812 mx-samba-config_0.21.12.03_amd64.buildinfo
+ 1e786d4fb80f81a630352a028db3a2ae34a05809150ec2d8cecdae09b2d76576 45732 mx-samba-config_0.21.12.03_amd64.deb
+Files:
+ f1406552e0bb546b2a2cd4cd3178792c 1162 admin optional mx-samba-config_0.21.12.03.dsc
+ 1307166a2985e90594f1c57bc9af2476 18920 admin optional mx-samba-config_0.21.12.03.tar.xz
+ 9ed9337915e65fab1abec59f47cfb9b3 10812 admin optional mx-samba-config_0.21.12.03_amd64.buildinfo
+ 139d842181f33f23e365833ba0b16c58 45732 admin optional mx-samba-config_0.21.12.03_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHOQakTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHAOB/0aey5oEg11oo9WdGzOqZuLUfYRyk+0
+frJg0V68sO5t1mik84zY2XzAusS3uFCB7TWzZbPiePGfSSf4oQw2cQ11tPS6aEeT
+SLJW4U3gIDEx3rK+PTaUD/Vo/Q0+Ru5wHS1JW9xWURMG3+qEUIRRNLL5GWtFrK/A
+x74nP1eO5xBQrc7q4+8h6MVYMZ6IUdGU7M+JdPcoDu9WgQW59K8g7RGR0ZSn9I+J
+hO88uj+DT5iK27ttAAT6jcvHxXbliTm5kTSCvXUkH208wXHogDn+c3HpXH5piXAH
+vzUE6IPppHBiNahxh/Mv2y/EjOEuyzIQefyGUYkEsOa1ZfXqyLrEJbwA
+=hEtk
+-----END PGP SIGNATURE-----

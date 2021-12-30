@@ -71,6 +71,7 @@ private:
     void buildUserList(EditShare*);
     void refreshShareList();
     void refreshUserList();
+    void checkSambashareGroup();
     void checksamba();
     void enablesamba();
     void disablesamba();

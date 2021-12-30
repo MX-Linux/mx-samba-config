@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 30 Dec 2021 12:00:13 -0500
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: source amd64
+Version: 0.21.12.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-samba-config - mx-samba-config
+Changes:
+ mx-samba-config (0.21.12.02) mx; urgency=medium
+ .
+   * Check if user is part of smabashare group (needed for MX-19 and RPi versions)
+Checksums-Sha1:
+ 782afaa6ccbf2ab6a8ab99395ddc452a9e8e3bd0 1162 mx-samba-config_0.21.12.02.dsc
+ 0095124aaff2f20e363a0f958276fa8ec08219f2 18828 mx-samba-config_0.21.12.02.tar.xz
+ 9f5fcfb15ebfde47b5e25b43e0e31fce7c1dc81e 10812 mx-samba-config_0.21.12.02_amd64.buildinfo
+ af6c9bcf06055d1309891ac343ec8f525d6c4687 45728 mx-samba-config_0.21.12.02_amd64.deb
+Checksums-Sha256:
+ b57c3edb8d8fcb037acf5353efa52e7f905616acba9f55c6756dde593fd6d975 1162 mx-samba-config_0.21.12.02.dsc
+ cafd8f04647e8bdcc6beb12f756dd89726dfcb9d6decfdc99adbf763b27d42a6 18828 mx-samba-config_0.21.12.02.tar.xz
+ af36a5b50ee118593f2b6bf28286dc499b61b5f56e868b959a4496834c244191 10812 mx-samba-config_0.21.12.02_amd64.buildinfo
+ 1f9043b6c49df12759a5d042912e122094a90784881f986019ca8b7730f233ac 45728 mx-samba-config_0.21.12.02_amd64.deb
+Files:
+ 19bdb684eaaf4bdd2f52946082d470ee 1162 admin optional mx-samba-config_0.21.12.02.dsc
+ dad67d6124059b074fd960ed10a00298 18828 admin optional mx-samba-config_0.21.12.02.tar.xz
+ eaca732962c99de2fbb77f51eeeb1a1f 10812 admin optional mx-samba-config_0.21.12.02_amd64.buildinfo
+ 58a1da337aa135e2439e290d03ff2348 45728 admin optional mx-samba-config_0.21.12.02_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmHN6ekTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumM15B/sFoLucY7rMHn/Vx7YVzO/LEpQfGUo1
+IcKpHq7qsQ1+fmpdfSzK0sNc9HHEMFP9YFfysXfIAGmgxpylwx+KNX+sZH6jw3wd
+Dtv8g7s0oRpE9MV2md26wAAvynBcgvxvnU6j0coUoM34c8QmEt++RAKOMDLpKMKT
+2KvQElg8wF9Jk7OBlKg89+JXdWhWuIGW2DIwuCDiMYOoagicKGaFO0vUDzxZLzKt
+0oCju2qjlFe7Rsul2WMKZ7EsMM6/AQ5gGT2Mqai+eKZFCEkaMHoe2ys+oFZZVDA2
+4l5Pl3DBAt0Hb3cXjm8ltQX3fmcCcyrfD/azn9O3xXI8/jhBi+PtlWvi
+=8PbZ
+-----END PGP SIGNATURE-----

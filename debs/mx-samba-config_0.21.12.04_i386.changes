@@ -14,13 +14,14 @@ Changes:
  mx-samba-config (0.21.12.04) mx; urgency=medium
  .
    * Fix: adding samba share if guest_ok=n
+   * Display error message in case it fails to add share
    * Some performances fixes, noticeable mostly on Raspberry Pi
 Checksums-Sha1:
- 68080b6388acc01334306352dcb23bef461dbaed 10044 mx-samba-config_0.21.12.04_i386.buildinfo
- aaa61855ed4741c3aa44085bb2231aafaec5e6c9 46680 mx-samba-config_0.21.12.04_i386.deb
+ 01e1ea033b7b3c408fdf566c97dccc0eb9262133 10044 mx-samba-config_0.21.12.04_i386.buildinfo
+ 2133eb0a9cd0d65bb15b2d7535381c6176dc78ad 47032 mx-samba-config_0.21.12.04_i386.deb
 Checksums-Sha256:
- 46a5c77a1d75e08d0956e51efeb07bc1e07b9565120464b3c88f60fa57e60a7e 10044 mx-samba-config_0.21.12.04_i386.buildinfo
- 4f888cfb0c2260205ac0fd59eac25018dd3cc9280281d7345a21d241aa1fd93c 46680 mx-samba-config_0.21.12.04_i386.deb
+ f3bb402e0d49acaa30167498f7d6c98a55ed2679b81172e271dfb257371d4687 10044 mx-samba-config_0.21.12.04_i386.buildinfo
+ 1f112a2c536b34be66e54d854b47f20eab86d95625d605d2eb5b0002654b20e8 47032 mx-samba-config_0.21.12.04_i386.deb
 Files:
- 953237d34677ef83d08992492ca1391b 10044 admin optional mx-samba-config_0.21.12.04_i386.buildinfo
- 8c05c3c40e0510823b225064fc349263 46680 admin optional mx-samba-config_0.21.12.04_i386.deb
+ 47bf55de08f57b8fb062eb0e29897cf0 10044 admin optional mx-samba-config_0.21.12.04_i386.buildinfo
+ d26a2af29b0fb001f190f45f4c01e670 47032 admin optional mx-samba-config_0.21.12.04_i386.deb

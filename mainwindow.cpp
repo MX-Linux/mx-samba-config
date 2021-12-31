@@ -104,7 +104,11 @@ void MainWindow::addEditShares(EditShare *editshare)
         const QStringList &args{"usershare", "add", editshare->ui->textShareName->text(),  editshare->ui->textSharePath->text(),
                     editshare->ui->textComment->text().isEmpty() ? "" : editshare->ui->textComment->text(),
                     permissions, editshare->ui->comboGuestOK->currentText() == tr("Yes") ? "guest_ok=y" : "guest_ok=n"};
-        run("net", args);
+        if (run("net", args) != 0) {
+            QMessageBox::critical(this, tr("Error"), tr("Could not add share. Error message:\n\n%1").
+                                  arg(QString(proc.readAllStandardError())));
+            return;
+        }
         refreshShareList();
     }
 }

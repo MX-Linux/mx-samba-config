@@ -1,6 +1,7 @@
 mx-samba-config (0.21.12.04) mx; urgency=medium
 
   * Fix: adding samba share if guest_ok=n
+  * Display error message in case it fails to add share
   * Some performances fixes, noticeable mostly on Raspberry Pi
 
  -- Adrian <adrian@mxlinux.org>  Fri, 31 Dec 2021 16:06:22 -0500

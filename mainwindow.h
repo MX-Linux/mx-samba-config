@@ -64,6 +64,7 @@ private:
     QProcess proc;
     QSettings settings;
     QStringList listUsers();
+    int run(const QString&, const QStringList&);
     void buildUserList(EditShare*);
     void checkSambashareGroup();
     void checksamba();

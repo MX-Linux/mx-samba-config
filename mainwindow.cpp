@@ -81,7 +81,7 @@ void MainWindow::addEditShares(EditShare *editshare)
             return;
         }
         if (!QFileInfo::exists(editshare->ui->textSharePath->text())) {
-            QMessageBox::critical(this, tr("Error"), QString("Path: %1 doesn't exist.").arg(editshare->ui->textSharePath->text()));
+            QMessageBox::critical(this, tr("Error"), tr("Path: %1 doesn't exist.").arg(editshare->ui->textSharePath->text()));
             return;
         }
         QStringList userList = cmd.getCmdOut("getent group users | cut -d: -f4").split(",");
@@ -460,7 +460,7 @@ void MainWindow::on_pushEditShare_clicked()
         } else if (permission.toLower() == "f") {
             button = editshare->findChild<QRadioButton *>("*FullAccess*" + user);
         } else {
-            QMessageBox::critical(this, tr("Error"), "Error: trying to process permissions: "  + item);
+            QMessageBox::critical(this, tr("Error"), tr("Error: trying to process permissions: ")  + item);
             return;
         }
         if (button) button->setChecked(true);

@@ -33,7 +33,6 @@
 #include <QTextStream>
 
 #include "about.h"
-#include "cmd.h"
 #include "mainwindow.h"
 #include "ui_editshare.h"
 #include "ui_mainwindow.h"
@@ -45,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
 
-    QSize size = this->size();
+    const QSize &size = this->size();
     if (settings.contains("geometry")) {
         restoreGeometry(settings.value("geometry").toByteArray());
         if (this->isMaximized()) { // add option to resize if maximized
@@ -84,7 +83,12 @@ void MainWindow::addEditShares(EditShare *editshare)
             QMessageBox::critical(this, tr("Error"), tr("Path: %1 doesn't exist.").arg(editshare->ui->textSharePath->text()));
             return;
         }
-        QStringList userList = cmd.getCmdOut("getent group users | cut -d: -f4").split(",");
+        QStringList userList;
+        proc.start("getent", QStringList{"group", "users"}, QIODevice::ReadOnly);
+        proc.waitForFinished();
+        const QStringList &list = QString(proc.readAllStandardOutput()).trimmed().split(",");
+        for (const QString &user : list)
+            userList << user.section(":", -1);
         userList.insert(0, tr("Everyone"));
         QString permissions;
         for (const QString &user : userList) {
@@ -98,12 +102,10 @@ void MainWindow::addEditShares(EditShare *editshare)
                 permissions += user + ":f";
             permissions.remove(QRegularExpression(",$"));
         }
-        qDebug() << "PERM" <<permissions;
-
-        cmd.run("net usershare add \"" + editshare->ui->textShareName->text() + "\" "
-            + "\"" + editshare->ui->textSharePath->text() + "\" "
-            + "\"" + (editshare->ui->textComment->text().isEmpty() ? "" : editshare->ui->textComment->text()) + "\""
-            + " " + permissions + " guest_ok=" + (editshare->ui->comboGuestOK->currentText() == tr("Yes") ? "y" : "n"));
+        const QStringList &args{"usershare", "add", editshare->ui->textShareName->text(),  editshare->ui->textSharePath->text(),
+                    editshare->ui->textComment->text().isEmpty() ? "" : editshare->ui->textComment->text(),
+                    permissions, editshare->ui->comboGuestOK->currentText() == tr("Yes") ? "guest_ok=y" : "guest_ok=n"};
+        proc.execute("net", args);
         refreshShareList();
     }
 }
@@ -111,11 +113,13 @@ void MainWindow::addEditShares(EditShare *editshare)
 
 QStringList MainWindow::listUsers()
 {
-    QString output;
-    if (!cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-list-users", output, true)) {
+    proc.start("pkexec", QStringList{"/usr/lib/mx-samba-config/mx-samba-config-list-users"}, QIODevice::ReadOnly);
+    proc.waitForFinished();
+    if (proc.exitCode() != 0) {
         QMessageBox::critical(this, tr("Error"), tr("Error listing users"));
         return QStringList();
     }
+    const QString &output = proc.readAllStandardOutput().trimmed();
     QStringList list;
     if (output.isEmpty())
         return QStringList();
@@ -128,7 +132,12 @@ QStringList MainWindow::listUsers()
 void MainWindow::buildUserList(EditShare *editshare)
 {
     QLayout *layout = editshare->ui->frameUsers->layout();
-    QStringList userList = cmd.getCmdOut("getent group users | cut -d: -f4").split(",");
+    proc.start("getent", QStringList{"group", "users"}, QIODevice::ReadOnly);
+    proc.waitForFinished();
+    const QStringList &list = QString(proc.readAllStandardOutput()).trimmed().split(",");
+    QStringList userList;
+    for (const QString &user : list)
+        userList << user.section(":", -1);
     userList.insert(0, tr("Everyone"));
     for (const QString &user : userList) {
         QGroupBox *groupBox = new QGroupBox(user);
@@ -164,16 +173,19 @@ void MainWindow::refreshShareList()
 {
     ui->treeWidgetShares->clear();
     ui->labelSambaSharesFound->hide();
-    QString output;
-    if (!cmd.run("net usershare info", output)) {
+
+    proc.start("net", QStringList{"usershare", "info"}, QIODevice::ReadOnly);
+    proc.waitForFinished();
+    if (proc.exitCode() != 0) {
         QMessageBox::critical(this, tr("Error"), tr("Error listing shares"));
         return;
     }
+    const QString &output = proc.readAllStandardOutput().trimmed();
     if (output.isEmpty()) {
         ui->labelSambaSharesFound->show();
         return;
     }
-    QStringList listShares{output.split("\n\n")};
+    const QStringList &listShares{output.split("\n\n")};
     qDebug() << listShares;
     for (const QString &share : listShares) {
         QStringList list = share.split("\n");
@@ -193,7 +205,7 @@ void MainWindow::refreshShareList()
             list[4].remove(QRegularExpression("^guest_ok="));
         ui->treeWidgetShares->insertTopLevelItem(0, new QTreeWidgetItem(list));
     }
-    for (auto i = 0; ui->treeWidgetShares->columnCount() > i; ++i)
+    for (auto i = 0; i < ui->treeWidgetShares->columnCount(); ++i)
         ui->treeWidgetShares->resizeColumnToContents(i);
     connect(ui->treeWidgetShares, &QTreeWidget::itemDoubleClicked, this, &MainWindow::on_pushEditShare_clicked, Qt::UniqueConnection);
 }
@@ -202,7 +214,7 @@ void MainWindow::refreshUserList()
 {
     ui->listWidgetUsers->clear();
     ui->labelUserNotFound->hide();
-    QStringList users = listUsers();
+    const QStringList &users = listUsers();
     if (!users.isEmpty())
         ui->listWidgetUsers->addItems(users);
     if (users.isEmpty())
@@ -254,28 +266,28 @@ void MainWindow::checksamba()
 void MainWindow::disablesamba()
 {
     setCursor(QCursor(Qt::BusyCursor));
-    cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib disablesamba");
+    proc.execute("pkexec", QStringList{"/usr/lib/mx-samba-config/mx-samba-config-lib", "disablesamba"});
     setCursor(QCursor(Qt::ArrowCursor));
 }
 
 void MainWindow::enablesamba()
 {
     setCursor(QCursor(Qt::BusyCursor));
-    cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib enablesamba");
+    proc.execute("pkexec", QStringList{"/usr/lib/mx-samba-config/mx-samba-config-lib", "enablesamba"});
     setCursor(QCursor(Qt::ArrowCursor));
 }
 
 void MainWindow::startsamba()
 {
     setCursor(QCursor(Qt::BusyCursor));
-    cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib startsamba");
+    proc.execute("pkexec", QStringList{"/usr/lib/mx-samba-config/mx-samba-config-lib", "startsamba"});
     setCursor(QCursor(Qt::ArrowCursor));
 }
 
 void MainWindow::stopsamba()
 {
     setCursor(QCursor(Qt::BusyCursor));
-    cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib stopsamba");
+    proc.execute("pkexec", QStringList{"/usr/lib/mx-samba-config/mx-samba-config-lib", "stopsamba"});
     setCursor(QCursor(Qt::ArrowCursor));
 }
 
@@ -303,20 +315,20 @@ void MainWindow::on_buttonStartStopSamba_clicked()
 void MainWindow::on_pushAbout_clicked()
 {
     this->hide();
-    displayAboutMsgBox( tr("About %1") + "MX Samba Config",
+    displayAboutMsgBox( tr("About %1") + tr("MX Samba Config"),
                        "<p align=\"center\"><b><h2>MX Samba Config</h2></b></p><p align=\"center\">" +
                        tr("Version: ") + qApp->applicationVersion() + "</p><p align=\"center\"><h3>" +
                        tr("Program for configuring Samba shares and users.") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>",
-                        "/usr/share/doc/mx-samba-config/license.html", tr("%1 License").arg(this->windowTitle()));
+                       "/usr/share/doc/mx-samba-config/license.html", tr("%1 License").arg(this->windowTitle()));
 
     this->show();
 }
 
 void MainWindow::on_pushHelp_clicked()
 {
-    QString url = "https://mxlinux.org/wiki/help-files/help-mx-samba-config/";
+    const QString &url = "https://mxlinux.org/wiki/help-files/help-mx-samba-config/";
     displayDoc(url, tr("%1 Help").arg(this->windowTitle()));
 }
 
@@ -325,7 +337,8 @@ void MainWindow::on_pushRemoveUser_clicked()
     if (!ui->listWidgetUsers->currentItem())
         return;
     const QString &user = ui->listWidgetUsers->currentItem()->text();
-    if (!cmd.run("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib removesambauser " +  user))
+
+    if (proc.execute("pkexec", QStringList{"/usr/lib/mx-samba-config/mx-samba-config-lib", "removesambauser", user}) != 0)
         QMessageBox::critical(this, tr("Error"), tr("Cannot delete user: ") + user);
     refreshUserList();
 }
@@ -356,8 +369,7 @@ void MainWindow::on_pushAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Empty username, please enter a name."));
             return;
         }
-        QString cmdstr = QString("grep -q '^%1:' /etc/passwd").arg(username->text());
-        if (system(cmdstr.toUtf8()) != 0) {
+        if (proc.execute("grep", QStringList{"^" + username->text() + ":", "/etc/passwd"}) != 0) {
             QMessageBox::critical(this, tr("Error"), tr("Matching linux user not found on system, "
                                                         "make sure you enter a valid username."));
             return;
@@ -366,9 +378,8 @@ void MainWindow::on_pushAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        cmdstr = QString("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib addsambauser %1 %2")
-                .arg(password->text()).arg(username->text());
-        if (!cmd.run(cmdstr, true)) {
+        QStringList args{"/usr/lib/mx-samba-config/mx-samba-config-lib", "addsambauser", password->text(), username->text()};
+        if (proc.execute("pkexec", args) != 0) {
             QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
             return;
         }
@@ -402,9 +413,9 @@ void MainWindow::on_pushUserPassword_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        const QString &cmdstr = QString("pkexec /usr/lib/mx-samba-config/mx-samba-config-lib changesambapasswd %1 %2")
-                .arg(password->text()).arg(ui->listWidgetUsers->currentItem()->text());
-        if (!cmd.run(cmdstr, true)) {
+        const QStringList &args{"/usr/lib/mx-samba-config/mx-samba-config-lib", "changesambapasswd",
+                         password->text(), ui->listWidgetUsers->currentItem()->text()};
+        if (proc.execute("pkexec", args) != 0) {
             QMessageBox::critical(this, tr("Error"), tr("Could not change password."));
             return;
         }
@@ -415,7 +426,7 @@ void MainWindow::on_pushRemoveShare_clicked()
 {
     if (!ui->treeWidgetShares->currentItem())
         return;
-    QString share = ui->treeWidgetShares->selectedItems().at(0)->text(0);
+    const QString &share = ui->treeWidgetShares->selectedItems().at(0)->text(0);
     if (share.isEmpty())
         return;
     if (system("net usershare delete \"" +  share.toUtf8() + "\"") != 0)

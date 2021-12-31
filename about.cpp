@@ -19,15 +19,14 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-
 #include "about.h"
-#include "cmd.h"
 #include "version.h"
 #include <unistd.h>
 
 #include <QApplication>
 #include <QFileInfo>
 #include <QMessageBox>
+#include <QProcess>
 #include <QPushButton>
 #include <QTextEdit>
 #include <QVBoxLayout>
@@ -36,13 +35,17 @@
 void displayDoc(QString url, QString title)
 {
     if (system("command -v mx-viewer >/dev/null") == 0) {
-        system("/usr/bin/mx-viewer " + url.toUtf8() + " \"" + title.toUtf8() + "\"&");
+        system("mx-viewer " + url.toUtf8() + " \"" + title.toUtf8() + "\"&");
     } else {
         if (getuid() != 0) {
             system("/usr/bin/xdg-open " + url.toUtf8());
         } else {
-            Cmd cmd;
-            QString user = cmd.getCmdOut("/usr/bin/logname", true);
+            QProcess proc;
+            proc.start("logname", QStringList(), QIODevice::ReadOnly);
+            proc.waitForFinished();
+            if (proc.exitCode() != 0)
+                return;
+            QString user = proc.readAllStandardOutput();
             system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
                    user.toUtf8() + ") /usr/bin/xdg-open " + url.toUtf8() + "\"&");
         }
@@ -68,8 +71,12 @@ void displayAboutMsgBox(QString title, QString message, QString licence_url, QSt
 
         QTextEdit *text = new QTextEdit;
         text->setReadOnly(true);
-        Cmd cmd;
-        text->setText(cmd.getCmdOut("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
+        QProcess proc;
+        proc.start("zless", QStringList{"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"});
+        proc.waitForFinished();
+        if (proc.exitCode() != 0)
+            return;
+        text->setText(proc.readAllStandardOutput());
 
         QPushButton *btnClose = new QPushButton(QApplication::tr("&Close"));
         btnClose->setIcon(QIcon::fromTheme("window-close"));

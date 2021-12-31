@@ -29,7 +29,6 @@
 #include <QProcess>
 #include <QSettings>
 
-#include "cmd.h"
 #include "editshare.h"
 
 namespace Ui {
@@ -49,6 +48,8 @@ public slots:
 
 private slots:
     void addEditShares(EditShare*);
+    void on_buttonEnableDisableSamba_clicked();
+    void on_buttonStartStopSamba_clicked();
     void on_pushAbout_clicked();
     void on_pushAddShare_clicked();
     void on_pushAddUser_clicked();
@@ -58,23 +59,18 @@ private slots:
     void on_pushRemoveUser_clicked();
     void on_pushUserPassword_clicked();
 
-    void on_buttonStartStopSamba_clicked();
-
-
-    void on_buttonEnableDisableSamba_clicked();
-
 private:
     Ui::MainWindow *ui;
-    Cmd cmd;
+    QProcess proc;
     QSettings settings;
     QStringList listUsers();
     void buildUserList(EditShare*);
-    void refreshShareList();
-    void refreshUserList();
     void checkSambashareGroup();
     void checksamba();
-    void enablesamba();
     void disablesamba();
+    void enablesamba();
+    void refreshShareList();
+    void refreshUserList();
     void startsamba();
     void stopsamba();
 };

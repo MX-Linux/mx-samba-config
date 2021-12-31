@@ -31,15 +31,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
     editshare.cpp \
     mainwindow.cpp \
-    about.cpp \
-    cmd.cpp
+    about.cpp
 
 HEADERS  += \
     editshare.h \
     mainwindow.h \
     version.h \
-    about.h \
-    cmd.h
+    about.h
 
 FORMS    += \
     editshare.ui \

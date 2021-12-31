@@ -26,7 +26,6 @@
 
 #include "editshare.h"
 #include "ui_editshare.h"
-#include "cmd.h"
 
 EditShare::EditShare(QWidget *parent) :
     QDialog(parent),
@@ -44,7 +43,6 @@ EditShare::~EditShare()
 void EditShare::on_pushChooseDirectory_clicked()
 {
     QFileDialog dialog;
-    Cmd cmd;
     QString path = ui->textSharePath->text();
     if (path.isEmpty() || !QFileInfo::exists(path))
         path = QDir::homePath();

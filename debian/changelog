@@ -1,3 +1,10 @@
+mx-samba-config (0.21.12.04) mx; urgency=medium
+
+  * Fix: adding samba share if guest_ok=n
+  * Some performances fixes, noticeable mostly on Raspberry Pi
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 31 Dec 2021 16:06:22 -0500
+
 mx-samba-config (0.21.12.03) mx; urgency=medium
 
   * Add busy indicator when starting/stopping/enabling Samba

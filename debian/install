@@ -1,7 +1,7 @@
-help							usr/share/doc/mx-samba-config
-mx-samba-config					usr/bin
-mx-samba-config.desktop			usr/share/applications
-images/mx-samba-config.svg	    usr/share/icons/hicolor/scalable/apps
-scripts/*						usr/lib/mx-samba-config
-actions/*					 	usr/share/polkit-1/actions
-translations/*.qm				usr/share/mx-samba-config/locale
+actions/*			usr/share/polkit-1/actions
+help/*				usr/share/doc/mx-samba-config
+images/mx-samba-config.svg	usr/share/icons/hicolor/scalable/apps
+mx-samba-config			usr/bin
+mx-samba-config.desktop		usr/share/applications
+scripts/*			usr/lib/mx-samba-config
+translations/*.qm		usr/share/mx-samba-config/locale

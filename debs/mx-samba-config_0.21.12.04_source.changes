@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Fri, 31 Dec 2021 16:06:22 -0500
+Source: mx-samba-config
+Architecture: source
+Version: 0.21.12.04
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-samba-config (0.21.12.04) mx; urgency=medium
+ .
+   * Fix: adding samba share if guest_ok=n
+   * Some performances fixes, noticeable mostly on Raspberry Pi
+Checksums-Sha1:
+ 01639ab82a0d9c272628c79af45a5318d527cdf1 600 mx-samba-config_0.21.12.04.dsc
+ f8222182358ada30a39d21b1104218f6b373bb15 19772 mx-samba-config_0.21.12.04.tar.xz
+ 68080b6388acc01334306352dcb23bef461dbaed 10044 mx-samba-config_0.21.12.04_i386.buildinfo
+Checksums-Sha256:
+ bf5d3e276118e1b5357a3e7ff02f0380c47246f6dbf15d99077a9bdcff87af94 600 mx-samba-config_0.21.12.04.dsc
+ 3f28387b4f697076e2a40362b1f8e80facec59648eedc9ee81d8ebdd57483fb5 19772 mx-samba-config_0.21.12.04.tar.xz
+ 46a5c77a1d75e08d0956e51efeb07bc1e07b9565120464b3c88f60fa57e60a7e 10044 mx-samba-config_0.21.12.04_i386.buildinfo
+Files:
+ 1a7d80892611404381fb1e1afe3c65b8 600 admin optional mx-samba-config_0.21.12.04.dsc
+ c81278ec4e07ae0dca2852dd040a783a 19772 admin optional mx-samba-config_0.21.12.04.tar.xz
+ 953237d34677ef83d08992492ca1391b 10044 admin optional mx-samba-config_0.21.12.04_i386.buildinfo

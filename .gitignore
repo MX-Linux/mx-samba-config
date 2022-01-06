@@ -52,3 +52,13 @@ compile_commands.json
 
 # QtCreator local machine specific files for imported projects
 *creator.user*
+
+# CMake ignore
+.cmake
+.ninja_deps
+.ninja_log
+CMakeCache.txt
+CMakeFiles
+build.ninja
+cmake_install.cmake
+*config_autogen

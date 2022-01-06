@@ -38,7 +38,7 @@ void displayDoc(QString url, QString title)
         system("mx-viewer " + url.toUtf8() + " \"" + title.toUtf8() + "\"&");
     } else {
         if (getuid() != 0) {
-            system("/usr/bin/xdg-open " + url.toUtf8());
+            system("xdg-open " + url.toUtf8());
         } else {
             QProcess proc;
             proc.start("logname", QStringList(), QIODevice::ReadOnly);
@@ -47,7 +47,7 @@ void displayDoc(QString url, QString title)
                 return;
             QString user = proc.readAllStandardOutput();
             system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
-                   user.toUtf8() + ") /usr/bin/xdg-open " + url.toUtf8() + "\"&");
+                   user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
         }
     }
 }

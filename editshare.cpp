@@ -38,7 +38,6 @@ EditShare::EditShare(QWidget *parent) :
 EditShare::~EditShare()
 {
     delete ui;
-
 }
 
 void EditShare::on_pushChooseDirectory_clicked()

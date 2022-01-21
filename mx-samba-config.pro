@@ -43,16 +43,55 @@ FORMS    += \
     editshare.ui \
     mainwindow.ui
 
-TRANSLATIONS += translations/mx-samba-config_ca.ts \
+TRANSLATIONS += translations/mx-samba-config_am.ts \
+                translations/mx-samba-config_ar.ts \
+                translations/mx-samba-config_bg.ts \
+                translations/mx-samba-config_bn.ts \
+                translations/mx-samba-config_ca.ts \
+                translations/mx-samba-config_cs.ts \
+                translations/mx-samba-config_da.ts \
                 translations/mx-samba-config_de.ts \
                 translations/mx-samba-config_el.ts \
                 translations/mx-samba-config_es.ts \
+                translations/mx-samba-config_es_ES.ts \
+                translations/mx-samba-config_et.ts \
+                translations/mx-samba-config_eu.ts \
+                translations/mx-samba-config_fa.ts \
+                translations/mx-samba-config_fi.ts \
+                translations/mx-samba-config_fil_PH.ts \
                 translations/mx-samba-config_fr.ts \
+                translations/mx-samba-config_fe_BE.ts \
+                translations/mx-samba-config_he_IL.ts \
+                translations/mx-samba-config_hi.ts \
+                translations/mx-samba-config_hr.ts \
+                translations/mx-samba-config_hu.ts \
+                translations/mx-samba-config_id.ts \
+                translations/mx-samba-config_is.ts \
                 translations/mx-samba-config_it.ts \
                 translations/mx-samba-config_ja.ts \
+                translations/mx-samba-config_kk.ts \
+                translations/mx-samba-config_ko.ts \
+                translations/mx-samba-config_lt.ts \
+                translations/mx-samba-config_mk.ts \
+                translations/mx-samba-config_mr.ts \
+                translations/mx-samba-config_nb.ts \
                 translations/mx-samba-config_nl.ts \
+                translations/mx-samba-config_pl.ts \
+                translations/mx-samba-config_pt.ts \
+                translations/mx-samba-config_pt_BR.ts \
                 translations/mx-samba-config_ro.ts \
-                translations/mx-samba-config_sv.ts
+                translations/mx-samba-config_ru.ts \
+                translations/mx-samba-config_sk.ts \
+                translations/mx-samba-config_sl.ts \
+                translations/mx-samba-config_sq.ts \
+                translations/mx-samba-config_sr.ts \
+                translations/mx-samba-config_sv.ts \
+                translations/mx-samba-config_tr.ts \
+                translations/mx-samba-config_uk.ts \
+                translations/mx-samba-config_vi.ts \
+                translations/mx-samba-config_zh_CN.ts \
+                translations/mx-samba-config_zh_TW.ts 
+                              
 
 RESOURCES += \
     images.qrc

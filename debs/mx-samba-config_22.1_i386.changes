@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sat, 29 Jan 2022 14:22:36 -0500
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: i386
+Version: 22.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-samba-config - mx-samba-config
+Changes:
+ mx-samba-config (22.1) mx; urgency=medium
+ .
+   * First official release with translations
+Checksums-Sha1:
+ 9b50d0dca733cb4c91f14a703d936d060d76deb5 10014 mx-samba-config_22.1_i386.buildinfo
+ a64e4a520d72b6ec59d9eb03930dc981e639e232 68528 mx-samba-config_22.1_i386.deb
+Checksums-Sha256:
+ 5623d4806cbe88454f1a7965eb207c58920fb7a456cc50488b8dfa5a9366b10d 10014 mx-samba-config_22.1_i386.buildinfo
+ daaffee1ca294c3925c15e2afe7207a5c36acf275f1e8b0e5f24c04fd546bc5c 68528 mx-samba-config_22.1_i386.deb
+Files:
+ e6c5c7a6cd9c737bed6285c5baf20eff 10014 admin optional mx-samba-config_22.1_i386.buildinfo
+ 033a0e6ee6554d50366e32c06bbe398f 68528 admin optional mx-samba-config_22.1_i386.deb

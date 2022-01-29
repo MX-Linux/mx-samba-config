@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 29 Jan 2022 14:22:36 -0500
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: source amd64
+Version: 22.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-samba-config - mx-samba-config
+Changes:
+ mx-samba-config (22.1) mx; urgency=medium
+ .
+   * First official release with translations
+Checksums-Sha1:
+ 0587566ec04da3681e72db1944933b040cdcda77 1138 mx-samba-config_22.1.dsc
+ df2575300d5c11b72e18c8e45363ea48499d896f 39772 mx-samba-config_22.1.tar.xz
+ a43b8563f52fcaf69e7b52ce485260d5db52f263 10764 mx-samba-config_22.1_amd64.buildinfo
+ d1ff93cca7462df95b82e890082753640ab4feed 67328 mx-samba-config_22.1_amd64.deb
+Checksums-Sha256:
+ 9eae80da23cc390edfd50db989daaeac53412836551881efe723e79a12625efe 1138 mx-samba-config_22.1.dsc
+ 1ed91d0e3d522ac6430cf5ad6e391e172d2db9cddf37f34dce1a53064106d97d 39772 mx-samba-config_22.1.tar.xz
+ 697103e8f79079a675a4d712b884ea8f58078ddd484469e0f8ee8472396d8ebf 10764 mx-samba-config_22.1_amd64.buildinfo
+ f2e83585e7f561fac232b763d69a57a20f25ce7b8113af73880217f7a79641f7 67328 mx-samba-config_22.1_amd64.deb
+Files:
+ ba5a4fbecfd43bef409abee7c1c14249 1138 admin optional mx-samba-config_22.1.dsc
+ d4e5907919392d9620621c50c3921af4 39772 admin optional mx-samba-config_22.1.tar.xz
+ 89a9fb98f7511f633f4ba6b7132d86f7 10764 admin optional mx-samba-config_22.1_amd64.buildinfo
+ 97f754de2913134e04c6ec06ea6f5e6d 67328 admin optional mx-samba-config_22.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmH1lPITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDhmCADRtDR8QJb5YA13gc/EIjURRdj1MnyS
+HazzlR7pLnP/hq8xHRWbzQoaJRaXYVIk8oh2EIWLuVNt/E/YfsBjwFlJZ05WPKeG
+tP9N+nPdv4RZre8UiRafm1YqZqIf6y8eVr1j0j43BHPyW+y194aSgmWAez9T/yOx
+Q1z5D8EQ/83WtqWLuQGMWFm8MtY2bgWbtobT5rJQvR0Ckp6wtuU/g8yD8sgH9Hsb
+iO63XyF8ImA7ZabLHZqyuu+4w42SAYwpJ5KzLW3CvDQJmGHafQC++Yc1GCOOwlAT
+gJMVUtc98y5BAs66Z972wvwXf0rst3CwBF4FIBR4g8kKYqMXzp4BZ/6f
+=aL3d
+-----END PGP SIGNATURE-----

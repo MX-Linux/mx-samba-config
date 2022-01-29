@@ -1,3 +1,9 @@
+mx-samba-config (22.1) mx; urgency=medium
+
+  * First official release with translations
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 29 Jan 2022 14:22:36 -0500
+
 mx-samba-config (0.21.12.04) mx; urgency=medium
 
   * Fix: adding samba share if guest_ok=n

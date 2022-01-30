@@ -1,3 +1,9 @@
+mx-samba-config (22.1.01) mx; urgency=medium
+
+  * 'Everyone' in the command should not be translated
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 30 Jan 2022 18:51:14 -0500
+
 mx-samba-config (22.1) mx; urgency=medium
 
   * First official release with translations

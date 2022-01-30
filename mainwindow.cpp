@@ -83,7 +83,7 @@ void MainWindow::addEditShares(EditShare *editshare)
             QMessageBox::critical(this, tr("Error"), tr("Path: %1 doesn't exist.").arg(editshare->ui->textSharePath->text()));
             return;
         }
-        QStringList list{":" + tr("Everyone")}; // add Everyone with a column in front to follow general format of getent
+        QStringList list{":Everyone"}; // add Everyone with a column in front to follow general format of getent
         run("getent", QStringList{"group", "users"});
         list  << QString(proc.readAllStandardOutput()).trimmed().split(",");
         QString permissions;
@@ -132,7 +132,7 @@ QStringList MainWindow::listUsers()
 void MainWindow::buildUserList(EditShare *editshare)
 {
     QLayout *layout = editshare->ui->frameUsers->layout();
-    QStringList list{":" + tr("Everyone")}; // add Everyone with a column in front to follow general format of getent
+    QStringList list{":Everyone"}; // add Everyone with a column in front to follow general format of getent
     run("getent", QStringList{"group", "users"});
     list << QString(proc.readAllStandardOutput()).trimmed().split(",");
     for (const QString &item : list) {

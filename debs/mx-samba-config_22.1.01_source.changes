@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sun, 30 Jan 2022 18:51:14 -0500
+Source: mx-samba-config
+Architecture: source
+Version: 22.1.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-samba-config (22.1.01) mx; urgency=medium
+ .
+   * 'Everyone' in the command should not be translated
+Checksums-Sha1:
+ 2097aae1c8b03411d3c3cd650ebf6ff45b1b743a 588 mx-samba-config_22.1.01.dsc
+ 3e5b4bddf21d30860589998e0303e98bd1909297 39820 mx-samba-config_22.1.01.tar.xz
+ 4ea3741432793944956d15bd20a40a962adf970e 10029 mx-samba-config_22.1.01_i386.buildinfo
+Checksums-Sha256:
+ c1d9f14eb4812e13624a1f57818ed0c39f45dcbf4f724a098555d7184c71521d 588 mx-samba-config_22.1.01.dsc
+ 82c999eaa5172144e66357e1b1dcd31e14500114c92c8ad4cc379cb1d8c9222b 39820 mx-samba-config_22.1.01.tar.xz
+ 7b582a8dcae585844d271924a0be035c6b47d2a97697af60cf2e3fe9886ecc34 10029 mx-samba-config_22.1.01_i386.buildinfo
+Files:
+ 2b5ae2b494490677b61eac1d14577afa 588 admin optional mx-samba-config_22.1.01.dsc
+ 15aa95e58b1d8811484343bf2d0e7930 39820 admin optional mx-samba-config_22.1.01.tar.xz
+ 7e5002ac6761fedfecbf0429ec2e9e6b 10029 admin optional mx-samba-config_22.1.01_i386.buildinfo

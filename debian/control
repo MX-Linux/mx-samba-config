@@ -11,5 +11,8 @@ Depends: xdg-utils | mx-viewer,
          samba,
          ${misc:Depends}, 
          ${shlibs:Depends}
-Description: mx-samba-config
- mx-samba-config
+Description: GUI for managing Samba shares and users
+ Samba configuration tool designed to work with the same samba “usershare” 
+ system used by the thunar-shares-plugin and Dolphin file sharing capabilities. 
+ It provides the ability for users to set up samba shares for folders they own, 
+ as well as add and remove samba users. 

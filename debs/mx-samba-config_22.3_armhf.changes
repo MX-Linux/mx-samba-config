@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sun, 27 Mar 2022 14:36:23 -0400
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: armhf
+Version: 22.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ mx-samba-config - GUI for managing Samba shares and users
+Changes:
+ mx-samba-config (22.3) mx; urgency=medium
+ .
+   * adjust postinstall
+Checksums-Sha1:
+ 9bba7d3624ec22c7fe0980dc481f4962cbdca4ac 9874 mx-samba-config_22.3_armhf.buildinfo
+ 0838c89990a75a40e295d8d04052c362c98e9c6c 62980 mx-samba-config_22.3_armhf.deb
+Checksums-Sha256:
+ 4280f0aa19ea43369abf912b5a6088a260a3b107fab7e4e9f25a5c459835fd8a 9874 mx-samba-config_22.3_armhf.buildinfo
+ 039a0baa34c73aca1a179cfcde8f5da13bbd4cfab22f751746274e782ee727e0 62980 mx-samba-config_22.3_armhf.deb
+Files:
+ d573d440459f22f09f37436e09863b15 9874 admin optional mx-samba-config_22.3_armhf.buildinfo
+ b5ffdb618f01bdf537544da50f4499bf 62980 admin optional mx-samba-config_22.3_armhf.deb

@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Sun, 27 Mar 2022 14:36:23 -0400
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: source amd64
+Version: 22.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ mx-samba-config - GUI for managing Samba shares and users
+Changes:
+ mx-samba-config (22.3) mx; urgency=medium
+ .
+   * adjust postinstall
+Checksums-Sha1:
+ 13adcaf0987f3fb498ecb26c9af28a77174386cb 579 mx-samba-config_22.3.dsc
+ 177f41874cac6b17a589cfcbe10768f8c94bec15 281800 mx-samba-config_22.3.tar.xz
+ 5265df04b3b455d935a69b1076439e6cb23c5579 10492 mx-samba-config_22.3_amd64.buildinfo
+ 2ca7ca2699740047f1ecb719b5e88fc31d2ab0a0 67468 mx-samba-config_22.3_amd64.deb
+Checksums-Sha256:
+ 19211e4451d1f8e8939ef9efcfe4393f973cfbb9419462569215229566b0f877 579 mx-samba-config_22.3.dsc
+ b8eb13e519709cc027759d98ef768fd16bd649e28d8a60175fe9e14ec7e64f35 281800 mx-samba-config_22.3.tar.xz
+ f89d606ed4f8abb161d1ba2011bf9d1e18702d532c2ed12dc3effcbd63a8cfbf 10492 mx-samba-config_22.3_amd64.buildinfo
+ 0106884de52ce04ea205dc4804dd923031ec5758735729055dd4a583e94fc8bf 67468 mx-samba-config_22.3_amd64.deb
+Files:
+ fe21fb84060bad5495714b1f7ff096fa 579 admin optional mx-samba-config_22.3.dsc
+ e0731bb329b9851f7ec39bd0a4518465 281800 admin optional mx-samba-config_22.3.tar.xz
+ e18fc2848fdf7c26096c37f8dcda4521 10492 admin optional mx-samba-config_22.3_amd64.buildinfo
+ eebaae49882711e7a7a447d57e842ec5 67468 admin optional mx-samba-config_22.3_amd64.deb

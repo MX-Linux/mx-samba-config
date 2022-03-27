@@ -1,3 +1,9 @@
+mx-samba-config (22.3) mx; urgency=medium
+
+  * adjust postinstall 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 27 Mar 2022 14:36:23 -0400
+
 mx-samba-config (22.1.01) mx; urgency=medium
 
   * 'Everyone' in the command should not be translated

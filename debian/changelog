@@ -1,3 +1,9 @@
+mx-samba-config (22.4) mx; urgency=medium
+
+  * update postinstall, don't setup group if already exists
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 01 Apr 2022 22:37:53 -0400
+
 mx-samba-config (22.3) mx; urgency=medium
 
   * adjust postinstall 

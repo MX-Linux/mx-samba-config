@@ -67,8 +67,8 @@ MainWindow::~MainWindow()
 void MainWindow::centerWindow()
 {
     QRect screenGeometry = qApp->primaryScreen()->geometry();
-    int x = (screenGeometry.width()-this->width()) / 2;
-    int y = (screenGeometry.height()-this->height()) / 2;
+    int x = (screenGeometry.width() - this->width()) / 2;
+    int y = (screenGeometry.height() - this->height()) / 2;
     this->move(x, y);
 }
 
@@ -87,7 +87,7 @@ void MainWindow::addEditShares(EditShare *editshare)
         run("getent", QStringList{"group", "users"});
         list  << QString(proc.readAllStandardOutput()).trimmed().split(",");
         QString permissions;
-        for (const QString &item : list) {
+        for (const QString &item : qAsConst(list)) {
             QString user = item.section(":", -1);
             if (!permissions.isEmpty())
                 permissions += ",";
@@ -135,7 +135,7 @@ void MainWindow::buildUserList(EditShare *editshare)
     QStringList list{":Everyone"}; // add Everyone with a column in front to follow general format of getent
     run("getent", QStringList{"group", "users"});
     list << QString(proc.readAllStandardOutput()).trimmed().split(",");
-    for (const QString &item : list) {
+    for (const QString &item : qAsConst(list)) {
         QString user = item.section(":", -1);
         QGroupBox *groupBox = new QGroupBox(user);
         groupBox->setObjectName(user);
@@ -244,7 +244,7 @@ void MainWindow::checkSambashareGroup()
 
 void MainWindow::checksamba()
 {
-    if (QFileInfo("/usr/sbin/smbd").exists()) {
+    if (QFileInfo::exists("/usr/sbin/smbd")) {
         if (system("pgrep smbd") == 0) {
             ui->buttonStartStopSamba->setText(tr("Sto&p Samba"));
             ui->textSambaStatus->setText(tr("Samba is running"));
@@ -459,7 +459,7 @@ void MainWindow::on_pushEditShare_clicked()
     if (!permissions.isEmpty())
         permission_list = permissions.split(",");
 
-    for (const QString &item : permission_list) {
+    for (const QString &item : qAsConst(permission_list)) {
         if (item.isEmpty())
             continue;
         QString user = item.section(":", 0, 0);

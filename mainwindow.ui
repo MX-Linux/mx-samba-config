@@ -214,14 +214,14 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_6">
       <item row="1" column="1">
-       <widget class="QPushButton" name="buttonEnableDisableSamba">
+       <widget class="QPushButton" name="pushEnableDisableSamba">
         <property name="text">
          <string>E&amp;nable Automatic Samba Startup</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="buttonStartStopSamba">
+       <widget class="QPushButton" name="pushStartStopSamba">
         <property name="text">
          <string>Star&amp;t Samba</string>
         </property>
@@ -455,8 +455,8 @@
   <tabstop>pushEditShare</tabstop>
   <tabstop>textSambaStatus</tabstop>
   <tabstop>textServiceStatus</tabstop>
-  <tabstop>buttonStartStopSamba</tabstop>
-  <tabstop>buttonEnableDisableSamba</tabstop>
+  <tabstop>pushStartStopSamba</tabstop>
+  <tabstop>pushEnableDisableSamba</tabstop>
   <tabstop>pushAbout</tabstop>
   <tabstop>pushHelp</tabstop>
   <tabstop>pushCancel</tabstop>

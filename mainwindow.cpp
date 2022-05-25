@@ -43,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
+    setConnections();
 
     const QSize &size = this->size();
     if (settings.contains("geometry")) {
@@ -70,6 +71,20 @@ void MainWindow::centerWindow()
     int x = (screenGeometry.width() - this->width()) / 2;
     int y = (screenGeometry.height() - this->height()) / 2;
     this->move(x, y);
+}
+
+void MainWindow::setConnections()
+{
+    connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::pushAbout_clicked);
+    connect(ui->pushAddShare, &QPushButton::clicked, this, &MainWindow::pushAddShare_clicked);
+    connect(ui->pushAddUser, &QPushButton::clicked, this, &MainWindow::pushAddUser_clicked);
+    connect(ui->pushEditShare, &QPushButton::clicked, this, &MainWindow::pushEditShare_clicked);
+    connect(ui->pushEnableDisableSamba, &QPushButton::clicked, this, &MainWindow::pushEnableDisableSamba_clicked);
+    connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::pushHelp_clicked);
+    connect(ui->pushRemoveShare, &QPushButton::clicked, this, &MainWindow::pushRemoveShare_clicked);
+    connect(ui->pushRemoveUser, &QPushButton::clicked, this, &MainWindow::pushRemoveUser_clicked);
+    connect(ui->pushStartStopSamba, &QPushButton::clicked, this, &MainWindow::pushStartStopSamba_clicked);
+    connect(ui->pushUserPassword, &QPushButton::clicked, this, &MainWindow::pushUserPassword_clicked);
 }
 
 void MainWindow::addEditShares(EditShare *editshare)
@@ -131,17 +146,17 @@ QStringList MainWindow::listUsers()
 
 void MainWindow::buildUserList(EditShare *editshare)
 {
-    QLayout *layout = editshare->ui->frameUsers->layout();
+    auto layout = editshare->ui->frameUsers->layout();
     QStringList list{":Everyone"}; // add Everyone with a column in front to follow general format of getent
     run("getent", QStringList{"group", "users"});
     list << QString(proc.readAllStandardOutput()).trimmed().split(",");
     for (const QString &item : qAsConst(list)) {
         QString user = item.section(":", -1);
-        QGroupBox *groupBox = new QGroupBox(user);
+        auto groupBox = new QGroupBox(user);
         groupBox->setObjectName(user);
-        QHBoxLayout *hbox = new QHBoxLayout;
+        auto hbox = new QHBoxLayout;
 
-        QRadioButton *radio = new QRadioButton(tr("&Deny"));
+        auto radio = new QRadioButton(tr("&Deny"));
         radio->setObjectName("*Deny*" + user);
         hbox->addWidget(radio);
         connect(radio, &QRadioButton::pressed, radio,
@@ -203,7 +218,7 @@ void MainWindow::refreshShareList()
     }
     for (auto i = 0; i < ui->treeWidgetShares->columnCount(); ++i)
         ui->treeWidgetShares->resizeColumnToContents(i);
-    connect(ui->treeWidgetShares, &QTreeWidget::itemDoubleClicked, this, &MainWindow::on_pushEditShare_clicked, Qt::UniqueConnection);
+    connect(ui->treeWidgetShares, &QTreeWidget::itemDoubleClicked, this, &MainWindow::pushEditShare_clicked, Qt::UniqueConnection);
 }
 
 void MainWindow::refreshUserList()
@@ -246,10 +261,10 @@ void MainWindow::checksamba()
 {
     if (QFileInfo::exists("/usr/sbin/smbd")) {
         if (system("pgrep smbd") == 0) {
-            ui->buttonStartStopSamba->setText(tr("Sto&p Samba"));
+            ui->pushStartStopSamba->setText(tr("Sto&p Samba"));
             ui->textSambaStatus->setText(tr("Samba is running"));
         } else {
-            ui->buttonStartStopSamba->setText(tr("Star&t Samba"));
+            ui->pushStartStopSamba->setText(tr("Star&t Samba"));
             ui->textSambaStatus->setText(tr("Samba is not running"));
         }
     } else {
@@ -267,10 +282,10 @@ void MainWindow::checksamba()
 
     if (enabled) {
         ui->textServiceStatus->setText("Samba autostart is enabled");
-        ui->buttonEnableDisableSamba->setText(tr("&Disable Automatic Samba Startup"));
+        ui->pushEnableDisableSamba->setText(tr("&Disable Automatic Samba Startup"));
     } else {
         ui->textServiceStatus->setText("Samba autostart is disabled");
-        ui->buttonEnableDisableSamba->setText(tr("E&nable Automatic Samba Startup"));
+        ui->pushEnableDisableSamba->setText(tr("E&nable Automatic Samba Startup"));
      }
 }
 
@@ -294,18 +309,18 @@ void MainWindow::stopsamba()
     run("pkexec", QStringList{"/usr/lib/mx-samba-config/mx-samba-config-lib", "stopsamba"});
 }
 
-void MainWindow::on_buttonEnableDisableSamba_clicked()
+void MainWindow::pushEnableDisableSamba_clicked()
 {
-    if (ui->buttonEnableDisableSamba->text() == tr("E&nable Automatic Samba Startup"))
+    if (ui->pushEnableDisableSamba->text() == tr("E&nable Automatic Samba Startup"))
         enablesamba();
     else
         disablesamba();
     checksamba();
 }
 
-void MainWindow::on_buttonStartStopSamba_clicked()
+void MainWindow::pushStartStopSamba_clicked()
 {
-    if (ui->buttonStartStopSamba->text() == tr("Star&t Samba"))
+    if (ui->pushStartStopSamba->text() == tr("Star&t Samba"))
         startsamba();
     else
         stopsamba();
@@ -315,7 +330,7 @@ void MainWindow::on_buttonStartStopSamba_clicked()
     refreshUserList();
 }
 
-void MainWindow::on_pushAbout_clicked()
+void MainWindow::pushAbout_clicked()
 {
     this->hide();
     displayAboutMsgBox( tr("About %1") + tr("MX Samba Config"),
@@ -329,13 +344,13 @@ void MainWindow::on_pushAbout_clicked()
     this->show();
 }
 
-void MainWindow::on_pushHelp_clicked()
+void MainWindow::pushHelp_clicked()
 {
     const QString &url = "https://mxlinux.org/wiki/help-files/help-mx-samba-config/";
     displayDoc(url, tr("%1 Help").arg(this->windowTitle()));
 }
 
-void MainWindow::on_pushRemoveUser_clicked()
+void MainWindow::pushRemoveUser_clicked()
 {
     if (!ui->listWidgetUsers->currentItem())
         return;
@@ -346,15 +361,15 @@ void MainWindow::on_pushRemoveUser_clicked()
     refreshUserList();
 }
 
-void MainWindow::on_pushAddUser_clicked()
+void MainWindow::pushAddUser_clicked()
 {
     QDialog dialog(this);
     QFormLayout form(&dialog);
     form.addRow(new QLabel(tr("Enter the username and password:")));
 
-    QLineEdit *username = new QLineEdit(&dialog);
-    QLineEdit *password = new QLineEdit(&dialog);
-    QLineEdit *password2 = new QLineEdit(&dialog);
+    auto username = new QLineEdit(&dialog);
+    auto password = new QLineEdit(&dialog);
+    auto password2 = new QLineEdit(&dialog);
     password->setEchoMode(QLineEdit::Password);
     password2->setEchoMode(QLineEdit::Password);
     form.addRow(tr("Username:"), username);
@@ -364,8 +379,8 @@ void MainWindow::on_pushAddUser_clicked()
     QDialogButtonBox buttonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, &dialog);
     form.addRow(&buttonBox);
 
-    QObject::connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
-    QObject::connect(&buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+    connect(&buttonBox, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    connect(&buttonBox, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
 
     if (dialog.exec() == QDialog::Accepted) {
         if (username->text().isEmpty()) {
@@ -390,7 +405,7 @@ void MainWindow::on_pushAddUser_clicked()
     refreshUserList();
 }
 
-void MainWindow::on_pushUserPassword_clicked()
+void MainWindow::pushUserPassword_clicked()
 {
     if (!ui->listWidgetUsers->currentItem())
         return;
@@ -398,8 +413,8 @@ void MainWindow::on_pushUserPassword_clicked()
     QFormLayout form(&dialog);
     form.addRow(new QLabel(tr("Change the password for \'%1\'").arg(ui->listWidgetUsers->currentItem()->text())));
 
-    QLineEdit *password = new QLineEdit(&dialog);
-    QLineEdit *password2 = new QLineEdit(&dialog);
+    auto password = new QLineEdit(&dialog);
+    auto password2 = new QLineEdit(&dialog);
     password->setEchoMode(QLineEdit::Password);
     password2->setEchoMode(QLineEdit::Password);
     form.addRow(tr("Password:"), password);
@@ -425,7 +440,7 @@ void MainWindow::on_pushUserPassword_clicked()
     }
 }
 
-void MainWindow::on_pushRemoveShare_clicked()
+void MainWindow::pushRemoveShare_clicked()
 {
     if (!ui->treeWidgetShares->currentItem())
         return;
@@ -437,7 +452,7 @@ void MainWindow::on_pushRemoveShare_clicked()
     refreshShareList();
 }
 
-void MainWindow::on_pushEditShare_clicked()
+void MainWindow::pushEditShare_clicked()
 {
     if (!ui->treeWidgetShares->currentItem())
         return;
@@ -448,7 +463,7 @@ void MainWindow::on_pushEditShare_clicked()
         return;
     }
 
-    EditShare *editshare = new EditShare;
+    auto editshare = new EditShare;
     buildUserList(editshare);
     editshare->ui->textShareName->setText(ui->treeWidgetShares->selectedItems().at(0)->text(0));
     editshare->ui->textSharePath->setText(ui->treeWidgetShares->selectedItems().at(0)->text(1));
@@ -482,14 +497,14 @@ void MainWindow::on_pushEditShare_clicked()
     addEditShares(editshare);
 }
 
-void MainWindow::on_pushAddShare_clicked()
+void MainWindow::pushAddShare_clicked()
 {
     if (system("pgrep smbd") != 0) {
         QMessageBox::critical(this, tr("Error"),
                               tr("Samba service is not running. Please start Samba before adding or editing shares"));
         return;
     }
-    EditShare *editshare = new EditShare;
+    auto editshare = new EditShare;
     buildUserList(editshare);
     addEditShares(editshare);
 }

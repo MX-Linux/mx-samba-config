@@ -43,21 +43,22 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void centerWindow();
+    void setConnections();
 
 public slots:
 
 private slots:
     void addEditShares(EditShare*);
-    void on_buttonEnableDisableSamba_clicked();
-    void on_buttonStartStopSamba_clicked();
-    void on_pushAbout_clicked();
-    void on_pushAddShare_clicked();
-    void on_pushAddUser_clicked();
-    void on_pushEditShare_clicked();
-    void on_pushHelp_clicked();
-    void on_pushRemoveShare_clicked();
-    void on_pushRemoveUser_clicked();
-    void on_pushUserPassword_clicked();
+    void pushAbout_clicked();
+    void pushAddShare_clicked();
+    void pushAddUser_clicked();
+    void pushEditShare_clicked();
+    void pushEnableDisableSamba_clicked();
+    void pushHelp_clicked();
+    void pushRemoveShare_clicked();
+    void pushRemoveUser_clicked();
+    void pushStartStopSamba_clicked();
+    void pushUserPassword_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -1,3 +1,9 @@
+mx-samba-config (22.8) mx; urgency=medium
+
+  * Fix adding user
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 10 Aug 2022 21:23:46 -0400
+
 mx-samba-config (22.7) mx; urgency=medium
 
   * translation refresh 

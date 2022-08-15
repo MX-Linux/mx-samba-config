@@ -64,7 +64,7 @@ TRANSLATIONS += translations/mx-samba-config_am.ts \
                 translations/mx-samba-config_fi.ts \
                 translations/mx-samba-config_fil_PH.ts \
                 translations/mx-samba-config_fr.ts \
-                translations/mx-samba-config_fe_BE.ts \
+                translations/mx-samba-config_fr_BE.ts \
                 translations/mx-samba-config_he_IL.ts \
                 translations/mx-samba-config_hi.ts \
                 translations/mx-samba-config_hr.ts \

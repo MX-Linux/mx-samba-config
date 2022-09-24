@@ -4,7 +4,7 @@
     <message>
         <location filename="editshare.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Dialoog</translation>
     </message>
     <message>
         <location filename="editshare.ui" line="20"/>
@@ -19,12 +19,12 @@
     <message>
         <location filename="editshare.ui" line="51"/>
         <source>Yes</source>
-        <translation type="unfinished"/>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="editshare.ui" line="56"/>
         <source>No</source>
-        <translation type="unfinished"/>
+        <translation>Nee</translation>
     </message>
     <message>
         <location filename="editshare.ui" line="64"/>
@@ -57,7 +57,7 @@
     <message>
         <location filename="mainwindow.ui" line="32"/>
         <source>Shares</source>
-        <translation type="unfinished"/>
+        <translation>Gedeelden</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="41"/>
@@ -154,7 +154,7 @@
     <message>
         <location filename="mainwindow.ui" line="324"/>
         <source>About this application</source>
-        <translation type="unfinished"/>
+        <translation>Over deze applicatie</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="327"/>
@@ -164,12 +164,12 @@
     <message>
         <location filename="mainwindow.ui" line="334"/>
         <source>Alt+B</source>
-        <translation type="unfinished"/>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="366"/>
         <source>Display help </source>
-        <translation type="unfinished"/>
+        <translation>Toon help</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="369"/>
@@ -179,22 +179,22 @@
     <message>
         <location filename="mainwindow.ui" line="376"/>
         <source>Alt+H</source>
-        <translation type="unfinished"/>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="411"/>
         <source>Quit application</source>
-        <translation type="unfinished"/>
+        <translation>Verlaat de applicatie</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="414"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Sluiten</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="421"/>
         <source>Alt+N</source>
-        <translation type="unfinished"/>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="79"/>
@@ -216,7 +216,7 @@
         <location filename="mainwindow.cpp" line="477"/>
         <location filename="mainwindow.cpp" line="488"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>Foutmelding</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="79"/>
@@ -237,7 +237,7 @@
     <message>
         <location filename="mainwindow.cpp" line="104"/>
         <source>Yes</source>
-        <translation type="unfinished"/>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="106"/>
@@ -299,7 +299,7 @@
     <message>
         <location filename="mainwindow.cpp" line="321"/>
         <source>About %1</source>
-        <translation type="unfinished"/>
+        <translation>Over %1</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="321"/>
@@ -309,7 +309,7 @@
     <message>
         <location filename="mainwindow.cpp" line="323"/>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Versie:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="324"/>
@@ -319,17 +319,17 @@
     <message>
         <location filename="mainwindow.cpp" line="326"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished"/>
+        <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="327"/>
         <source>%1 License</source>
-        <translation type="unfinished"/>
+        <translation>%1 Licentie</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="335"/>
         <source>%1 Help</source>
-        <translation type="unfinished"/>
+        <translation>%1 Help</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="345"/>
@@ -411,13 +411,13 @@
     <message>
         <location filename="about.cpp" line="58"/>
         <source>License</source>
-        <translation type="unfinished"/>
+        <translation>Licentie</translation>
     </message>
     <message>
         <location filename="about.cpp" line="59"/>
         <location filename="about.cpp" line="69"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation>Changelog</translation>
     </message>
     <message>
         <location filename="about.cpp" line="60"/>
@@ -427,12 +427,12 @@
     <message>
         <location filename="about.cpp" line="81"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Sluiten</translation>
     </message>
     <message>
         <location filename="main.cpp" line="61"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"/>
+        <translation>U moet dit programma als normale gebruiker uitvoeren.</translation>
     </message>
 </context>
 </TS>

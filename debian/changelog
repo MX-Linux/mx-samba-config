@@ -1,3 +1,9 @@
+mx-samba-config (22.10) mx; urgency=medium
+
+  * translation refresh
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 26 Oct 2022 20:06:39 -0400
+
 mx-samba-config (22.8) mx; urgency=medium
 
   * Fix adding user

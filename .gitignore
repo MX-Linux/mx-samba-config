@@ -53,6 +53,9 @@ compile_commands.json
 # QtCreator local machine specific files for imported projects
 *creator.user*
 
+# Transifex ignore
+.tx/
+
 # CMake ignore
 .cmake
 .ninja_deps

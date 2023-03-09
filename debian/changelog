@@ -1,3 +1,9 @@
+mx-samba-config (23.03) mx; urgency=medium
+
+  * update translations
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 08 Mar 2023 22:52:25 -0500
+
 mx-samba-config (22.10) mx; urgency=medium
 
   * translation refresh

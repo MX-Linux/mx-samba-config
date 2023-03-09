@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 08 Mar 2023 22:52:25 -0500
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: source amd64
+Version: 23.03
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ mx-samba-config - GUI for managing Samba shares and users
+Changes:
+ mx-samba-config (23.03) mx; urgency=medium
+ .
+   * update translations
+Checksums-Sha1:
+ 3aae5130b065ee7779e59c66229737fa56be5672 1145 mx-samba-config_23.03.dsc
+ 31e6532380c54fd59b2a25cc77cbd4c4abab5e86 116000 mx-samba-config_23.03.tar.xz
+ 42d88eab956bef63773cd439ec8b3eecf353735a 10772 mx-samba-config_23.03_amd64.buildinfo
+ 5aa28fefc381ce909b243ef2b2190e48d9450b03 78424 mx-samba-config_23.03_amd64.deb
+Checksums-Sha256:
+ e9aa25a289b19eb8d3ea19e10fc63c93a41e5e9ddd9c57b8c45157e3ea646c25 1145 mx-samba-config_23.03.dsc
+ a362dadfb50eadd0e099cc94bc7f9f8fce9a625b2ce7e1e01928d64db164bf2e 116000 mx-samba-config_23.03.tar.xz
+ 39f5952ae184abb5cf18fc1c90d714a17a58a076209df82d2ad0eccc75f3a6dc 10772 mx-samba-config_23.03_amd64.buildinfo
+ 6e38408cbe341279592be7798576b0274c53cbab8d3473738d8ec8e3e150c500 78424 mx-samba-config_23.03_amd64.deb
+Files:
+ ad0472849e3291c6ab21acef90c35617 1145 admin optional mx-samba-config_23.03.dsc
+ a4633382990c90903cc94856073d5d96 116000 admin optional mx-samba-config_23.03.tar.xz
+ 06f2726e69a91425e733c54e4481f55d 10772 admin optional mx-samba-config_23.03_amd64.buildinfo
+ 0ea3b069a85c3b75d3e2a3a2c763148f 78424 admin optional mx-samba-config_23.03_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmQJWhcTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPMICAC0WB9j3u2uyK5GyPdj6eJjaTVaQaVG
+3aobGufw0HyRB02tcwoCNsggmryPm/NzXr70exeD53mcp6Vafx8Epu3832uJ3zEq
+2PtYTNi6xIhwnmx4icgNtiHynDWovCSwAm9UmYz1VYEtN/ObF307B5x5KHdb/UDC
+GdroLFV/oVOKbl5CYpXZjCYh3pvv4RTWhP4N8GCZDP5ecS+4qXFWhVq5l4IDDLqZ
+fx5CWTUYY5P9gI6wSqmwKhB0otAKl4Hk5PNGCcVNMG7MWJcWQEUGUhJhufurfFDy
+6lfeLQJZkjtFJARhFwEfZizlu/qIx/MjDxhMeM73Gfi8/VSThaCoN7vQ
+=V5Ms
+-----END PGP SIGNATURE-----

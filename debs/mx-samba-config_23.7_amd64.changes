@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 20 Jul 2023 17:08:28 -0400
+Source: mx-samba-config
+Binary: mx-samba-config
+Architecture: source amd64
+Version: 23.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-samba-config - GUI for managing Samba shares and users
+Changes:
+ mx-samba-config (23.7) mx; urgency=medium
+ .
+   * Update translations
+Checksums-Sha1:
+ 9d32b8984822ea36584f2944e9c8ff04f4467ddf 1138 mx-samba-config_23.7.dsc
+ e53d099e5339afcdf851cde6067ba16c9becdfc6 61356 mx-samba-config_23.7.tar.xz
+ 0ba8fd445bc0e40bcfbc919b97ace4d34c7644ed 10764 mx-samba-config_23.7_amd64.buildinfo
+ 21722df889d2d36afc0816021fcb7b70b7dc7ace 81564 mx-samba-config_23.7_amd64.deb
+Checksums-Sha256:
+ 1d70df3813cdfa465296cc49e04227f175479aab0b8ef352a55a1c52e7ff3c63 1138 mx-samba-config_23.7.dsc
+ cb9d032dd27b3a119cf74e62fc683d2b16c4318fa526977cc5cdbdbb6ab14314 61356 mx-samba-config_23.7.tar.xz
+ 361fce77c40fd0543ec01e767359095027430ab1dcc328868c84ad5b4776c601 10764 mx-samba-config_23.7_amd64.buildinfo
+ 7931a8ef2373f1b030f4a23f7a8da6ec517819662836a684e5fd96349f2990a2 81564 mx-samba-config_23.7_amd64.deb
+Files:
+ 226a0968197958272352a4986aeb32d9 1138 admin optional mx-samba-config_23.7.dsc
+ bb33e947cccd667e71c6930a9407a16e 61356 admin optional mx-samba-config_23.7.tar.xz
+ 0ecd3eac2cd51d3c8a92e92096c84e8f 10764 admin optional mx-samba-config_23.7_amd64.buildinfo
+ df117dfc20ba36c12041e46a8f905dcf 81564 admin optional mx-samba-config_23.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmS5oq0THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGbyB/9rDDJdLCGP+I3R09TqQr4UYKZ6m2fe
+LQHIBtmve6en76IqHig4ksr4i9xyfUe+fu/x2fFY+RHmY9x7EacvhWAEvkt8xcv6
+Bwh9T+R6XRiEB8TLZa0p3Rem5aiR5llKNrcIVtWHf33xGCFp6PBC9PEw9yxWa3Ij
+h8kHxtj6VgGX/ZsmjkgBTRkjCp7ULAj9Lcma0a4zWiSD2ZY8fpA76WFhzYKWXfqQ
+zvnzdTiB0umGG/e/XtrjBdNLy7HBuhKKfZP4FuhKMhR5/6GSOcrQDXY/eCwoXAhX
+Hp5wSD8xCAUk52Qgx6EsbooMQbVM91Tz55+qIo6vfHa/iU6GcOOaLt20
+=vdyo
+-----END PGP SIGNATURE-----

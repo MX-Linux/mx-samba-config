@@ -137,13 +137,13 @@ QStringList MainWindow::listUsers()
     run(QStringLiteral("pkexec"), QStringList {"/usr/lib/mx-samba-config/mx-samba-config-list-users"});
     if (proc.exitCode() != 0) {
         QMessageBox::critical(this, tr("Error"), tr("Error listing users"));
-        return QStringList();
+        return {};
     }
     const QStringList output = QString(proc.readAllStandardOutput().trimmed()).split(QStringLiteral("\n"));
     QStringList list;
     list.reserve(output.size());
     if (output.isEmpty())
-        return QStringList();
+        return {};
     for (const QString &item : output)
         list << item.section(QStringLiteral(":"), 0, 0);
     list.sort();

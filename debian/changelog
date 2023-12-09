@@ -1,3 +1,9 @@
+mx-samba-config (23.12.02) mx; urgency=medium
+
+  * Small fix: run both update-rc.d and systemctl on MX
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 08 Dec 2023 21:41:57 -0500
+
 mx-samba-config (23.12.01) mx; urgency=medium
 
   * Generalize: don't assume service command available

@@ -11,8 +11,7 @@ if [ -x /usr/sbin/update-rc.d ]; then
     update-rc.d nmbd remove
     update-rc.d smbd defaults
     update-rc.d nmbd defaults
-fi
-if [ -x /usr/bin/systemctl ]; then
+elif [ -x /usr/bin/systemctl ]; then
     systemctl unmask smbd
     systemctl unmask nmbd
     systemctl enable smbd
@@ -26,8 +25,7 @@ disablesamba()
 if [ -x /usr/sbin/update-rc.d ]; then
     update-rc.d smbd remove
     update-rc.d nmbd remove
-fi
-if [ -x /usr/bin/systemctl ]; then
+elif [ -x /usr/bin/systemctl ]; then
     systemctl disable smbd
     systemctl disable nmbd
     systemctl mask smbd
@@ -69,8 +67,15 @@ if [ -x /usr/bin/systemctl ]; then
     systemctl unmask smbd
     systemctl unmask nmbd
 fi
-service smbd start
-service nmbd start
+
+if [ -x /usr/bin/service ]; then
+    service smbd start
+    service nmbd start
+elif [ -x /usr/bin/systemctl ]; then
+    systemctl start smbd
+    systemctl start nmbd
+fi
+
 if [[ -x /usr/bin/systemctl && $MASKED == "masked" ]]; then
     systemctl mask smbd
     systemctl mask nmbd
@@ -82,8 +87,15 @@ exit $?
 
 stopsamba()
 {
-service smbd stop
-service nmbd stop
+
+if [ -x /usr/bin/service ]; then
+    service smbd stop
+    service nmbd stop
+elif [ -x /usr/bin/systemctl ]; then
+    systemctl stop smbd
+    systemctl stop nmbd
+fi
+
 exit $?
 
 }

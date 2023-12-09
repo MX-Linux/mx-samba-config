@@ -68,7 +68,7 @@ if [ -x /usr/bin/systemctl ]; then
     systemctl unmask nmbd
 fi
 
-if [ -x /usr/bin/service ]; then
+if [ -x /usr/sbin/service ]; then
     service smbd start
     service nmbd start
 elif [ -x /usr/bin/systemctl ]; then
@@ -88,7 +88,7 @@ exit $?
 stopsamba()
 {
 
-if [ -x /usr/bin/service ]; then
+if [ -x /usr/sbin/service ]; then
     service smbd stop
     service nmbd stop
 elif [ -x /usr/bin/systemctl ]; then

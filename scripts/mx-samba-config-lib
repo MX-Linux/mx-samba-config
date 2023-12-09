@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# root level functions requiring password for mx-samba-config
+# Root level functions requiring password for mx-samba-config
 
 # Disable/enable on both systemd and sysV
 # Need to run both update-rc.d and systemctl on MX because we have two init systems
@@ -20,7 +20,6 @@ if [ -x /usr/bin/systemctl ]; then
 fi
 }
 
-
 disablesamba()
 {
 if [ -x /usr/sbin/update-rc.d ]; then
@@ -37,33 +36,25 @@ fi
 
 addsambauser()
 {
-
 echo -ne "$pass\n$pass" | smbpasswd -as "$user"
 exit $?
-
 }
 
 removesambauser()
 {
-
 pdbedit --delete "$user"
 exit $?
-
 }
 
 changesambapasswd()
 {
-
 echo -ne "$pass\n$pass" | smbpasswd -U "$user"
 exit $?
-
 }
 
-
-#service works for starting and stopping on both sysV and systemd
+# service works for starting and stopping on both sysV and systemd
 startsamba()
 {
-
 if [ -x /usr/bin/systemctl ]; then
     MASKED=$(systemctl is-enabled smbd)
     systemctl unmask smbd
@@ -84,12 +75,10 @@ if [[ -x /usr/bin/systemctl && $MASKED == "masked" ]]; then
 fi
 
 exit $?
-
 }
 
 stopsamba()
 {
-
 if [ -x /usr/sbin/service ]; then
     service smbd stop
     service nmbd stop
@@ -99,9 +88,7 @@ elif [ -x /usr/bin/systemctl ]; then
 fi
 
 exit $?
-
 }
-
 
 main()
 {

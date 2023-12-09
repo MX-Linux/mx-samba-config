@@ -161,7 +161,7 @@
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>About this application</source>
-        <translation>關於本程式</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
@@ -171,12 +171,12 @@
     <message>
         <location filename="../mainwindow.ui" line="334"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="366"/>
         <source>Display help </source>
-        <translation>顯示說明</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="369"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../mainwindow.ui" line="376"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="411"/>
@@ -196,12 +196,12 @@
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>&amp;Close</source>
-        <translation>關閉（&amp;C）</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -224,7 +224,7 @@
         <location filename="../mainwindow.cpp" line="556"/>
         <location filename="../mainwindow.cpp" line="569"/>
         <source>Error</source>
-        <translation>錯誤</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="379"/>
         <source>Version: </source>
-        <translation>版本：</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="381"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="383"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>MX Linux 版權所有 (c)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="384"/>
@@ -414,23 +414,23 @@
     <message>
         <location filename="../about.cpp" line="42"/>
         <source>License</source>
-        <translation>授權條款</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <location filename="../about.cpp" line="52"/>
         <source>Changelog</source>
-        <translation>變更紀錄</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="44"/>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="64"/>
         <source>&amp;Close</source>
-        <translation>關閉（&amp;C）</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="61"/>

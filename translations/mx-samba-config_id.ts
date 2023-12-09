@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="id">
+<TS version="2.1" language="id_ID">
 <context>
     <name>EditShare</name>
     <message>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>About this application</source>
-        <translation>Tentang aplikasi ini</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
@@ -171,12 +171,12 @@
     <message>
         <location filename="../mainwindow.ui" line="334"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="366"/>
         <source>Display help </source>
-        <translation>Tampilkan bantuan</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="369"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../mainwindow.ui" line="376"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="411"/>
@@ -196,12 +196,12 @@
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>&amp;Close</source>
-        <translation>&amp;Tutup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -224,7 +224,7 @@
         <location filename="../mainwindow.cpp" line="556"/>
         <location filename="../mainwindow.cpp" line="569"/>
         <source>Error</source>
-        <translation>Galat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="379"/>
         <source>Version: </source>
-        <translation>Versi:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="381"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="383"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="384"/>
@@ -414,23 +414,23 @@
     <message>
         <location filename="../about.cpp" line="42"/>
         <source>License</source>
-        <translation>Lisensi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <location filename="../about.cpp" line="52"/>
         <source>Changelog</source>
-        <translation>Changelog</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="44"/>
         <source>Cancel</source>
-        <translation>Batal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="64"/>
         <source>&amp;Close</source>
-        <translation>&amp;Tutup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="61"/>

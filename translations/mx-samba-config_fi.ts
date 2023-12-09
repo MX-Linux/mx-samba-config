@@ -306,7 +306,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="378"/>
         <source>MX Samba Config</source>
-        <translation type="unfinished"></translation>
+        <translation>MX Samba Config</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="379"/>

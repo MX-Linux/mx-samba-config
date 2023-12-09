@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sd">
+<TS version="2.1" language="sd_PK">
 <context>
     <name>EditShare</name>
     <message>

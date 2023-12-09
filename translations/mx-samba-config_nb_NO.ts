@@ -26,12 +26,12 @@
     <message>
         <location filename="../editshare.ui" line="51"/>
         <source>Yes</source>
-        <translation>Ja</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="56"/>
         <source>No</source>
-        <translation>Nei</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="64"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>About this application</source>
-        <translation>Om denne applikasjonen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
@@ -171,12 +171,12 @@
     <message>
         <location filename="../mainwindow.ui" line="334"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="366"/>
         <source>Display help </source>
-        <translation>Vis hjelp</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="369"/>
@@ -186,22 +186,22 @@
     <message>
         <location filename="../mainwindow.ui" line="376"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="411"/>
         <source>Quit application</source>
-        <translation>Lukk programmet</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>&amp;Close</source>
-        <translation>&amp;Lukk</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -224,7 +224,7 @@
         <location filename="../mainwindow.cpp" line="556"/>
         <location filename="../mainwindow.cpp" line="569"/>
         <source>Error</source>
-        <translation>Feil</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="126"/>
         <source>Yes</source>
-        <translation>Ja</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="130"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="378"/>
         <source>About %1</source>
-        <translation>Om %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="378"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="379"/>
         <source>Version: </source>
-        <translation>Versjon:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="381"/>
@@ -331,7 +331,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="391"/>
         <source>%1 Help</source>
-        <translation>%1 Hjelp</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="404"/>
@@ -425,12 +425,12 @@
     <message>
         <location filename="../about.cpp" line="44"/>
         <source>Cancel</source>
-        <translation>Avbryt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="64"/>
         <source>&amp;Close</source>
-        <translation>&amp;Lukk</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="61"/>

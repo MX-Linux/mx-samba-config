@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="bg">
+<TS version="2.1" language="bg_BG">
 <context>
     <name>EditShare</name>
     <message>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../editshare.ui" line="51"/>
         <source>Yes</source>
-        <translation>Да</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="56"/>
         <source>No</source>
-        <translation>Не</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="64"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="32"/>
         <source>Shares</source>
-        <translation>Дялове</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="41"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../mainwindow.ui" line="194"/>
         <source>Users</source>
-        <translation>Потребители</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="219"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>About this application</source>
-        <translation>Относно това приложение</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
@@ -171,12 +171,12 @@
     <message>
         <location filename="../mainwindow.ui" line="334"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="366"/>
         <source>Display help </source>
-        <translation>Помощ за дисплея</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="369"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../mainwindow.ui" line="376"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="411"/>
@@ -196,12 +196,12 @@
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>&amp;Close</source>
-        <translation>&amp;Затвори</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -224,7 +224,7 @@
         <location filename="../mainwindow.cpp" line="556"/>
         <location filename="../mainwindow.cpp" line="569"/>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="126"/>
         <source>Yes</source>
-        <translation>Да</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="130"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="379"/>
         <source>Version: </source>
-        <translation>Версия:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="381"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="383"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="384"/>
@@ -414,23 +414,23 @@
     <message>
         <location filename="../about.cpp" line="42"/>
         <source>License</source>
-        <translation>Лиценз</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <location filename="../about.cpp" line="52"/>
         <source>Changelog</source>
-        <translation>Промени</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="44"/>
         <source>Cancel</source>
-        <translation>Отказ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="64"/>
         <source>&amp;Close</source>
-        <translation>&amp;Затвори</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="61"/>

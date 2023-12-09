@@ -138,7 +138,7 @@
         <location filename="../mainwindow.cpp" line="327"/>
         <location filename="../mainwindow.cpp" line="353"/>
         <source>E&amp;nable Automatic Samba Startup</source>
-        <translation>Samba automatisch starten</translation>
+        <translation>&amp;Samba automatisch starten</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="226"/>

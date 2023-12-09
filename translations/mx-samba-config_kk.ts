@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="kk">
+<TS version="2.1" language="kk_KZ">
 <context>
     <name>EditShare</name>
     <message>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../editshare.ui" line="51"/>
         <source>Yes</source>
-        <translation>Иә</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="56"/>
         <source>No</source>
-        <translation>Жоқ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="64"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>About this application</source>
-        <translation>Бұл қолданба жөнінде</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
@@ -171,12 +171,12 @@
     <message>
         <location filename="../mainwindow.ui" line="334"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="366"/>
         <source>Display help </source>
-        <translation>Көмекті көрсету</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="369"/>
@@ -186,12 +186,12 @@
     <message>
         <location filename="../mainwindow.ui" line="376"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="411"/>
         <source>Quit application</source>
-        <translation>Қолданба жұмысын аяқтау</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="414"/>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../mainwindow.ui" line="421"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -224,7 +224,7 @@
         <location filename="../mainwindow.cpp" line="556"/>
         <location filename="../mainwindow.cpp" line="569"/>
         <source>Error</source>
-        <translation>Қате</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="94"/>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="126"/>
         <source>Yes</source>
-        <translation>Иә</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="130"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="379"/>
         <source>Version: </source>
-        <translation>Нұсқасы:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="381"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="383"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="384"/>
@@ -414,7 +414,7 @@
     <message>
         <location filename="../about.cpp" line="42"/>
         <source>License</source>
-        <translation>Лицензиясы</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
@@ -425,7 +425,7 @@
     <message>
         <location filename="../about.cpp" line="44"/>
         <source>Cancel</source>
-        <translation>Бас тарту</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="64"/>
@@ -435,7 +435,7 @@
     <message>
         <location filename="../main.cpp" line="61"/>
         <source>You must run this program as normal user.</source>
-        <translation>Бұл бағдарламаны қалыпты пайдаланушы атынан жөнелтуіңіз керек.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

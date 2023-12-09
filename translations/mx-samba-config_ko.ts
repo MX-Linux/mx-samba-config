@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ko">
+<TS version="2.1" language="ko_KR">
 <context>
     <name>EditShare</name>
     <message>
@@ -425,7 +425,7 @@
     <message>
         <location filename="../about.cpp" line="44"/>
         <source>Cancel</source>
-        <translation>취소</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../about.cpp" line="64"/>

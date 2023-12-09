@@ -328,7 +328,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="384"/>
         <source>%1 License</source>
-        <translation>%1 Ruhsat</translation>
+        <translation>%1 Lisans</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="391"/>
@@ -416,7 +416,7 @@
     <message>
         <location filename="../about.cpp" line="42"/>
         <source>License</source>
-        <translation>Ruhsat</translation>
+        <translation>Lisans</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>

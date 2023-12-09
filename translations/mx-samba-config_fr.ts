@@ -181,7 +181,7 @@
     <message>
         <location filename="../mainwindow.ui" line="369"/>
         <source>&amp;Help</source>
-        <translation>Aide &amp;?</translation>
+        <translation>A&amp;ide</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="376"/>

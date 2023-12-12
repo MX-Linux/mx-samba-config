@@ -228,7 +228,6 @@ void MainWindow::refreshShareList()
         if (list.isEmpty()) {
             continue;
         }
-        QStringList fixed_list;
         list.first()
             .remove(QRegularExpression(QStringLiteral("^\\[")))
             .remove(QRegularExpression(QStringLiteral("]$")));

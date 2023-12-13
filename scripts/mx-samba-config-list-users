@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-#list users for mx-samba-config
+# list users for mx-samba-config
 
-/usr/bin/pdbedit --list
+_pdbedit=$(which pdbedit)
 
+exec "$_pdbedit" --list

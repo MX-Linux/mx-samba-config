@@ -1,36 +1,56 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Root level functions requiring password for mx-samba-config
 
+# Find binaries
+_update_rc=$(which update-rc.d)
+_systemctl=$(which systemctl)
+_service=$(which service)
+
+# Service names for MX
+_smbd="smbd"
+_nmbd="nmbd"
+
+# Service names for non-MX systems
+if [ -x "$_systemctl" ]; then
+    if "$_systemctl" list-unit-files smb.service 2>&1 > /dev/null ; then
+        _smbd="smb"
+    fi
+    if "$_systemctl" list-unit-files nmb.service 2>&1 > /dev/null ; then
+        _nmbd="nmb"
+    fi
+fi
+
 # Disable/enable on both systemd and sysV
 # Need to run both update-rc.d and systemctl on MX because we have two init systems
+
 enablesamba()
 {
-if [ -x /usr/sbin/update-rc.d ]; then
-    update-rc.d smbd remove
-    update-rc.d nmbd remove
-    update-rc.d smbd defaults
-    update-rc.d nmbd defaults
+if [ -x "$_update_rc" ]; then
+    "$_update_rc" $_smbd remove
+    "$_update_rc" $_nmbd remove
+    "$_update_rc" $_smbd defaults
+    "$_update_rc" $_nmbd defaults
 fi
-if [ -x /usr/bin/systemctl ]; then
-    systemctl unmask smbd
-    systemctl unmask nmbd
-    systemctl enable smbd
-    systemctl enable nmbd
+if [ -x "$_systemctl" ]; then
+    "$_systemctl" unmask $_smbd
+    "$_systemctl" unmask $_nmbd
+    "$_systemctl" enable $_smbd
+    "$_systemctl" enable $_nmbd
 fi
 }
 
 disablesamba()
 {
-if [ -x /usr/sbin/update-rc.d ]; then
-    update-rc.d smbd remove
-    update-rc.d nmbd remove
+if [ -x "$_update_rc" ]; then
+    "$_update_rc" $_smbd remove
+    "$_update_rc" $_nmbd remove
 fi
-if [ -x /usr/bin/systemctl ]; then
-    systemctl disable smbd
-    systemctl disable nmbd
-    systemctl mask smbd
-    systemctl mask nmbd
+if [ -x "$_systemctl" ]; then
+    "$_systemctl" disable $_smbd
+    "$_systemctl" disable $_nmbd
+    "$_systemctl" mask $_smbd
+    "$_systemctl" mask $_nmbd
 fi
 }
 
@@ -52,26 +72,25 @@ echo -ne "$pass\n$pass" | smbpasswd -U "$user"
 exit $?
 }
 
-# service works for starting and stopping on both sysV and systemd
 startsamba()
 {
-if [ -x /usr/bin/systemctl ]; then
-    MASKED=$(systemctl is-enabled smbd)
-    systemctl unmask smbd
-    systemctl unmask nmbd
+if [ -x "$_systemctl" ]; then
+    MASKED=$("$_systemctl" is-enabled smbd)
+    "$_systemctl" unmask $_smbd
+    "$_systemctl" unmask $_nmbd
 fi
 
-if [ -x /usr/sbin/service ]; then
-    service smbd start
-    service nmbd start
-elif [ -x /usr/bin/systemctl ]; then
-    systemctl start smbd
-    systemctl start nmbd
+if [ -x "$_service" ]; then
+    "$_service" $_smbd start
+    "$_service" $_nmbd start
+elif [ -x "$_systemctl" ]; then
+    "$_systemctl" start $_smbd
+    "$_systemctl" start $_nmbd
 fi
 
-if [[ -x /usr/bin/systemctl && $MASKED == "masked" ]]; then
-    systemctl mask smbd
-    systemctl mask nmbd
+if [[ -x "$_systemctl" && $MASKED == "masked" ]]; then
+    "$_systemctl" mask $_smbd
+    "$_systemctl" mask $_nmbd
 fi
 
 exit $?
@@ -79,12 +98,12 @@ exit $?
 
 stopsamba()
 {
-if [ -x /usr/sbin/service ]; then
-    service smbd stop
-    service nmbd stop
-elif [ -x /usr/bin/systemctl ]; then
-    systemctl stop smbd
-    systemctl stop nmbd
+if [ -x "$_service" ]; then
+    "$_service" $_smbd stop
+    "$_service" $_nmbd stop
+elif [ -x "$_systemctl" ]; then
+    "$_systemctl" stop $_smbd
+    "$_systemctl" stop $_nmbd
 fi
 
 exit $?

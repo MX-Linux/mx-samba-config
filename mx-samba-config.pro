@@ -40,7 +40,6 @@ SOURCES += \
 HEADERS  += \
     editshare.h \
     mainwindow.h \
-    version.h \
     about.h
 
 FORMS    += \

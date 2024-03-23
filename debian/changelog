@@ -1,3 +1,9 @@
+mx-samba-config (24.3) mx; urgency=medium
+
+  * Update translations 
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 23 Mar 2024 12:59:21 -0400
+
 mx-samba-config (23.12.02) mx; urgency=medium
 
   * Small fix: run both update-rc.d and systemctl on MX

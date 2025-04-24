@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="lt">
+<TS version="2.1" language="gl">
 <context>
     <name>EditShare</name>
     <message>
         <location filename="../editshare.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Dialogas</translation>
+        <translation>Caixa de diálogo</translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="20"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../editshare.ui" line="30"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="37"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../editshare.ui" line="51"/>
         <source>Yes</source>
-        <translation>Taip</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="56"/>
         <source>No</source>
-        <translation>Ne</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="64"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../mainwindow.ui" line="32"/>
         <source>Shares</source>
-        <translation>Viešiniai</translation>
+        <translation>Intercambios</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="41"/>
@@ -86,12 +86,12 @@
     <message>
         <location filename="../mainwindow.ui" line="70"/>
         <source>&amp;Edit</source>
-        <translation>&amp;Taisyti</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="80"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="85"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../mainwindow.ui" line="194"/>
         <source>Users</source>
-        <translation>Naudotojai</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="219"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>About this application</source>
-        <translation>Apie šią programą</translation>
+        <translation>Sobre esta aplicación</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
@@ -176,12 +176,12 @@
     <message>
         <location filename="../mainwindow.ui" line="365"/>
         <source>Display help </source>
-        <translation>Rodyti žinyną</translation>
+        <translation>Amosar axuda</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="368"/>
         <source>&amp;Help</source>
-        <translation>Ž&amp;inynas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="374"/>
@@ -191,12 +191,12 @@
     <message>
         <location filename="../mainwindow.ui" line="409"/>
         <source>Quit application</source>
-        <translation>Išeiti iš programos</translation>
+        <translation>Saír do aplicativo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="412"/>
         <source>&amp;Close</source>
-        <translation>&amp;Užverti</translation>
+        <translation>&amp;Cerrar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="418"/>
@@ -225,7 +225,7 @@
         <location filename="../mainwindow.cpp" line="554"/>
         <location filename="../mainwindow.cpp" line="569"/>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="104"/>
@@ -235,7 +235,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="101"/>
         <source>Yes</source>
-        <translation>Taip</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
@@ -312,7 +312,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="362"/>
         <source>About %1</source>
-        <translation>Apie %1</translation>
+        <translation>Sobre %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="362"/>
@@ -322,7 +322,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="363"/>
         <source>Version: </source>
-        <translation>Versija: </translation>
+        <translation>Versión: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="365"/>
@@ -332,17 +332,17 @@
     <message>
         <location filename="../mainwindow.cpp" line="367"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Autorių teisės (c) MX Linux</translation>
+        <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="368"/>
         <source>%1 License</source>
-        <translation>%1 licencija</translation>
+        <translation>Licenza de %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="375"/>
         <source>%1 Help</source>
-        <translation>%1 žinynas</translation>
+        <translation>Axuda para %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="386"/>
@@ -363,13 +363,13 @@
         <location filename="../mainwindow.cpp" line="403"/>
         <location filename="../mainwindow.cpp" line="457"/>
         <source>Password:</source>
-        <translation>Slaptažodis:</translation>
+        <translation>Contrasinal:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="404"/>
         <location filename="../mainwindow.cpp" line="458"/>
         <source>Confirm password:</source>
-        <translation>Pakartokite slaptažodį:</translation>
+        <translation>Confirmar contrasinal:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="418"/>
@@ -464,28 +464,28 @@
     <message>
         <location filename="../about.cpp" line="42"/>
         <source>License</source>
-        <translation>Licencija</translation>
+        <translation>Licenza</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="43"/>
         <location filename="../about.cpp" line="52"/>
         <source>Changelog</source>
-        <translation>Keitinių žurnalas</translation>
+        <translation>Rexistro dos cambios</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="44"/>
         <source>Cancel</source>
-        <translation>Atsisakyti</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="64"/>
         <source>&amp;Close</source>
-        <translation>&amp;Užverti</translation>
+        <translation>&amp;Cerrar</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="64"/>
         <source>You must run this program as normal user.</source>
-        <translation>Privalote paleisti šią programą kaip normalus naudotojas.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

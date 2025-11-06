@@ -148,7 +148,7 @@ QStringList MainWindow::listUsers()
         return {};
     }
 
-    const QStringList output = QString(proc.readAllStandardOutput().trimmed()).split('\n');
+    const QStringList output = QString(proc.readAllStandardOutput().trimmed()).split('\n', Qt::SkipEmptyParts);
     if (output.isEmpty()) {
         return {};
     }

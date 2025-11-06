@@ -259,12 +259,21 @@ void MainWindow::refreshUserList()
  *  -- returns when the process ends, but doesn't freeze the GUI (can update progress bars, etc)
  * For quick commands system() calls are probably more efficient, GUI freezes
  * For non-blocking commands proc.start() */
-int MainWindow::run(const QString &cmd, const QStringList &args)
+int MainWindow::run(const QString &cmd, const QStringList &args, const QByteArray &input)
 {
     setCursor(QCursor(Qt::BusyCursor));
     QEventLoop loop;
     connect(&proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), &loop, &QEventLoop::quit);
-    proc.start(cmd, args, QIODevice::ReadOnly);
+    const QIODevice::OpenMode mode = input.isEmpty() ? QIODevice::ReadOnly : QIODevice::ReadWrite;
+    proc.start(cmd, args, mode);
+    if (!proc.waitForStarted()) {
+        setCursor(QCursor(Qt::ArrowCursor));
+        return -1;
+    }
+    if (!input.isEmpty()) {
+        proc.write(input);
+        proc.closeWriteChannel();
+    }
     loop.exec();
     setCursor(QCursor(Qt::ArrowCursor));
     return proc.exitCode();
@@ -428,8 +437,10 @@ void MainWindow::pushAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        QStringList args {"/usr/lib/mx-samba-config/mx-samba-config-lib", "addsambauser", passText, userText};
-        if (run("pkexec", args) != 0) {
+        QStringList args {"/usr/lib/mx-samba-config/mx-samba-config-lib", "addsambauser", userText};
+        QByteArray passwordInput = passText.toUtf8();
+        passwordInput.append('\n');
+        if (run("pkexec", args, passwordInput) != 0) {
             QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
             return;
         }
@@ -477,8 +488,10 @@ void MainWindow::pushUserPassword_clicked()
             return;
         }
 
-        const QStringList args {"/usr/lib/mx-samba-config/mx-samba-config-lib", "changesambapasswd", passwordText, currentUser};
-        if (run("pkexec", args) != 0) {
+        QStringList args {"/usr/lib/mx-samba-config/mx-samba-config-lib", "changesambapasswd", currentUser};
+        QByteArray passwordInput = passwordText.toUtf8();
+        passwordInput.append('\n');
+        if (run("pkexec", args, passwordInput) != 0) {
             QMessageBox::critical(this, tr("Error"), tr("Could not change password."));
             return;
         }

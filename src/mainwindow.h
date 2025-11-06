@@ -63,7 +63,7 @@ private:
     QProcess proc;
     QSettings settings;
     QStringList listUsers();
-    int run(const QString &, const QStringList &);
+    int run(const QString &, const QStringList &, const QByteArray &input = {});
     void buildUserList(EditShare *);
     void checkSambashareGroup();
     void checksamba();

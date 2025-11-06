@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="es_ES">
 <context>
     <name>EditShare</name>
     <message>
@@ -233,10 +231,6 @@
         <translation>Error, imposible añadir el recurso compartido. Nombre de recurso compartido vacío</translation>
     </message>
     <message>
-        <source>Path: %1 doesn&apos;t exist.</source>
-        <translation type="vanished">Ruta: %1 no existe.</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="101"/>
         <source>Yes</source>
         <translation>Sí</translation>
@@ -244,7 +238,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
         <source>Path: %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruta: %1 no existe.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="137"/>
@@ -288,7 +282,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="287"/>
         <source>Samba is not installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Samba no está instalado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -301,18 +295,14 @@
         <translation>Samba no está ejecutándose</translation>
     </message>
     <message>
-        <source>Samba not installed</source>
-        <translation type="vanished">Samba no está instalado</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>El servicio de autoinicio de Samba está habilitado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>El servicio de autoinicio de Samba está deshabilitado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="295"/>
@@ -408,12 +398,12 @@
         <location filename="../mainwindow.cpp" line="498"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>No user selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se seleccionó ningún usuario.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="451"/>
@@ -423,7 +413,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="471"/>
         <source>Password fields cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los campos de contraseña no pueden estar vacíos.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="482"/>
@@ -434,12 +424,12 @@
         <location filename="../mainwindow.cpp" line="492"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>No share selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha seleccionado ningún recurso.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="498"/>
         <source>Selected share is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>La selección a compartir está vacía.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="503"/>
@@ -449,12 +439,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Exito</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Share deleted successfully: </source>
-        <translation type="unfinished"></translation>
+        <translation>El recurso compartido se eliminó exitosamente:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
@@ -466,11 +456,7 @@
         <location filename="../mainwindow.cpp" line="539"/>
         <location filename="../mainwindow.cpp" line="554"/>
         <source>Error processing permissions: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error: trying to process permissions: </source>
-        <translation type="vanished">Error: intentando procesar los permisos: </translation>
+        <translation>Error al procesar permisos:</translation>
     </message>
 </context>
 <context>

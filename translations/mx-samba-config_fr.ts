@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fr">
 <context>
     <name>EditShare</name>
     <message>
@@ -16,7 +14,7 @@
     <message>
         <location filename="../editshare.ui" line="30"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="37"/>
@@ -86,7 +84,7 @@
     <message>
         <location filename="../mainwindow.ui" line="70"/>
         <source>&amp;Edit</source>
-        <translation>&amp;Editer</translation>
+        <translation>&amp;Éditer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="80"/>
@@ -121,7 +119,7 @@
     <message>
         <location filename="../mainwindow.ui" line="150"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;No samba users found&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Aucun utilisateur samba trouvé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Aucun utilisateur samba détecté&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="171"/>
@@ -166,7 +164,7 @@
     <message>
         <location filename="../mainwindow.ui" line="327"/>
         <source>A&amp;bout...</source>
-        <translation>A&amp;propos de...</translation>
+        <translation>À&amp;propos de…</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="333"/>
@@ -233,10 +231,6 @@
         <translation>Erreur, impossible d’ajouter un partage. Nom de partage vide</translation>
     </message>
     <message>
-        <source>Path: %1 doesn&apos;t exist.</source>
-        <translation type="vanished">Le chemin : %1 n’existe pas.</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="101"/>
         <source>Yes</source>
         <translation>Oui</translation>
@@ -244,14 +238,14 @@
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
         <source>Path: %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le chemin : %1 n’existe pas.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="137"/>
         <source>Could not add share. Error message:
 
 %1</source>
-        <translation>Impossible d’ajouter un partage. Message d’erreur :
+        <translation>Impossible d’ajouter un partage. Message d’erreur :
 
 %1</translation>
     </message>
@@ -288,7 +282,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="287"/>
         <source>Samba is not installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Samba n’est pas installé</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -301,18 +295,14 @@
         <translation>Samba est inactif</translation>
     </message>
     <message>
-        <source>Samba not installed</source>
-        <translation type="vanished">Samba n’est pas installé</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Le démarrage automatique Samba est activé</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Le démarrage automatique Samba est désactivé</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="295"/>
@@ -332,7 +322,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="363"/>
         <source>Version: </source>
-        <translation>Version : </translation>
+        <translation>Version : </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="365"/>
@@ -357,29 +347,29 @@
     <message>
         <location filename="../mainwindow.cpp" line="386"/>
         <source>Cannot delete user: </source>
-        <translation>Impossible de supprimer l’utilisateur : </translation>
+        <translation>Impossible de supprimer l’utilisateur : </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="395"/>
         <source>Enter the username and password:</source>
-        <translation>Entrez le nom d’utilisateur et le mot de passe :</translation>
+        <translation>Entrez le nom d’utilisateur et le mot de passe :</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="402"/>
         <source>Username:</source>
-        <translation>Nom d’utilisateur :</translation>
+        <translation>Nom d’utilisateur :</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
         <location filename="../mainwindow.cpp" line="457"/>
         <source>Password:</source>
-        <translation>Mot de passe :</translation>
+        <translation>Mot de passe :</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="404"/>
         <location filename="../mainwindow.cpp" line="458"/>
         <source>Confirm password:</source>
-        <translation>Confirmer le mot de passe :</translation>
+        <translation>Confirmer le mot de passe :</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="418"/>
@@ -408,12 +398,12 @@
         <location filename="../mainwindow.cpp" line="498"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Attention</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>No user selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun utilisateur sélectionné.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="451"/>
@@ -423,7 +413,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="471"/>
         <source>Password fields cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les champs du mot de passe ne peuvent pas être vides.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="482"/>
@@ -434,27 +424,27 @@
         <location filename="../mainwindow.cpp" line="492"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>No share selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun partage sélectionné.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="498"/>
         <source>Selected share is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le partage sélectionné est vide.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="503"/>
         <source>Cannot delete share: </source>
-        <translation>Impossible de supprimer le partage : </translation>
+        <translation>Impossible de supprimer le partage : </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Installation réussie</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Share deleted successfully: </source>
-        <translation type="unfinished"></translation>
+        <translation>Le partage a bien été supprimé : </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
@@ -466,11 +456,7 @@
         <location filename="../mainwindow.cpp" line="539"/>
         <location filename="../mainwindow.cpp" line="554"/>
         <source>Error processing permissions: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error: trying to process permissions: </source>
-        <translation type="vanished">Erreur : essai de traitement des autorisations : </translation>
+        <translation>Erreur dans le traitement des autorisations : </translation>
     </message>
 </context>
 <context>

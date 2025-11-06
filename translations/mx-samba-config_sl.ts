@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="sl">
 <context>
     <name>EditShare</name>
     <message>
@@ -233,10 +231,6 @@
         <translation>Napaka - skupne rabe ni bilo mogoče dodati. Prazno ime skupne rabe</translation>
     </message>
     <message>
-        <source>Path: %1 doesn&apos;t exist.</source>
-        <translation type="vanished">Pot: %1 ne obstaja.</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="101"/>
         <source>Yes</source>
         <translation>Da</translation>
@@ -244,7 +238,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
         <source>Path: %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pot: %1 ne obstaja.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="137"/>
@@ -288,7 +282,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="287"/>
         <source>Samba is not installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Samba ni nameščena</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -301,18 +295,14 @@
         <translation>Samba ni zagnana</translation>
     </message>
     <message>
-        <source>Samba not installed</source>
-        <translation type="vanished">Samba ni nameščena</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Samodejni zagon same je vklopljen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Samodejni zagon same je izklopljen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="295"/>
@@ -408,12 +398,12 @@
         <location filename="../mainwindow.cpp" line="498"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>No user selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Noben uporabnik ni izbran.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="451"/>
@@ -423,7 +413,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="471"/>
         <source>Password fields cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Polja za geslo ne smejo biti prazna.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="482"/>
@@ -434,12 +424,12 @@
         <location filename="../mainwindow.cpp" line="492"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>No share selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ni izbrane skupne rabe.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="498"/>
         <source>Selected share is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbrana skupna raba je prazna.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="503"/>
@@ -449,12 +439,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Uspešno</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Share deleted successfully: </source>
-        <translation type="unfinished"></translation>
+        <translation>Skupna raba je bila izbrisana:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
@@ -466,11 +456,7 @@
         <location filename="../mainwindow.cpp" line="539"/>
         <location filename="../mainwindow.cpp" line="554"/>
         <source>Error processing permissions: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error: trying to process permissions: </source>
-        <translation type="vanished">Napaka: poskus obdelave dovoljenj:</translation>
+        <translation>Napaka pri obdelavi dovolenj:</translation>
     </message>
 </context>
 <context>

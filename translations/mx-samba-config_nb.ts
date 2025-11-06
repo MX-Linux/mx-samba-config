@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nb">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="nb">
 <context>
     <name>EditShare</name>
     <message>
@@ -233,10 +231,6 @@
         <translation>Klarte ikke å legge til delt ressurs fordi navnet er tomt.</translation>
     </message>
     <message>
-        <source>Path: %1 doesn&apos;t exist.</source>
-        <translation type="vanished">Sti: %1 finnes ikke.</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="101"/>
         <source>Yes</source>
         <translation>Ja</translation>
@@ -244,7 +238,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
         <source>Path: %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sti: %1 finnes ikke.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="137"/>
@@ -288,7 +282,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="287"/>
         <source>Samba is not installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Samba er ikke installert</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -301,18 +295,14 @@
         <translation>Samba kjører ikke</translation>
     </message>
     <message>
-        <source>Samba not installed</source>
-        <translation type="vanished">Samba er ikke installert</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Tjeneste for automatisk oppstart av Samba er slått på</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Tjeneste for automatisk oppstart av Samba er slått av</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="295"/>
@@ -408,12 +398,12 @@
         <location filename="../mainwindow.cpp" line="498"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>No user selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen bruker valgt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="451"/>
@@ -423,7 +413,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="471"/>
         <source>Password fields cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Felt for passord kan ikke stå tomme.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="482"/>
@@ -434,12 +424,12 @@
         <location filename="../mainwindow.cpp" line="492"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>No share selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen delt ressurs valgt.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="498"/>
         <source>Selected share is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valgt delt ressurs er tom.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="503"/>
@@ -449,12 +439,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Vellykket</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Share deleted successfully: </source>
-        <translation type="unfinished"></translation>
+        <translation>Delt ressurs er nå slettet:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
@@ -466,11 +456,7 @@
         <location filename="../mainwindow.cpp" line="539"/>
         <location filename="../mainwindow.cpp" line="554"/>
         <source>Error processing permissions: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error: trying to process permissions: </source>
-        <translation type="vanished">Feil: Forsøker å behandle rettigheter:</translation>
+        <translation>Feil ved behandling av rettigheter:</translation>
     </message>
 </context>
 <context>

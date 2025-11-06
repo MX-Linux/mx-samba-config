@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr_BE">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fr_BE">
 <context>
     <name>EditShare</name>
     <message>
@@ -16,7 +14,7 @@
     <message>
         <location filename="../editshare.ui" line="30"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation> …</translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="37"/>
@@ -46,7 +44,7 @@
     <message>
         <location filename="../editshare.ui" line="111"/>
         <source>Access rights for valid users</source>
-        <translation>Droits d’accès pour les utilisateurs autorisés</translation>
+        <translation>Droits d’accès pour les utilisateurs•rices autorisés•es</translation>
     </message>
     <message>
         <location filename="../editshare.cpp" line="52"/>
@@ -69,7 +67,7 @@
     <message>
         <location filename="../mainwindow.ui" line="41"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;No samba user shares found&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Aucun partage utilisateur samba trouvé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Aucun partage utilisateur•rice samba trouvé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -86,7 +84,7 @@
     <message>
         <location filename="../mainwindow.ui" line="70"/>
         <source>&amp;Edit</source>
-        <translation>&amp;Editer</translation>
+        <translation>&amp;Éditer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="80"/>
@@ -116,12 +114,12 @@
     <message>
         <location filename="../mainwindow.ui" line="142"/>
         <source>&amp;Users</source>
-        <translation>&amp;Utilisateurs</translation>
+        <translation>&amp;Utilisateurs•rices</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="150"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;No samba users found&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Aucun utilisateur samba trouvé&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Aucun•e utilisateur•rice samba détecté•e&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="171"/>
@@ -131,7 +129,7 @@
     <message>
         <location filename="../mainwindow.ui" line="194"/>
         <source>Users</source>
-        <translation>Utilisateurs</translation>
+        <translation>Utilisateurs•rices</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="219"/>
@@ -166,7 +164,7 @@
     <message>
         <location filename="../mainwindow.ui" line="327"/>
         <source>A&amp;bout...</source>
-        <translation>A&amp;propos de ...</translation>
+        <translation>À&amp;propos de …</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="333"/>
@@ -233,10 +231,6 @@
         <translation>Erreur, impossible d’ajouter un partage. Nom de partage vide</translation>
     </message>
     <message>
-        <source>Path: %1 doesn&apos;t exist.</source>
-        <translation type="vanished">Le chemin: %1 n’existe pas.</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="101"/>
         <source>Yes</source>
         <translation>Oui</translation>
@@ -244,7 +238,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
         <source>Path: %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le chemin: %1 n’existe pas.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="137"/>
@@ -258,7 +252,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="147"/>
         <source>Error listing users</source>
-        <translation>Erreur dans la liste des utilisateurs</translation>
+        <translation>Erreur dans la liste des utilisateurs•rices</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="186"/>
@@ -283,12 +277,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="277"/>
         <source>Your user doesn&apos;t belong to &apos;sambashare&apos; group  if you just installed the app you might need to restart the system first.</source>
-        <translation>Votre utilisateur n’appartient pas au groupe « sambashare ». Si vous venez d’installer l’application, vous devrez peut-être redémarrer le système.</translation>
+        <translation>Votre utilisateur•rice n’appartient pas au groupe « sambashare ». Si vous venez d’installer l’application, vous devrez peut-être redémarrer le système.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="287"/>
         <source>Samba is not installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Samba n’est pas installé</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -301,18 +295,14 @@
         <translation>Samba est inactif</translation>
     </message>
     <message>
-        <source>Samba not installed</source>
-        <translation type="vanished">Samba n’est pas installé</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Le démarrage automatique Samba est activé</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Le démarrage automatique Samba est désactivé</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="295"/>
@@ -337,7 +327,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="365"/>
         <source>Program for configuring Samba shares and users.</source>
-        <translation>Programme pour la configuration des partages et des utilisateurs Samba.</translation>
+        <translation>Programme pour la configuration des partages et des utilisateurs•rices Samba.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="367"/>
@@ -357,17 +347,17 @@
     <message>
         <location filename="../mainwindow.cpp" line="386"/>
         <source>Cannot delete user: </source>
-        <translation>Impossible de supprimer l’utilisateur: </translation>
+        <translation>Impossible de supprimer l’utilisateur•rice: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="395"/>
         <source>Enter the username and password:</source>
-        <translation>Entrez le nom d’utilisateur et le mot de passe:</translation>
+        <translation>Entrez le nom d’utilisateur•rice et le mot de passe:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="402"/>
         <source>Username:</source>
-        <translation>Nom d’utilisateur:</translation>
+        <translation>Nom d’utilisateur•rice:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
@@ -384,12 +374,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="418"/>
         <source>Empty username, please enter a name.</source>
-        <translation>Nom d’utilisateur vide, veuillez entrer un nom.</translation>
+        <translation>Nom d’utilisateur•rice vide, veuillez entrer un nom.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="423"/>
         <source>Matching linux user not found on system, make sure you enter a valid username.</source>
-        <translation>Utilisateur linux non trouvé sur le système, veuillez entrer un nom d’utilisateur valide.</translation>
+        <translation>Utilisateur•rice linux non trouvé•e sur le système, veuillez entrer un nom d’utilisateur•rice valide.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="428"/>
@@ -400,7 +390,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="433"/>
         <source>Could not add user.</source>
-        <translation>Impossible d’ajouter un utilisateur.</translation>
+        <translation>Impossible d’ajouter un•e utilisateur•rice.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="444"/>
@@ -408,12 +398,12 @@
         <location filename="../mainwindow.cpp" line="498"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Attention</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>No user selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun•e utilisateur•rice sélectionné•e.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="451"/>
@@ -423,7 +413,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="471"/>
         <source>Password fields cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les champs du mot de passe ne peuvent pas être vides.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="482"/>
@@ -434,12 +424,12 @@
         <location filename="../mainwindow.cpp" line="492"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>No share selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun partage sélectionné.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="498"/>
         <source>Selected share is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le partage sélectionné est vide.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="503"/>
@@ -449,12 +439,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Installation réussie</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Share deleted successfully: </source>
-        <translation type="unfinished"></translation>
+        <translation>Le partage a bien été supprimé: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
@@ -466,11 +456,7 @@
         <location filename="../mainwindow.cpp" line="539"/>
         <location filename="../mainwindow.cpp" line="554"/>
         <source>Error processing permissions: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error: trying to process permissions: </source>
-        <translation type="vanished">Erreur: essai de traitement des autorisations: </translation>
+        <translation>Erreur dans le traitement des autorisations: </translation>
     </message>
 </context>
 <context>
@@ -499,7 +485,7 @@
     <message>
         <location filename="../main.cpp" line="64"/>
         <source>You must run this program as normal user.</source>
-        <translation>Vous devez exécuter cette application en tant qu’utilisateur normal.</translation>
+        <translation>Vous devez exécuter cette application en tant qu’utilisateur•rice normal•e.</translation>
     </message>
 </context>
 </TS>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pt_BR">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="pt_BR">
 <context>
     <name>EditShare</name>
     <message>
@@ -41,7 +39,7 @@
     <message>
         <location filename="../editshare.ui" line="77"/>
         <source>&amp;Guest OK</source>
-        <translation>Permitir o Acesso de C&amp;onvidado</translation>
+        <translation>Permitir o Acesso do C&amp;onvidado</translation>
     </message>
     <message>
         <location filename="../editshare.ui" line="111"/>
@@ -51,7 +49,7 @@
     <message>
         <location filename="../editshare.cpp" line="52"/>
         <source>Select directory to share</source>
-        <translation>Selecione o diretório de compartilhamento</translation>
+        <translation>Selecione o diretório do compartilhamento</translation>
     </message>
 </context>
 <context>
@@ -69,7 +67,7 @@
     <message>
         <location filename="../mainwindow.ui" line="41"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;No samba user shares found&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Não foram encontrados compartilhamentos de usuário no servidor samba&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Não foram encontrados compartilhamentos do usuário no servidor samba&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="50"/>
@@ -111,7 +109,7 @@
     <message>
         <location filename="../mainwindow.ui" line="100"/>
         <source>Guest OK</source>
-        <translation>Permitir o Acesso de Convidado</translation>
+        <translation>Permitir o Acesso do Convidado</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="142"/>
@@ -161,7 +159,7 @@
     <message>
         <location filename="../mainwindow.ui" line="324"/>
         <source>About this application</source>
-        <translation>Sobre este aplicativo</translation>
+        <translation>Sobre este programa</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="327"/>
@@ -191,7 +189,7 @@
     <message>
         <location filename="../mainwindow.ui" line="409"/>
         <source>Quit application</source>
-        <translation>Sair do aplicativo</translation>
+        <translation>Sair do programa</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="412"/>
@@ -230,11 +228,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="104"/>
         <source>Error, could not add share. Empty share name</source>
-        <translation>Ocorreu um erro e não foi possível adicionar o compartilhamento. O nome de compartilhamento está vazio</translation>
-    </message>
-    <message>
-        <source>Path: %1 doesn&apos;t exist.</source>
-        <translation type="vanished">Caminho: %1 não existe.</translation>
+        <translation>Ocorreu um erro e não foi possível adicionar o compartilhamento. O nome do compartilhamento está vazio</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="101"/>
@@ -244,7 +238,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
         <source>Path: %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>O caminho %1 não existe.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="137"/>
@@ -283,12 +277,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="277"/>
         <source>Your user doesn&apos;t belong to &apos;sambashare&apos; group  if you just installed the app you might need to restart the system first.</source>
-        <translation>O seu usuário não pertence ao grupo de compartilhamentos ‘sambashare’, se você acabou de instalar o aplicativo, pode ser necessário reiniciar o sistema operacional.</translation>
+        <translation>O seu usuário não pertence ao grupo do compartilhamentos ‘sambashare’, se você acabou de instalar o programa, pode ser necessário reiniciar o sistema operacional.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="287"/>
         <source>Samba is not installed</source>
-        <translation type="unfinished"></translation>
+        <translation>O servidor Samba não está instalado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -301,18 +295,14 @@
         <translation>O servidor Samba não está em execução</translation>
     </message>
     <message>
-        <source>Samba not installed</source>
-        <translation type="vanished">O servidor Samba não está instalado</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>A inicialização automática do servidor Samba está ativada</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>A inicialização automática do servidor Samba está desativada</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="295"/>
@@ -337,7 +327,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="365"/>
         <source>Program for configuring Samba shares and users.</source>
-        <translation>Programa para configurar compartilhamentos de arquivos de usuários do servidor Samba.</translation>
+        <translation>Programa para configurar os compartilhamentos de arquivos e pastas dos usuários no servidor Samba.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="367"/>
@@ -362,12 +352,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="395"/>
         <source>Enter the username and password:</source>
-        <translation>Insira o nome de usuário e a senha:</translation>
+        <translation>Insira o nome do usuário e a senha:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="402"/>
         <source>Username:</source>
-        <translation>Nome de Usuário:</translation>
+        <translation>Nome do Usuário:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="403"/>
@@ -384,7 +374,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="418"/>
         <source>Empty username, please enter a name.</source>
-        <translation>O nome de usuário está vazio. Por favor, insira um nome.</translation>
+        <translation>O nome do usuário está vazio. Por favor, insira um nome.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="423"/>
@@ -408,12 +398,12 @@
         <location filename="../mainwindow.cpp" line="498"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>No user selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhum usuário foi selecionado.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="451"/>
@@ -423,7 +413,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="471"/>
         <source>Password fields cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Os campos da senha não podem estar vazios.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="482"/>
@@ -434,12 +424,12 @@
         <location filename="../mainwindow.cpp" line="492"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>No share selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhum compartilhamento foi selecionado.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="498"/>
         <source>Selected share is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>O compartilhamento que foi selecionado está vazio.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="503"/>
@@ -449,28 +439,24 @@
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>O processo foi concluído com sucesso.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Share deleted successfully: </source>
-        <translation type="unfinished"></translation>
+        <translation>O compartilhamento foi excluído com sucesso: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
         <location filename="../mainwindow.cpp" line="570"/>
         <source>Samba service is not running. Please start Samba before adding or editing shares</source>
-        <translation>O serviço Samba não está funcionando. Por favor, inicie o servidor Samba antes de adicionar ou editar os compartilhamentos</translation>
+        <translation>O serviço do servidor Samba não está funcionando. Por favor, inicie o servidor Samba antes de adicionar ou editar os compartilhamentos</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="539"/>
         <location filename="../mainwindow.cpp" line="554"/>
         <source>Error processing permissions: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error: trying to process permissions: </source>
-        <translation type="vanished">Ocorreu um erro ao tentar processar as permissões:</translation>
+        <translation>Ocorreu um erro ao processar as permissões: </translation>
     </message>
 </context>
 <context>

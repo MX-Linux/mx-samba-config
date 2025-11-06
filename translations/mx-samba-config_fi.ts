@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fi">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fi">
 <context>
     <name>EditShare</name>
     <message>
@@ -46,7 +44,7 @@
     <message>
         <location filename="../editshare.ui" line="111"/>
         <source>Access rights for valid users</source>
-        <translation>Pääsyoikeudet voimassa oleville käyttäjille</translation>
+        <translation>Oikeudet voimassa oleville käyttäjille</translation>
     </message>
     <message>
         <location filename="../editshare.cpp" line="52"/>
@@ -150,7 +148,7 @@
     <message>
         <location filename="../mainwindow.ui" line="254"/>
         <source>Samba autostart service is disabled</source>
-        <translation>Samba automaattinen käynnistyspalvelu ei ole käytössä</translation>
+        <translation>Samba-palvelu ei käynnisty automaattisesti</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="285"/>
@@ -233,10 +231,6 @@
         <translation>Virhe, jakoa ei voitu lisätä. Jakonimi on tyhjä</translation>
     </message>
     <message>
-        <source>Path: %1 doesn&apos;t exist.</source>
-        <translation type="vanished">Polkua: %1 ei ole olemassa.</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="101"/>
         <source>Yes</source>
         <translation>Kyllä</translation>
@@ -244,7 +238,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="109"/>
         <source>Path: %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Polkua: %1 ei ole olemassa.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="137"/>
@@ -283,12 +277,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="277"/>
         <source>Your user doesn&apos;t belong to &apos;sambashare&apos; group  if you just installed the app you might need to restart the system first.</source>
-        <translation>Käyttäjä ei kuulu &quot;sambashare&quot;-ryhmään, jos olet juuri asentanut sovelluksen, käynnistä järjestelmä ensin uudelleen.</translation>
+        <translation>Käyttäjä ei kuulu &quot;sambashare&quot;-ryhmään, jos olet juuri asentanut sovelluksen, käynnistä ensin tietokone uudelleen.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="287"/>
         <source>Samba is not installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Samba ei ole asennettuna</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -301,23 +295,19 @@
         <translation>Samba ei ole käynnissä</translation>
     </message>
     <message>
-        <source>Samba not installed</source>
-        <translation type="vanished">Samba ei ole asennettuna</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Samba käynnistyy automaattisesti</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>Samba autostart is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Samba ei käynnisty automaattisesti</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="295"/>
         <source>&amp;Disable Automatic Samba Startup</source>
-        <translation>&amp;Poista Samba automaattinen käynnistys</translation>
+        <translation>&amp;Poista automaattinen käynnistyminen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="362"/>
@@ -327,7 +317,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="362"/>
         <source>MX Samba Config</source>
-        <translation>MX Samba Config</translation>
+        <translation>MX Samba-asetukset</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="363"/>
@@ -337,7 +327,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="365"/>
         <source>Program for configuring Samba shares and users.</source>
-        <translation>Ohjelma Samban ja sen käyttäjien määrittämiseen.</translation>
+        <translation>Ohjelma Samba-jakojen ja -käyttäjien määritykseen.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="367"/>
@@ -408,12 +398,12 @@
         <location filename="../mainwindow.cpp" line="498"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="444"/>
         <source>No user selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei valittua käyttäjää.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="451"/>
@@ -423,7 +413,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="471"/>
         <source>Password fields cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasanakentät eivät voi olla tyhjiä.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="482"/>
@@ -434,12 +424,12 @@
         <location filename="../mainwindow.cpp" line="492"/>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>No share selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei jakoa valittuna.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="498"/>
         <source>Selected share is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valittu jako on tyhjä.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="503"/>
@@ -449,28 +439,24 @@
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Onnistui</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="508"/>
         <source>Share deleted successfully: </source>
-        <translation type="unfinished"></translation>
+        <translation>Jako poistettu onnistuneesti:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
         <location filename="../mainwindow.cpp" line="570"/>
         <source>Samba service is not running. Please start Samba before adding or editing shares</source>
-        <translation>Samba-palvelu ei ole käynnissä. Käynnistä Samba ensin jakamisen lisäämistä tai muokkaamista varten</translation>
+        <translation>Samba-palvelu ei ole käynnissä. Käynnistä palvelu ennen jakojen lisäämistä tai muokkaamista.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="539"/>
         <location filename="../mainwindow.cpp" line="554"/>
         <source>Error processing permissions: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error: trying to process permissions: </source>
-        <translation type="vanished">Virhe: yrittäessä käsitellä käyttöoikeuksia:</translation>
+        <translation>Virhe käyttöoikeuksien käsittelyssä:</translation>
     </message>
 </context>
 <context>

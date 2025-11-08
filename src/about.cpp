@@ -10,10 +10,6 @@
 
 #include <unistd.h>
 
-#ifndef VERSION
-    #define VERSION "?.?.?.?"
-#endif
-
 // Display doc as nomal user when run as root
 void displayDoc(const QString &url, const QString &title)
 {

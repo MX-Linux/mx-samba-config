@@ -31,6 +31,10 @@
 #include "mainwindow.h"
 #include <unistd.h>
 
+#ifndef VERSION
+    #define VERSION "0.0.0"
+#endif
+
 int main(int argc, char *argv[])
 {
     // Set Qt platform to XCB (X11) if not already set and we're in X11 environment
@@ -43,6 +47,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QApplication::setOrganizationName(QStringLiteral("MX-Linux"));
     QApplication::setApplicationDisplayName(QStringLiteral("MX Samba Config"));
+    QApplication::setApplicationVersion(QStringLiteral(VERSION));
     QApplication::setWindowIcon(QIcon::fromTheme(QApplication::applicationName()));
 
     QTranslator qtTran;

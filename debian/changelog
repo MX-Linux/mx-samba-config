@@ -1,3 +1,9 @@
+mx-samba-config (25.11.1) mx; urgency=medium
+
+  * Fix displaying version in About menu
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 07 Nov 2025 21:01:26 -0500
+
 mx-samba-config (25.11) mx; urgency=medium
 
   * Various fixes

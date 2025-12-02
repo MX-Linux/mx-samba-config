@@ -460,28 +460,28 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/about.cpp" line="45"/>
+        <location filename="../src/about.cpp" line="41"/>
         <source>License</source>
         <translation>Lisensya</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="46"/>
-        <location filename="../src/about.cpp" line="55"/>
+        <location filename="../src/about.cpp" line="42"/>
+        <location filename="../src/about.cpp" line="51"/>
         <source>Changelog</source>
         <translation>Ulat na mga pagbabago</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="47"/>
+        <location filename="../src/about.cpp" line="43"/>
         <source>Cancel</source>
         <translation>Huwag ituloy</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="67"/>
+        <location filename="../src/about.cpp" line="63"/>
         <source>&amp;Close</source>
         <translation>&amp;Isara</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="71"/>
+        <location filename="../src/main.cpp" line="76"/>
         <source>You must run this program as normal user.</source>
         <translation type="unfinished"/>
     </message>

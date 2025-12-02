@@ -154,7 +154,7 @@
         <location filename="../src/mainwindow.ui" line="285"/>
         <location filename="../src/mainwindow.cpp" line="302"/>
         <source>Samba is running</source>
-        <translation>Samba s&apos;està executant</translation>
+        <translation>Samba s&apos;executa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
@@ -292,7 +292,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="302"/>
         <source>Samba is not running</source>
-        <translation>Samba no s&apos;està executant</translation>
+        <translation>Samba no s&apos;executa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="303"/>
@@ -450,7 +450,7 @@
         <location filename="../src/mainwindow.cpp" line="534"/>
         <location filename="../src/mainwindow.cpp" line="583"/>
         <source>Samba service is not running. Please start Samba before adding or editing shares</source>
-        <translation>No s&apos;està executant el servei Samba. Si us plau, engegueu Samba abans d&apos;afegir o editar compartits </translation>
+        <translation>No s&apos;executa el servei Samba. Si us plau, inicieu el Samba abans d&apos;afegir o editar comparticions. </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="552"/>
@@ -462,28 +462,28 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/about.cpp" line="45"/>
+        <location filename="../src/about.cpp" line="41"/>
         <source>License</source>
         <translation>Llicència</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="46"/>
-        <location filename="../src/about.cpp" line="55"/>
+        <location filename="../src/about.cpp" line="42"/>
+        <location filename="../src/about.cpp" line="51"/>
         <source>Changelog</source>
         <translation>Registre de canvis</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="47"/>
+        <location filename="../src/about.cpp" line="43"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="67"/>
+        <location filename="../src/about.cpp" line="63"/>
         <source>&amp;Close</source>
         <translation>Tan&amp;ca </translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="71"/>
+        <location filename="../src/main.cpp" line="76"/>
         <source>You must run this program as normal user.</source>
         <translation>Cal executar aquest programa com a usuari normal.</translation>
     </message>

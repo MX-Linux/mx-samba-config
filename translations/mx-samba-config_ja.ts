@@ -462,28 +462,28 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/about.cpp" line="45"/>
+        <location filename="../src/about.cpp" line="41"/>
         <source>License</source>
         <translation>ライセンス</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="46"/>
-        <location filename="../src/about.cpp" line="55"/>
+        <location filename="../src/about.cpp" line="42"/>
+        <location filename="../src/about.cpp" line="51"/>
         <source>Changelog</source>
         <translation>更新履歴</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="47"/>
+        <location filename="../src/about.cpp" line="43"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../src/about.cpp" line="67"/>
+        <location filename="../src/about.cpp" line="63"/>
         <source>&amp;Close</source>
         <translation>閉じる(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="71"/>
+        <location filename="../src/main.cpp" line="76"/>
         <source>You must run this program as normal user.</source>
         <translation>このプログラムは通常のユーザで実行して下さい。</translation>
     </message>

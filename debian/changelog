@@ -1,3 +1,9 @@
+mx-samba-config (25.12) mx; urgency=medium
+
+  * Validate share permission selection before saving
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 02 Dec 2025 11:48:47 -0500
+
 mx-samba-config (25.11.1) mx; urgency=medium
 
   * Fix displaying version in About menu

@@ -36,6 +36,9 @@ class EditShare : public QDialog
 public:
     explicit EditShare(QWidget *parent = nullptr);
     ~EditShare() override;
+
+    void accept() override;
+
     Ui::EditShare *ui;
 private slots:
     void pushChooseDirectory_clicked();

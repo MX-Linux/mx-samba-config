@@ -25,7 +25,10 @@
 
 #include <QDebug>
 #include <QFileDialog>
+#include <QGroupBox>
+#include <QMessageBox>
 #include <QPushButton>
+#include <QRadioButton>
 
 EditShare::EditShare(QWidget *parent)
     : QDialog(parent),
@@ -53,4 +56,29 @@ void EditShare::pushChooseDirectory_clicked()
     if (!selected.isEmpty()) {
         ui->textSharePath->setText(selected);
     }
+}
+
+void EditShare::accept()
+{
+    const auto groupBoxes = ui->frameUsers->findChildren<QGroupBox *>(QString(), Qt::FindDirectChildrenOnly);
+    for (auto *groupBox : groupBoxes) {
+        const auto radioButtons = groupBox->findChildren<QRadioButton *>(QString(), Qt::FindDirectChildrenOnly);
+
+        bool selected = false;
+        for (auto *radio : radioButtons) {
+            if (radio->isChecked()) {
+                selected = true;
+                break;
+            }
+        }
+
+        if (!selected) {
+            QMessageBox::warning(this, tr("Warning"),
+                                 tr("Select Deny, Read Only, or Full Access for %1 before continuing.")
+                                     .arg(groupBox->objectName()));
+            return;
+        }
+    }
+
+    QDialog::accept();
 }

@@ -117,14 +117,21 @@ void MainWindow::addEditShares(EditShare *editshare)
     QString permissions;
     for (const QString &user : userList) {
         QString userName = user.section(':', -1);
+        if (userName.isEmpty()) {
+            continue;
+        }
+
         if (!permissions.isEmpty()) {
             permissions.append(',');
         }
-        if (editshare->findChild<QRadioButton *>("*Deny*" + userName)->isChecked()) {
+        auto *denyButton = editshare->findChild<QRadioButton *>("*Deny*" + userName);
+        auto *readOnlyButton = editshare->findChild<QRadioButton *>("*ReadOnly*" + userName);
+        auto *fullAccessButton = editshare->findChild<QRadioButton *>("*FullAccess*" + userName);
+        if (denyButton->isChecked()) {
             permissions += userName + ":d";
-        } else if (editshare->findChild<QRadioButton *>("*ReadOnly*" + userName)->isChecked()) {
+        } else if (readOnlyButton->isChecked()) {
             permissions += userName + ":r";
-        } else if (editshare->findChild<QRadioButton *>("*FullAccess*" + userName)->isChecked()) {
+        } else if (fullAccessButton->isChecked()) {
             permissions += userName + ":f";
         }
     }

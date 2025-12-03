@@ -114,29 +114,37 @@ void MainWindow::addEditShares(EditShare *editshare)
     run("getent", {"group", "users"});
     userList << QString(proc.readAllStandardOutput()).trimmed().split(',');
 
-    QString permissions;
+    QStringList permissions;
     for (const QString &user : userList) {
         QString userName = user.section(':', -1);
         if (userName.isEmpty()) {
             continue;
         }
 
-        if (!permissions.isEmpty()) {
-            permissions.append(',');
-        }
         auto *denyButton = editshare->findChild<QRadioButton *>("*Deny*" + userName);
         auto *readOnlyButton = editshare->findChild<QRadioButton *>("*ReadOnly*" + userName);
         auto *fullAccessButton = editshare->findChild<QRadioButton *>("*FullAccess*" + userName);
         if (denyButton->isChecked()) {
-            permissions += userName + ":d";
+            permissions << userName + ":d";
         } else if (readOnlyButton->isChecked()) {
-            permissions += userName + ":r";
+            permissions << userName + ":r";
         } else if (fullAccessButton->isChecked()) {
-            permissions += userName + ":f";
+            permissions << userName + ":f";
         }
     }
 
-    const QStringList args {"usershare", "add", shareName, sharePath, comment.isEmpty() ? "" : comment, permissions, guestOK};
+    if (permissions.isEmpty()) {
+        QMessageBox::critical(this, tr("Error"), tr("Please set access for at least one user."));
+        return;
+    }
+
+    const QStringList args {"usershare",
+                            "add",
+                            shareName,
+                            sharePath,
+                            comment.isEmpty() ? "" : comment,
+                            permissions.join(','),
+                            guestOK};
 
     if (run("net", args) != 0) {
         QMessageBox::critical(

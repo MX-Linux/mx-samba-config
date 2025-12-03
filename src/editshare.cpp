@@ -61,23 +61,25 @@ void EditShare::pushChooseDirectory_clicked()
 void EditShare::accept()
 {
     const auto groupBoxes = ui->frameUsers->findChildren<QGroupBox *>(QString(), Qt::FindDirectChildrenOnly);
+    bool anySelected = false;
     for (auto *groupBox : groupBoxes) {
         const auto radioButtons = groupBox->findChildren<QRadioButton *>(QString(), Qt::FindDirectChildrenOnly);
 
-        bool selected = false;
         for (auto *radio : radioButtons) {
             if (radio->isChecked()) {
-                selected = true;
+                anySelected = true;
                 break;
             }
         }
 
-        if (!selected) {
-            QMessageBox::warning(this, tr("Warning"),
-                                 tr("Select Deny, Read Only, or Full Access for %1 before continuing.")
-                                     .arg(groupBox->objectName()));
-            return;
+        if (anySelected) {
+            break;
         }
+    }
+
+    if (!anySelected) {
+        QMessageBox::warning(this, tr("Warning"), tr("Select access for at least one user before continuing."));
+        return;
     }
 
     QDialog::accept();

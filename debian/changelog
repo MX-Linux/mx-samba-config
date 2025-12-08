@@ -1,3 +1,9 @@
+mx-samba-config (25.12.3) mx; urgency=medium
+
+  * Require Samba user before adding share
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 07 Dec 2025 23:43:46 -0500
+
 mx-samba-config (25.12.1) mx; urgency=medium
 
   * Updated share permissions handling: the dialog now only requires at

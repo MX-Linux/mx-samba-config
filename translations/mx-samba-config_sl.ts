@@ -52,14 +52,14 @@
         <translation>Izberite direktorij za skupno rabo</translation>
     </message>
     <message>
-        <location filename="../src/editshare.cpp" line="76"/>
+        <location filename="../src/editshare.cpp" line="81"/>
         <source>Warning</source>
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <location filename="../src/editshare.cpp" line="77"/>
-        <source>Select Deny, Read Only, or Full Access for %1 before continuing.</source>
-        <translation type="unfinished"/>
+        <location filename="../src/editshare.cpp" line="81"/>
+        <source>Select access for at least one user before continuing.</source>
+        <translation>Pred nadaljevanjem izberite dostop za vsaj enega uporabnika.</translation>
     </message>
 </context>
 <context>
@@ -143,15 +143,15 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="219"/>
-        <location filename="../src/mainwindow.cpp" line="312"/>
-        <location filename="../src/mainwindow.cpp" line="353"/>
+        <location filename="../src/mainwindow.cpp" line="320"/>
+        <location filename="../src/mainwindow.cpp" line="361"/>
         <source>E&amp;nable Automatic Samba Startup</source>
         <translation>&amp;Vklopi samodejni zagon Sambe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="226"/>
-        <location filename="../src/mainwindow.cpp" line="308"/>
-        <location filename="../src/mainwindow.cpp" line="363"/>
+        <location filename="../src/mainwindow.cpp" line="316"/>
+        <location filename="../src/mainwindow.cpp" line="371"/>
         <source>Star&amp;t Samba</source>
         <translation>&amp;Zagon Sambe</translation>
     </message>
@@ -162,7 +162,7 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="285"/>
-        <location filename="../src/mainwindow.cpp" line="309"/>
+        <location filename="../src/mainwindow.cpp" line="317"/>
         <source>Samba is running</source>
         <translation>Samba se izvaja</translation>
     </message>
@@ -214,24 +214,25 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="104"/>
         <location filename="../src/mainwindow.cpp" line="109"/>
-        <location filename="../src/mainwindow.cpp" line="143"/>
-        <location filename="../src/mainwindow.cpp" line="154"/>
-        <location filename="../src/mainwindow.cpp" line="210"/>
-        <location filename="../src/mainwindow.cpp" line="292"/>
-        <location filename="../src/mainwindow.cpp" line="303"/>
-        <location filename="../src/mainwindow.cpp" line="402"/>
-        <location filename="../src/mainwindow.cpp" line="434"/>
-        <location filename="../src/mainwindow.cpp" line="438"/>
-        <location filename="../src/mainwindow.cpp" line="444"/>
-        <location filename="../src/mainwindow.cpp" line="451"/>
-        <location filename="../src/mainwindow.cpp" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="494"/>
+        <location filename="../src/mainwindow.cpp" line="137"/>
+        <location filename="../src/mainwindow.cpp" line="151"/>
+        <location filename="../src/mainwindow.cpp" line="162"/>
+        <location filename="../src/mainwindow.cpp" line="218"/>
+        <location filename="../src/mainwindow.cpp" line="300"/>
+        <location filename="../src/mainwindow.cpp" line="311"/>
+        <location filename="../src/mainwindow.cpp" line="410"/>
+        <location filename="../src/mainwindow.cpp" line="442"/>
+        <location filename="../src/mainwindow.cpp" line="446"/>
+        <location filename="../src/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow.cpp" line="459"/>
+        <location filename="../src/mainwindow.cpp" line="497"/>
         <location filename="../src/mainwindow.cpp" line="502"/>
-        <location filename="../src/mainwindow.cpp" line="523"/>
-        <location filename="../src/mainwindow.cpp" line="540"/>
-        <location filename="../src/mainwindow.cpp" line="559"/>
-        <location filename="../src/mainwindow.cpp" line="574"/>
-        <location filename="../src/mainwindow.cpp" line="589"/>
+        <location filename="../src/mainwindow.cpp" line="510"/>
+        <location filename="../src/mainwindow.cpp" line="531"/>
+        <location filename="../src/mainwindow.cpp" line="548"/>
+        <location filename="../src/mainwindow.cpp" line="567"/>
+        <location filename="../src/mainwindow.cpp" line="582"/>
+        <location filename="../src/mainwindow.cpp" line="597"/>
         <source>Error</source>
         <translation>Napaka</translation>
     </message>
@@ -251,7 +252,12 @@
         <translation>Pot: %1 ne obstaja.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="144"/>
+        <location filename="../src/mainwindow.cpp" line="137"/>
+        <source>Please set access for at least one user.</source>
+        <translation>Določite dostop za vsaj enega uporabnika.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="152"/>
         <source>Could not add share. Error message:
 
 %1</source>
@@ -260,211 +266,211 @@
 %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="154"/>
+        <location filename="../src/mainwindow.cpp" line="162"/>
         <source>Error listing users</source>
         <translation>Napaka pri izpisovanju uporabnikov</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="193"/>
+        <location filename="../src/mainwindow.cpp" line="201"/>
         <source>&amp;Deny</source>
         <translation>&amp;Zavrni</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="194"/>
+        <location filename="../src/mainwindow.cpp" line="202"/>
         <source>&amp;Read Only</source>
         <translation>%Samo &amp;branje</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="195"/>
+        <location filename="../src/mainwindow.cpp" line="203"/>
         <source>&amp;Full Access</source>
         <translation>&amp;Poln dostop</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="210"/>
+        <location filename="../src/mainwindow.cpp" line="218"/>
         <source>Error listing shares</source>
         <translation>Napaka pri izpisovanju map v skupni rabi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="293"/>
+        <location filename="../src/mainwindow.cpp" line="301"/>
         <source>Your user doesn&apos;t belong to &apos;sambashare&apos; group  if you just installed the app you might need to restart the system first.</source>
         <translation>Vaš uporabnik ne spada v skupino &apos;sambashare&apos;. Če ste aplikacijo šele namestili je morda potreben ponovni zagon sistema.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="303"/>
+        <location filename="../src/mainwindow.cpp" line="311"/>
         <source>Samba is not installed</source>
         <translation>Samba ni nameščena</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="308"/>
+        <location filename="../src/mainwindow.cpp" line="316"/>
         <source>Sto&amp;p Samba</source>
         <translation>&amp;Zaustavi Sambo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="309"/>
+        <location filename="../src/mainwindow.cpp" line="317"/>
         <source>Samba is not running</source>
         <translation>Samba ni zagnana</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="310"/>
+        <location filename="../src/mainwindow.cpp" line="318"/>
         <source>Samba autostart is enabled</source>
         <translation>Samodejni zagon same je vklopljen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="310"/>
+        <location filename="../src/mainwindow.cpp" line="318"/>
         <source>Samba autostart is disabled</source>
         <translation>Samodejni zagon same je izklopljen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="311"/>
+        <location filename="../src/mainwindow.cpp" line="319"/>
         <source>&amp;Disable Automatic Samba Startup</source>
         <translation>&amp;Izklopi samodejni zagon Sambe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="378"/>
+        <location filename="../src/mainwindow.cpp" line="386"/>
         <source>About %1</source>
         <translation>O %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="378"/>
+        <location filename="../src/mainwindow.cpp" line="386"/>
         <source>MX Samba Config</source>
         <translation>MX Samba nastavitve</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="379"/>
+        <location filename="../src/mainwindow.cpp" line="387"/>
         <source>Version: </source>
         <translation>Različica:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="381"/>
+        <location filename="../src/mainwindow.cpp" line="389"/>
         <source>Program for configuring Samba shares and users.</source>
         <translation>Program za nastavljanje map v skupni rabi in uporabnikov s Sambo  </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="383"/>
+        <location filename="../src/mainwindow.cpp" line="391"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Avtorska zaščita (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="384"/>
+        <location filename="../src/mainwindow.cpp" line="392"/>
         <source>%1 License</source>
         <translation>%1 licenca</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="391"/>
+        <location filename="../src/mainwindow.cpp" line="399"/>
         <source>%1 Help</source>
         <translation>%1 pomoč</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="402"/>
+        <location filename="../src/mainwindow.cpp" line="410"/>
         <source>Cannot delete user: </source>
         <translation>Ne morem izbrisati uporabnika:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="411"/>
+        <location filename="../src/mainwindow.cpp" line="419"/>
         <source>Enter the username and password:</source>
         <translation>Vnesite uporabniško ime in geslo:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="418"/>
+        <location filename="../src/mainwindow.cpp" line="426"/>
         <source>Username:</source>
         <translation>Uporabniško ime:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="419"/>
-        <location filename="../src/mainwindow.cpp" line="475"/>
+        <location filename="../src/mainwindow.cpp" line="427"/>
+        <location filename="../src/mainwindow.cpp" line="483"/>
         <source>Password:</source>
         <translation>&quot;Geslo:&quot;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="420"/>
-        <location filename="../src/mainwindow.cpp" line="476"/>
+        <location filename="../src/mainwindow.cpp" line="428"/>
+        <location filename="../src/mainwindow.cpp" line="484"/>
         <source>Confirm password:</source>
         <translation>Potrdite geslo:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="434"/>
+        <location filename="../src/mainwindow.cpp" line="442"/>
         <source>Empty username, please enter a name.</source>
         <translation>Prazno ime - prosimo vnesite ime.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="439"/>
+        <location filename="../src/mainwindow.cpp" line="447"/>
         <source>Matching linux user not found on system, make sure you enter a valid username.</source>
         <translation>Na sistemu ni bilo mogoče najti ustreznega Linux uporabnika. Uporabite ime, ki obstaja,</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="444"/>
-        <location filename="../src/mainwindow.cpp" line="494"/>
+        <location filename="../src/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow.cpp" line="502"/>
         <source>Passwords don&apos;t match, please enter again.</source>
         <translation>Gesli se ne ujemata. Poskusite znova.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="451"/>
+        <location filename="../src/mainwindow.cpp" line="459"/>
         <source>Could not add user.</source>
         <translation>Uporabnika ni bilo mogoče dodati.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="462"/>
-        <location filename="../src/mainwindow.cpp" line="512"/>
-        <location filename="../src/mainwindow.cpp" line="518"/>
-        <location filename="../src/mainwindow.cpp" line="535"/>
+        <location filename="../src/mainwindow.cpp" line="470"/>
+        <location filename="../src/mainwindow.cpp" line="520"/>
+        <location filename="../src/mainwindow.cpp" line="526"/>
+        <location filename="../src/mainwindow.cpp" line="543"/>
         <source>Warning</source>
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="462"/>
+        <location filename="../src/mainwindow.cpp" line="470"/>
         <source>No user selected.</source>
         <translation>Noben uporabnik ni izbran.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="469"/>
+        <location filename="../src/mainwindow.cpp" line="477"/>
         <source>Change the password for &apos;%1&apos;</source>
         <translation>Spremeni geslo za &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="489"/>
+        <location filename="../src/mainwindow.cpp" line="497"/>
         <source>Password fields cannot be empty.</source>
         <translation>Polja za geslo ne smejo biti prazna.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="502"/>
+        <location filename="../src/mainwindow.cpp" line="510"/>
         <source>Could not change password.</source>
         <translation>Gesla ni bilo mogoče spremeniti.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="512"/>
-        <location filename="../src/mainwindow.cpp" line="535"/>
+        <location filename="../src/mainwindow.cpp" line="520"/>
+        <location filename="../src/mainwindow.cpp" line="543"/>
         <source>No share selected.</source>
         <translation>Ni izbrane skupne rabe.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="518"/>
+        <location filename="../src/mainwindow.cpp" line="526"/>
         <source>Selected share is empty.</source>
         <translation>Izbrana skupna raba je prazna.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="523"/>
+        <location filename="../src/mainwindow.cpp" line="531"/>
         <source>Cannot delete share: </source>
         <translation>Ne morem izbrisati skupne rabe:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="528"/>
+        <location filename="../src/mainwindow.cpp" line="536"/>
         <source>Success</source>
         <translation>Uspešno</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="528"/>
+        <location filename="../src/mainwindow.cpp" line="536"/>
         <source>Share deleted successfully: </source>
         <translation>Skupna raba je bila izbrisana:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="541"/>
-        <location filename="../src/mainwindow.cpp" line="590"/>
+        <location filename="../src/mainwindow.cpp" line="549"/>
+        <location filename="../src/mainwindow.cpp" line="598"/>
         <source>Samba service is not running. Please start Samba before adding or editing shares</source>
         <translation>Storitev Samba se ne izvaja. Zaženite Sambo pred dodajanjem ali urejanjem skupne rabe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="559"/>
-        <location filename="../src/mainwindow.cpp" line="574"/>
+        <location filename="../src/mainwindow.cpp" line="567"/>
+        <location filename="../src/mainwindow.cpp" line="582"/>
         <source>Error processing permissions: </source>
         <translation>Napaka pri obdelavi dovolenj:</translation>
     </message>

@@ -598,6 +598,12 @@ void MainWindow::pushAddShare_clicked()
                               tr("Samba service is not running. Please start Samba before adding or editing shares"));
         return;
     }
+
+    if (ui->listWidgetUsers->count() == 0) {
+        QMessageBox::critical(this, tr("Error"), tr("Please add a Samba user before creating a share."));
+        return;
+    }
+
     auto *editshare = new EditShare;
     buildUserList(editshare);
     addEditShares(editshare);

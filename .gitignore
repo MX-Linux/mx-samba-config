@@ -65,3 +65,6 @@ CMakeFiles
 build.ninja
 cmake_install.cmake
 *config_autogen
+
+# AUR package (separate git repo)
+aur/

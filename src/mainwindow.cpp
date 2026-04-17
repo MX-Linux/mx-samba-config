@@ -296,7 +296,11 @@ int MainWindow::run(const QString &cmd, const QStringList &args, const QByteArra
 
 void MainWindow::checkSambashareGroup()
 {
-    if (run("/bin/bash", {"-c", "groups | grep -q sambashare"}) != 0) {
+    QProcess groups;
+    groups.start("groups", {});
+    groups.waitForFinished();
+    const auto groupList = QString::fromLocal8Bit(groups.readAllStandardOutput()).split(QRegularExpression("\\s+"), Qt::SkipEmptyParts);
+    if (!groupList.contains("sambashare")) {
         QMessageBox::critical(this, tr("Error"),
                               tr("Your user doesn't belong to 'sambashare' group  "
                                  "if you just installed the app you might need to restart the system first."));
@@ -324,7 +328,13 @@ void MainWindow::checksamba()
 
     bool enabled = false;
     if (run("grep", {"-q", "systemd", "/proc/1/comm"}) == 0) {
-        if (run("/bin/bash", {"-c", "LANG=C systemctl is-enabled smbd | grep enabled"}) == 0) {
+        QProcess isEnabled;
+        auto env = QProcessEnvironment::systemEnvironment();
+        env.insert("LANG", "C");
+        isEnabled.setProcessEnvironment(env);
+        isEnabled.start("systemctl", {"is-enabled", "smbd"});
+        isEnabled.waitForFinished();
+        if (QString::fromLocal8Bit(isEnabled.readAllStandardOutput()).trimmed() == "enabled") {
             enabled = true;
         }
     } else {

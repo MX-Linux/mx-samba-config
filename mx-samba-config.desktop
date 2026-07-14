@@ -62,5 +62,5 @@ Terminal=false
 Type=Application
 StartupNotify=true
 Icon=mx-samba-config
-Categories=System;MX-Maintenance;
+Categories=System;X-MX-Maintenance;
 NoDisplay=false

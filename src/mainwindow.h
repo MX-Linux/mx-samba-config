@@ -1,7 +1,7 @@
 /**********************************************************************
  *  mainwindow.h
  **********************************************************************
- * Copyright (C) 2021 MX Authors
+ * Copyright (C) 2021-2026 MX Authors
  *
  * Authors: Adrian <adrian@mxlinux.org>
  *          Dolphin_Oracle

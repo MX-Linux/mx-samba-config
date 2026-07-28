@@ -3,12 +3,12 @@ Upstream-Name: mx-samba-config
 Source: https://github.com/MX-Linux/mx-samba-config
 
 Files: *
-Copyright: 2019 Adrian <adrian@mxlinux.org>
+Copyright: 2019-2026 Adrian <adrian@mxlinux.org>
            2019 MX Linux <http://mxlinux.org>
 License: GPL-3+
 
 Files: debian/*
-Copyright: 2019 Steven Pusser <stevep@mxlinux.org>
+Copyright: 2019-2026 Steven Pusser <stevep@mxlinux.org>
 License: GPL-3+
 
 License: GPL-3+

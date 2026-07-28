@@ -60,6 +60,8 @@ package() {
 
     # Install documentation
     install -dm755 "${pkgdir}/usr/share/doc/mx-samba-config"
+
+    install -Dm644 help/*.1 "${pkgdir}/usr/share/man/man1/" 2>/dev/null || true
     if [ -d docs ]; then
         cp -r docs/* "${pkgdir}/usr/share/doc/mx-samba-config/" 2>/dev/null || true
     fi

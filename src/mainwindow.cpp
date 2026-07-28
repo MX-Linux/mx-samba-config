@@ -560,14 +560,15 @@ void MainWindow::pushEditShare_clicked()
         return;
     }
 
-    auto *editshare = new EditShare;
-    buildUserList(editshare);
+    EditShare editshare(this);
+    editshare.setWindowTitle(tr("Edit Share"));
+    buildUserList(&editshare);
 
     auto selectedItem = ui->treeWidgetShares->selectedItems().at(0);
-    editshare->ui->textShareName->setText(selectedItem->text(0));
-    editshare->ui->textSharePath->setText(selectedItem->text(1));
-    editshare->ui->textComment->setText(selectedItem->text(2));
-    editshare->ui->comboGuestOK->setCurrentIndex(selectedItem->text(4) == "y" ? 0 : 1);
+    editshare.ui->textShareName->setText(selectedItem->text(0));
+    editshare.ui->textSharePath->setText(selectedItem->text(1));
+    editshare.ui->textComment->setText(selectedItem->text(2));
+    editshare.ui->comboGuestOK->setCurrentIndex(selectedItem->text(4) == "y" ? 0 : 1);
 
     QStringList permissionList = selectedItem->text(3).split(',', Qt::SkipEmptyParts);
 
@@ -583,11 +584,11 @@ void MainWindow::pushEditShare_clicked()
         QRadioButton *button = nullptr;
 
         if (permission == "d") {
-            button = editshare->findChild<QRadioButton *>("*Deny*" + user);
+            button = editshare.findChild<QRadioButton *>("*Deny*" + user);
         } else if (permission == "r") {
-            button = editshare->findChild<QRadioButton *>("*ReadOnly*" + user);
+            button = editshare.findChild<QRadioButton *>("*ReadOnly*" + user);
         } else if (permission == "f") {
-            button = editshare->findChild<QRadioButton *>("*FullAccess*" + user);
+            button = editshare.findChild<QRadioButton *>("*FullAccess*" + user);
         } else {
             QMessageBox::critical(this, tr("Error"), tr("Error processing permissions: ") + item);
             return;
@@ -598,7 +599,7 @@ void MainWindow::pushEditShare_clicked()
         }
     }
 
-    addEditShares(editshare);
+    addEditShares(&editshare);
 }
 
 void MainWindow::pushAddShare_clicked()
@@ -614,7 +615,8 @@ void MainWindow::pushAddShare_clicked()
         return;
     }
 
-    auto *editshare = new EditShare;
-    buildUserList(editshare);
-    addEditShares(editshare);
+    EditShare editshare(this);
+    editshare.setWindowTitle(tr("Add Share"));
+    buildUserList(&editshare);
+    addEditShares(&editshare);
 }

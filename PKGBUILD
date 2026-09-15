@@ -1,6 +1,6 @@
 # Maintainer: Adrian <adrian@mxlinux.org>
 pkgname=mx-samba-config
-pkgver=${PKGVER:-25.12.3}
+pkgver=${PKGVER:-26.03}
 pkgrel=1
 pkgdesc="Samba configuration tool for MX Linux"
 arch=('x86_64' 'i686')

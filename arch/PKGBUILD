@@ -71,9 +71,14 @@ package() {
 
     install -dm755 "${pkgdir}/usr/share/doc/mx-samba-config"
 
-    # help/ postdates the 26.03 tarball, so the glob may find nothing.
-    install -dm755 "${pkgdir}/usr/share/man/man1"
-    install -Dm644 help/*.1 "${pkgdir}/usr/share/man/man1/" 2>/dev/null || true
+    # help/ postdates the 26.03 tarball and is still absent from it, so this
+    # installs nothing today. Guard on the file existing rather than suppressing
+    # install's errors, and use -t: "install -D" treats its last argument as a
+    # file path even with a single source, which is why the old form left an
+    # empty man1 directory behind.
+    if compgen -G "help/*.1" >/dev/null; then
+        install -Dm644 -t "${pkgdir}/usr/share/man/man1/" help/*.1
+    fi
     if [ -d docs ]; then
         cp -r docs/* "${pkgdir}/usr/share/doc/mx-samba-config/" 2>/dev/null || true
     fi

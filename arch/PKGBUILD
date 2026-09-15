@@ -49,8 +49,11 @@ package() {
 
     install -Dm755 build/mx-samba-config "${pkgdir}/usr/bin/mx-samba-config"
 
-    install -dm755 "${pkgdir}/usr/share/mx-samba-config/locale"
-    install -Dm644 build/*.qm "${pkgdir}/usr/share/mx-samba-config/locale/" 2>/dev/null || true
+    # "install -D" with several sources needs -t, and then creates the
+    # destination directory itself, so the separate install -dm755 is gone. No
+    # error suppression either: the old "2>/dev/null || true" swallowed a glob
+    # that matched nothing, shipping the package with no translations at all.
+    install -Dm644 -t "${pkgdir}/usr/share/mx-samba-config/locale/" build/*.qm
 
     install -Dm644 mx-samba-config.desktop "${pkgdir}/usr/share/applications/mx-samba-config.desktop"
 

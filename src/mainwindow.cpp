@@ -30,11 +30,15 @@
 #include <QGroupBox>
 #include <QInputDialog>
 #include <QMap>
+#include <QPointer>
 #include <QRadioButton>
+#include <QScopeGuard>
+#include <QScopedValueRollback>
 #include <QScreen>
 #include <QScrollBar>
 #include <QSysInfo>
 #include <QTextStream>
+#include <QTimer>
 
 #include "about.h"
 #include "ui_editshare.h"
@@ -76,7 +80,11 @@ void MainWindow::centerWindow()
 void MainWindow::setConnections()
 {
     const auto connectButton = [this](QPushButton* button, void (MainWindow::*slot)()) {
-        connect(button, &QPushButton::clicked, this, slot);
+        connect(button, &QPushButton::clicked, this, [this, slot]() {
+            if (!commandRunning) {
+                (this->*slot)();
+            }
+        });
     };
 
     connectButton(ui->pushAbout, &MainWindow::pushAbout_clicked);
@@ -240,22 +248,52 @@ void MainWindow::refreshUserList()
  * For non-blocking commands proc.start() */
 int MainWindow::run(const QString &cmd, const QStringList &args, const QByteArray &input)
 {
+    if (commandRunning) {
+        return -1;
+    }
+    QScopedValueRollback<bool> commandGuard(commandRunning, true);
+    const bool wasEnabled = isEnabled();
+    const bool hadExplicitCursor = testAttribute(Qt::WA_SetCursor);
+    const QCursor previousCursor = cursor();
+    const QPointer<QWidget> previousFocus = QApplication::focusWidget();
+    bool disabledForCommand = false;
+    const auto restoreUi = qScopeGuard([this, wasEnabled, hadExplicitCursor, previousCursor, previousFocus,
+                                      &disabledForCommand]() {
+        setEnabled(wasEnabled);
+        if (hadExplicitCursor) {
+            setCursor(previousCursor);
+        } else {
+            unsetCursor();
+        }
+        if (disabledForCommand && previousFocus && previousFocus->isEnabled() && previousFocus->isVisible()) {
+            previousFocus->setFocus();
+        }
+    });
     setCursor(QCursor(Qt::BusyCursor));
     QEventLoop loop;
+    QTimer disableTimer(&loop);
+    disableTimer.setSingleShot(true);
+    connect(&disableTimer, &QTimer::timeout, this, [this, wasEnabled, &disabledForCommand]() {
+        if (proc.state() != QProcess::NotRunning) {
+            disabledForCommand = wasEnabled;
+            setEnabled(false);
+        }
+    });
     connect(&proc, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), &loop, &QEventLoop::quit);
     const QIODevice::OpenMode mode = input.isEmpty() ? QIODevice::ReadOnly : QIODevice::ReadWrite;
     proc.start(cmd, args, mode);
     if (!proc.waitForStarted()) {
-        setCursor(QCursor(Qt::ArrowCursor));
         return -1;
     }
+    disableTimer.start(150);
     if (!input.isEmpty()) {
         proc.write(input);
         proc.closeWriteChannel();
     }
-    loop.exec();
-    setCursor(QCursor(Qt::ArrowCursor));
-    return proc.exitCode();
+    if (proc.state() != QProcess::NotRunning) {
+        loop.exec();
+    }
+    return proc.exitStatus() == QProcess::NormalExit ? proc.exitCode() : -1;
 }
 
 void MainWindow::checkSambashareGroup()
@@ -512,6 +550,9 @@ void MainWindow::pushRemoveShare_clicked()
 
 void MainWindow::pushEditShare_clicked()
 {
+    if (commandRunning) {
+        return;
+    }
     auto *currentItem = ui->treeWidgetShares->currentItem();
     if (!currentItem) {
         QMessageBox::warning(this, tr("Warning"), tr("No share selected."));

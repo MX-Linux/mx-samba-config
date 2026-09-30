@@ -61,6 +61,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QProcess proc;
+    bool commandRunning = false;
     QSettings settings;
     QStringList listUsers();
     int run(const QString &, const QStringList &, const QByteArray &input = {});

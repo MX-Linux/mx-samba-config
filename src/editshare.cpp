@@ -37,7 +37,7 @@ EditShare::EditShare(QWidget *parent)
       ui(new Ui::EditShare)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::WindowStaysOnTopHint);
+    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
     connect(ui->pushChooseDirectory, &QPushButton::clicked, this, &EditShare::pushChooseDirectory_clicked);
 }
 

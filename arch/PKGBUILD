@@ -27,7 +27,7 @@ license=('GPL3')
 depends=('samba' 'qt6-base' 'polkit' 'xdg-utils')
 makedepends=('cmake' 'ninja' 'qt6-tools')
 install=mx-samba-config.install
-source=("${pkgname}_${pkgver}.tar.xz")
+source=("https://github.com/MX-Linux/mx-samba-config/archive/refs/tags/${pkgver}.tar.gz")
 sha256sums=('SKIP')
 
 build() {

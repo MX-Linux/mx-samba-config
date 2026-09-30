@@ -194,6 +194,19 @@
           <widget class="QListWidget" name="listWidgetUsers"/>
          </item>
          <item row="6" column="0" colspan="2">
+          <widget class="QLabel" name="labelHomesNote">
+           <property name="visible">
+            <bool>false</bool>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::PlainText</enum>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0" colspan="2">
           <spacer name="verticalSpacer">
            <property name="orientation">
             <enum>Qt::Vertical</enum>

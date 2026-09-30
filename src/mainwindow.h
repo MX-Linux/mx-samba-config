@@ -66,6 +66,7 @@ private:
     QStringList listUsers();
     int run(const QString &, const QStringList &, const QByteArray &input = {});
     void buildUserList(EditShare *);
+    void checkHomesShare();
     void checkSambashareGroup();
     void checksamba();
     void disablesamba();

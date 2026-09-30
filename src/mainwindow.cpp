@@ -63,6 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
     refreshUserList();
     refreshShareList();
     checksamba();
+    checkHomesShare();
 }
 
 MainWindow::~MainWindow()
@@ -294,6 +295,23 @@ int MainWindow::run(const QString &cmd, const QStringList &args, const QByteArra
         loop.exec();
     }
     return proc.exitStatus() == QProcess::NormalExit ? proc.exitCode() : -1;
+}
+
+// The [homes] section in smb.conf exports each Samba user's home folder to
+// that user. It is not a usershare, so it never shows in the share list.
+void MainWindow::checkHomesShare()
+{
+    if (run("testparm", {"-s", "--section-name=homes", "--parameter-name=read only"}) != 0) {
+        return;
+    }
+    const bool readOnly = QString::fromLocal8Bit(proc.readAllStandardOutput()).trimmed().compare("No", Qt::CaseInsensitive) != 0;
+    const QString host = QSysInfo::machineHostName().section('.', 0, 0);
+    ui->labelHomesNote->setText(
+        (readOnly ? tr("Each Samba user can also open their own home folder, read-only, as \\\\%1\\<user name>.")
+                  : tr("Each Samba user can also open their own home folder, with write access, as \\\\%1\\<user name>."))
+            .arg(host)
+        + ' ' + tr("This is set by the [homes] section in /etc/samba/smb.conf."));
+    ui->labelHomesNote->show();
 }
 
 void MainWindow::checkSambashareGroup()

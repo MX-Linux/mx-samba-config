@@ -1,3 +1,21 @@
+mx-samba-config (26.09) mx; urgency=medium
+
+  * Editing a share no longer drops access settings for users and groups
+    that the edit window doesn't list
+  * The share name can no longer be changed when editing, which used to
+    leave the old share active alongside a new one
+  * Buttons are disabled while a Samba action is running, so a second
+    click can't interfere with it
+  * Removing a Samba user offers to remove that user from the shares they
+    are listed on, and to remove shares no one else could access
+  * The add and edit share windows are titled "Add Share" and "Edit Share"
+  * Add tooltips explaining the buttons and fields
+  * Add a manual page (man mx-samba-config)
+  * Show a clear message instead of crashing when started without a
+    graphical session
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 29 Sep 2026 23:20:59 -0400
+
 mx-samba-config (26.03) mx; urgency=medium
 
   * Use internal Qt help and license viewer

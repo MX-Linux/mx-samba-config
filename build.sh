@@ -75,24 +75,37 @@ done
 
 # Build Debian package
 if [ "$DEBIAN_BUILD" = true ]; then
+    DEBIAN_SOURCE=$(dpkg-parsechangelog -SSource)
+    DEBIAN_VERSION=$(dpkg-parsechangelog -SVersion)
+    DEBIAN_VERSION=${DEBIAN_VERSION#*:}
     echo "Building Debian package..."
     debuild -us -uc
 
     echo "Creating debs directory and moving debian artifacts..."
     mkdir -p debs
-    mv ../*.deb debs/ 2>/dev/null || true
-    mv ../*.changes debs/ 2>/dev/null || true
-    mv ../*.dsc debs/ 2>/dev/null || true
-    mv ../*.tar.* debs/ 2>/dev/null || true
-    mv ../*.buildinfo debs/ 2>/dev/null || true
-    mv ../*build* debs/ 2>/dev/null || true
+    (
+        shopt -s nullglob
+        artifacts=(
+            ../"${DEBIAN_SOURCE}_${DEBIAN_VERSION}"_*.deb
+            ../"${DEBIAN_SOURCE}_${DEBIAN_VERSION}"_*.changes
+            ../"${DEBIAN_SOURCE}_${DEBIAN_VERSION}".dsc
+            # Native source package; quilt packages need separate orig/debian tar patterns.
+            ../"${DEBIAN_SOURCE}_${DEBIAN_VERSION}".tar.*
+            ../"${DEBIAN_SOURCE}_${DEBIAN_VERSION}"_*.buildinfo
+            ../"${DEBIAN_SOURCE}_${DEBIAN_VERSION}"_*.build
+        )
+        for artifact in "${artifacts[@]}"; do
+            if [ -f "$artifact" ]; then
+                mv -- "$artifact" debs/
+            fi
+        done
+    )
 
     echo "Cleaning build directory and debian artifacts..."
     rm -rf "$BUILD_DIR"
     rm -f debian/*.debhelper.log debian/*.substvars debian/files
     rm -rf debian/.debhelper/ debian/mx-samba-config/ obj-*/
     rm -f translations/*.qm
-    rm -f ../*build* ../*.buildinfo 2>/dev/null || true
 
     echo "Debian package build completed!"
     echo "Debian artifacts moved to debs/ directory"
@@ -151,7 +164,6 @@ if [ "$CLEAN" = true ]; then
     rm -f debian/*.debhelper.log debian/*.substvars debian/files
     rm -rf debian/.debhelper/ debian/mx-samba-config/ obj-*/
     rm -f translations/*.qm
-    rm -f ../*build* ../*.buildinfo 2>/dev/null || true
 fi
 
 # Create build directory

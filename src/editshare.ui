@@ -102,6 +102,19 @@
      </property>
     </widget>
    </item>
+   <item row="5" column="0" colspan="6">
+    <widget class="QLabel" name="labelEditNote">
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Changes apply to new connections. Clients that are already connected keep their current access until they reconnect. Restart Samba to apply the change to everyone immediately.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
    <item row="6" column="0" colspan="6">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">

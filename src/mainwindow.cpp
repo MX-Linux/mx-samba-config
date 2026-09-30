@@ -573,6 +573,7 @@ void MainWindow::pushEditShare_clicked()
     editshare.ui->textShareName->setText(selectedItem->text(0));
     editshare.ui->textShareName->setReadOnly(true);
     editshare.ui->textShareName->setToolTip(tr("Share names cannot be changed when editing an existing share."));
+    editshare.ui->labelEditNote->show();
     editshare.ui->textSharePath->setText(selectedItem->text(1));
     editshare.ui->textComment->setText(selectedItem->text(2));
     editshare.ui->comboGuestOK->setCurrentIndex(selectedItem->text(4) == "y" ? 0 : 1);

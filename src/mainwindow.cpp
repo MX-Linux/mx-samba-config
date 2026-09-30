@@ -29,9 +29,11 @@
 #include <QFormLayout>
 #include <QGroupBox>
 #include <QInputDialog>
+#include <QMap>
 #include <QRadioButton>
 #include <QScreen>
 #include <QScrollBar>
+#include <QSysInfo>
 #include <QTextStream>
 
 #include "about.h"
@@ -91,6 +93,7 @@ void MainWindow::setConnections()
 
 void MainWindow::addEditShares(EditShare *editshare)
 {
+    editshare->adjustSize();
     if (editshare->exec() != QDialog::Accepted) {
         return;
     }
@@ -110,28 +113,7 @@ void MainWindow::addEditShares(EditShare *editshare)
         return;
     }
 
-    QStringList userList {":Everyone"};
-    run("getent", {"group", "users"});
-    userList << QString(proc.readAllStandardOutput()).trimmed().split(',');
-
-    QStringList permissions;
-    for (const QString &user : userList) {
-        QString userName = user.section(':', -1);
-        if (userName.isEmpty()) {
-            continue;
-        }
-
-        auto *denyButton = editshare->findChild<QRadioButton *>("*Deny*" + userName);
-        auto *readOnlyButton = editshare->findChild<QRadioButton *>("*ReadOnly*" + userName);
-        auto *fullAccessButton = editshare->findChild<QRadioButton *>("*FullAccess*" + userName);
-        if (denyButton->isChecked()) {
-            permissions << userName + ":d";
-        } else if (readOnlyButton->isChecked()) {
-            permissions << userName + ":r";
-        } else if (fullAccessButton->isChecked()) {
-            permissions << userName + ":f";
-        }
-    }
+    const QStringList permissions = editshare->permissions();
 
     if (permissions.isEmpty()) {
         QMessageBox::critical(this, tr("Error"), tr("Please set access for at least one user."));
@@ -185,27 +167,9 @@ void MainWindow::buildUserList(EditShare *editshare)
     userList << QString(proc.readAllStandardOutput()).trimmed().split(',');
 
     for (const QString &user : userList) {
-        QString userName = user.section(':', -1);
-        auto *groupBox = new QGroupBox(userName);
-        groupBox->setObjectName(userName);
-        auto *hbox = new QHBoxLayout;
-
-        auto createRadioButton = [&](const QString &text, const QString &objectName) {
-            auto *radio = new QRadioButton(text);
-            radio->setObjectName(objectName);
-            hbox->addWidget(radio);
-            connect(radio, &QRadioButton::pressed, radio, [radio]() { radio->setAutoExclusive(!radio->isChecked()); });
-            return radio;
-        };
-
-        createRadioButton(tr("&Deny"), "*Deny*" + userName);
-        createRadioButton(tr("&Read Only"), "*ReadOnly*" + userName);
-        createRadioButton(tr("&Full Access"), "*FullAccess*" + userName);
-
-        hbox->addStretch(1);
-        groupBox->setLayout(hbox);
-        layout->addWidget(groupBox);
+        editshare->addUser(user.section(':', -1));
     }
+
     layout->addItem(new QSpacerItem(0, 10, QSizePolicy::Ignored, QSizePolicy::Expanding));
 }
 
@@ -572,6 +536,25 @@ void MainWindow::pushEditShare_clicked()
 
     QStringList permissionList = selectedItem->text(3).split(',', Qt::SkipEmptyParts);
 
+    QString localNetbiosName = QSysInfo::machineHostName().section('.', 0, 0).left(15).toUpper();
+    if (run("testparm", {"-s", "--parameter-name=netbios name"}) == 0) {
+        const QString configuredName = QString::fromLocal8Bit(proc.readAllStandardOutput()).trimmed();
+        if (!configuredName.isEmpty()) {
+            localNetbiosName = configuredName;
+        }
+    }
+
+    // Only reuse a bare-name control for an unknown qualifier when no other
+    // principal in the ACL claims that name. Keep the original principal on save.
+    QMap<QString, QStringList> principalsByName;
+    for (const QString &item : permissionList) {
+        const QString principal = item.section(':', 0, 0);
+        const QString name = principal.section('\\', -1);
+        if (!principalsByName[name].contains(principal)) {
+            principalsByName[name] << principal;
+        }
+    }
+
     for (const QString &item : permissionList) {
         const QStringList parts = item.split(':');
         if (parts.size() != 2) {
@@ -579,23 +562,46 @@ void MainWindow::pushEditShare_clicked()
             return;
         }
 
-        QString user = parts.at(0).section('\\', -1);
+        const QString principal = parts.at(0);
+        const qsizetype separator = principal.lastIndexOf('\\');
+        const QString qualifier = separator < 0 ? QString() : principal.left(separator);
+        const QString user = separator < 0 ? principal : principal.mid(separator + 1);
         const QString permission = parts.at(1).toLower();
-        QRadioButton *button = nullptr;
-
-        if (permission == "d") {
-            button = editshare.findChild<QRadioButton *>("*Deny*" + user);
-        } else if (permission == "r") {
-            button = editshare.findChild<QRadioButton *>("*ReadOnly*" + user);
-        } else if (permission == "f") {
-            button = editshare.findChild<QRadioButton *>("*FullAccess*" + user);
-        } else {
+        if (permission != "d" && permission != "r" && permission != "f") {
             QMessageBox::critical(this, tr("Error"), tr("Error processing permissions: ") + item);
             return;
         }
 
-        if (button) {
-            button->setChecked(true);
+        const bool knownLocal = qualifier.isEmpty() || qualifier.compare(localNetbiosName, Qt::CaseInsensitive) == 0;
+        auto *groupBox = editshare.ui->frameUsers->findChild<QGroupBox *>(user, Qt::FindDirectChildrenOnly);
+        if (!groupBox || (!knownLocal && principalsByName.value(user).size() != 1)) {
+            groupBox = editshare.ui->frameUsers->findChild<QGroupBox *>(principal, Qt::FindDirectChildrenOnly);
+            if (!groupBox) {
+                groupBox = editshare.addUser(principal);
+            }
+        }
+
+        const QString controlName = groupBox->objectName();
+        if (!editshare.permissionOrder.contains(controlName)) {
+            editshare.permissionOrder << controlName;
+            groupBox->setProperty("principal", principal);
+            editshare.addRemoveButton(groupBox);
+        }
+        groupBox->setProperty("originalPermission", parts.at(1));
+        if (!knownLocal) {
+            groupBox->setTitle(principal);
+        }
+        const QString controlPrefix = permission == "d" ? "*Deny*" : permission == "r" ? "*ReadOnly*" : "*FullAccess*";
+        groupBox->findChild<QRadioButton *>(controlPrefix + controlName)->setChecked(true);
+    }
+
+    // Do not offer an unused bare-name rule alongside several qualified entries
+    // whose relationship to the local account cannot be established.
+    for (auto it = principalsByName.cbegin(); it != principalsByName.cend(); ++it) {
+        auto *groupBox = editshare.ui->frameUsers->findChild<QGroupBox *>(it.key(), Qt::FindDirectChildrenOnly);
+        if (groupBox && !editshare.permissionOrder.contains(it.key()) && it.value().size() > 1) {
+            groupBox->setEnabled(false);
+            groupBox->setToolTip(tr("Several existing rules refer to this name; edit them individually."));
         }
     }
 

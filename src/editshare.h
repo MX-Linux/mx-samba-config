@@ -23,11 +23,14 @@
 #pragma once
 
 #include <QDialog>
+#include <QStringList>
 
 namespace Ui
 {
 class EditShare;
 }
+
+class QGroupBox;
 
 class EditShare : public QDialog
 {
@@ -38,8 +41,12 @@ public:
     ~EditShare() override;
 
     void accept() override;
+    QGroupBox *addUser(const QString &principal);
+    void addRemoveButton(QGroupBox *groupBox);
+    QStringList permissions() const;
 
     Ui::EditShare *ui;
+    QStringList permissionOrder;
 private slots:
     void pushChooseDirectory_clicked();
 };

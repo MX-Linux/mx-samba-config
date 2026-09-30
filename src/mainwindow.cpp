@@ -23,6 +23,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <algorithm>
+
 #include <QDebug>
 #include <QDialogButtonBox>
 #include <QFileDialog>
@@ -314,6 +316,18 @@ void MainWindow::checkHomesShare()
     ui->labelHomesNote->show();
 }
 
+// The name Samba qualifies local accounts with in ACLs, e.g. "MX" in "MX\adrian"
+QString MainWindow::netbiosName()
+{
+    if (run("testparm", {"-s", "--parameter-name=netbios name"}) == 0) {
+        const QString configuredName = QString::fromLocal8Bit(proc.readAllStandardOutput()).trimmed();
+        if (!configuredName.isEmpty()) {
+            return configuredName;
+        }
+    }
+    return QSysInfo::machineHostName().section('.', 0, 0).left(15).toUpper();
+}
+
 void MainWindow::checkSambashareGroup()
 {
     QProcess groups;
@@ -434,10 +448,92 @@ void MainWindow::pushRemoveUser_clicked()
     if (ui->listWidgetUsers->currentItem() == nullptr) {
         return;
     }
-    const QString &user = ui->listWidgetUsers->currentItem()->text();
+    const QString user = ui->listWidgetUsers->currentItem()->text();
+
+    // Find shares whose ACL names this local user, plain or qualified with the
+    // local NetBIOS name. Domain accounts and SIDs may be other accounts.
+    struct ShareUpdate {
+        QTreeWidgetItem *item;
+        QStringList remaining;
+    };
+    QList<ShareUpdate> updates;
+    QStringList updatedNames;
+    QStringList removedNames;
+    const QString localNetbiosName = netbiosName();
+    for (int i = 0; i < ui->treeWidgetShares->topLevelItemCount(); ++i) {
+        auto *item = ui->treeWidgetShares->topLevelItem(i);
+        QStringList remaining;
+        bool listed = false;
+        for (const QString &entry : item->text(3).split(',', Qt::SkipEmptyParts)) {
+            const QString principal = entry.section(':', 0, 0);
+            const QString qualifier = principal.contains('\\') ? principal.section('\\', 0, -2) : QString();
+            const bool isUser = principal.section('\\', -1).compare(user, Qt::CaseInsensitive) == 0
+                                && (qualifier.isEmpty() || qualifier.compare(localNetbiosName, Qt::CaseInsensitive) == 0);
+            if (isUser) {
+                listed = true;
+            } else {
+                // net usershare add rejects some uppercase letters that info prints
+                remaining << principal + ':' + entry.section(':', 1).toLower();
+            }
+        }
+        if (listed) {
+            // A share left with only Deny entries is as unreachable as one left
+            // with none, and an empty ACL would make net usershare add default
+            // to Everyone:R, so offer to remove both instead
+            const bool grantsAccess = std::any_of(remaining.cbegin(), remaining.cend(),
+                                                  [](const QString &entry) { return !entry.endsWith(":d"); });
+            if (!grantsAccess) {
+                remaining.clear();
+            }
+            updates.append({item, remaining});
+            (remaining.isEmpty() ? removedNames : updatedNames) << item->text(0);
+        }
+    }
+
+    bool updateShares = false;
+    if (!updates.isEmpty()) {
+        QString text = tr("%1 is listed on these shares:").arg(user);
+        if (!updatedNames.isEmpty()) {
+            text += "\n\n" + tr("Remove %1's access from: %2").arg(user, updatedNames.join(", "));
+        }
+        if (!removedNames.isEmpty()) {
+            text += "\n\n" + tr("Remove these shares, which no one else can access: %1").arg(removedNames.join(", "));
+        }
+        QMessageBox box(QMessageBox::Question, tr("Remove User"), text, QMessageBox::NoButton, this);
+        auto *removeButton = box.addButton(tr("Remove from Shares"), QMessageBox::AcceptRole);
+        auto *keepButton = box.addButton(tr("Keep Entries"), QMessageBox::ActionRole);
+        box.addButton(QMessageBox::Cancel);
+        box.setDefaultButton(removeButton);
+        box.exec();
+        if (box.clickedButton() != removeButton && box.clickedButton() != keepButton) {
+            return;
+        }
+        updateShares = box.clickedButton() == removeButton;
+    }
 
     if (run("pkexec", {"/usr/lib/mx-samba-config/mx-samba-config-lib", "removesambauser", user}) != 0) {
         QMessageBox::critical(this, tr("Error"), tr("Cannot delete user: ") + user);
+        refreshUserList();
+        return;
+    }
+
+    if (updateShares) {
+        QStringList failed;
+        for (const ShareUpdate &update : updates) {
+            const QString name = update.item->text(0);
+            const int result = update.remaining.isEmpty()
+                ? run("net", {"usershare", "delete", name})
+                : run("net", {"usershare", "add", name, update.item->text(1), update.item->text(2),
+                              update.remaining.join(','), update.item->text(4) == "y" ? "guest_ok=y" : "guest_ok=n"});
+            if (result != 0) {
+                failed << name;
+            }
+        }
+        refreshShareList();
+        if (!failed.isEmpty()) {
+            QMessageBox::critical(this, tr("Error"),
+                                  tr("%1 was removed, but these shares could not be updated: %2").arg(user, failed.join(", ")));
+        }
     }
     refreshUserList();
 }
@@ -598,13 +694,7 @@ void MainWindow::pushEditShare_clicked()
 
     QStringList permissionList = selectedItem->text(3).split(',', Qt::SkipEmptyParts);
 
-    QString localNetbiosName = QSysInfo::machineHostName().section('.', 0, 0).left(15).toUpper();
-    if (run("testparm", {"-s", "--parameter-name=netbios name"}) == 0) {
-        const QString configuredName = QString::fromLocal8Bit(proc.readAllStandardOutput()).trimmed();
-        if (!configuredName.isEmpty()) {
-            localNetbiosName = configuredName;
-        }
-    }
+    const QString localNetbiosName = netbiosName();
 
     // Only reuse a bare-name control for an unknown qualifier when no other
     // principal in the ACL claims that name. Keep the original principal on save.

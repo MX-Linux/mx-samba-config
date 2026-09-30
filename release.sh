@@ -105,8 +105,8 @@ compare_versions() {
     fi
 }
 
-# arch/PKGBUILD is what OBS builds from main, and OBS fetches the tag tarball
-# its pkgver names, so a new tag needs arch/ at that version and pushed
+# arch/PKGBUILD is what OBS builds from main, from the debs/ tarball its
+# pkgver names, so a new tag needs arch/ at that version and pushed
 check_arch_pkgbuild() {
     local version=$1
     local tag_status=$2
@@ -244,8 +244,10 @@ update_aur_package() {
     print_step "Converting to tarball source and calculating checksum..."
     local tarball_url="https://github.com/MX-Linux/mx-samba-config/archive/refs/tags/${version}.tar.gz"
 
-    # Update source in PKGBUILD
+    # Update source in PKGBUILD; the tag tarball unpacks to <pkgname>-<version>/,
+    # not the src/ of the debs/ tarball arch/PKGBUILD names for OBS
     sed -i "s|source=.*|source=(\"${tarball_url}\")|" "$pkgbuild"
+    sed -i 's|^_srcdir=.*|_srcdir="${pkgname}-${pkgver}"|' "$pkgbuild"
 
     # Remove git from makedepends if present
     sed -i '/makedepends=.*git/d' "$pkgbuild"

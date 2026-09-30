@@ -133,9 +133,9 @@ if [ "$ARCH_BUILD" = true ]; then
     fi
     echo "Using version ${ARCH_VERSION} from debian/changelog"
 
-    # arch/PKGBUILD is the same file the AUR and OBS use. Build it in a scratch
-    # directory, next to a tarball of the working tree named the way its
-    # source= names the tag tarball, so makepkg uses that instead of fetching.
+    # arch/PKGBUILD is the same file OBS uses. Build it in a scratch directory,
+    # next to a tarball of the working tree laid out like the debs/ tarball its
+    # source= names: <pkgname>_<pkgver>.tar.xz holding src/.
     ARCH_BUILDDIR=$(mktemp -d -p "$PWD" archpkgbuild.XXXXXX)
     trap 'rm -rf "$ARCH_BUILDDIR"' EXIT
     cp arch/PKGBUILD arch/mx-samba-config.install "$ARCH_BUILDDIR/"
@@ -143,8 +143,9 @@ if [ "$ARCH_BUILD" = true ]; then
     # "git stash create" snapshots uncommitted changes to tracked files without
     # touching the working tree; it prints nothing when there are none
     ARCH_TREE=$(git stash create)
-    git archive --format=tar.gz --prefix="mx-samba-config-${ARCH_VERSION}/" \
-        -o "$ARCH_BUILDDIR/${ARCH_VERSION}.tar.gz" "${ARCH_TREE:-HEAD}"
+    git archive --format=tar --prefix=src/ \
+        -o "$ARCH_BUILDDIR/mx-samba-config_${ARCH_VERSION}.tar" "${ARCH_TREE:-HEAD}"
+    xz "$ARCH_BUILDDIR/mx-samba-config_${ARCH_VERSION}.tar"
 
     PKG_DEST_DIR="$PWD/build"
     mkdir -p "$PKG_DEST_DIR"

@@ -120,25 +120,27 @@ if [ "$ARCH_BUILD" = true ]; then
     fi
     echo "Using version ${ARCH_VERSION} from debian/changelog"
 
+    # arch/PKGBUILD is the same file the AUR and OBS use. Build it in a scratch
+    # directory, next to a tarball of the working tree named the way its
+    # source= names the tag tarball, so makepkg uses that instead of fetching.
     ARCH_BUILDDIR=$(mktemp -d -p "$PWD" archpkgbuild.XXXXXX)
     trap 'rm -rf "$ARCH_BUILDDIR"' EXIT
-
-    # Clean previous build artifacts
-    rm -rf pkg *.pkg.tar.zst
+    cp arch/PKGBUILD arch/mx-samba-config.install "$ARCH_BUILDDIR/"
+    sed -i "s/^pkgver=.*/pkgver=${ARCH_VERSION}/" "$ARCH_BUILDDIR/PKGBUILD"
+    # "git stash create" snapshots uncommitted changes to tracked files without
+    # touching the working tree; it prints nothing when there are none
+    ARCH_TREE=$(git stash create)
+    git archive --format=tar.gz --prefix="mx-samba-config-${ARCH_VERSION}/" \
+        -o "$ARCH_BUILDDIR/${ARCH_VERSION}.tar.gz" "${ARCH_TREE:-HEAD}"
 
     PKG_DEST_DIR="$PWD/build"
     mkdir -p "$PKG_DEST_DIR"
+    rm -f "$PKG_DEST_DIR"/*.pkg.tar.*
 
-    # Build package (without --clean to preserve directories)
-    BUILDDIR="$ARCH_BUILDDIR" PKGDEST="$PKG_DEST_DIR" PKGVER="$ARCH_VERSION" makepkg -f
-
-    # Clean makepkg artifacts
-    echo "Cleaning makepkg artifacts..."
-    rm -rf pkg
+    (cd "$ARCH_BUILDDIR" && BUILDDIR="$ARCH_BUILDDIR/build" PKGDEST="$PKG_DEST_DIR" makepkg -f)
 
     echo "Arch Linux package build completed!"
-    echo "Package: $(ls build/*.pkg.tar.zst 2>/dev/null || echo 'not found')"
-    echo "Binary available at: build/mx-samba-config"
+    echo "Package: $(ls build/*.pkg.tar.* 2>/dev/null || echo 'not found')"
     exit 0
 fi
 

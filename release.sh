@@ -10,6 +10,8 @@ NC='\e[0m' # No Color
 
 # Configuration
 AUR_DIR="aur"
+# The tracked PKGBUILD and install hook; aur/ gets a copy of them on release
+ARCH_DIR="arch"
 # The AUR repo's local branch and the remote/branch it is published to
 # (the AUR only accepts pushes to master). Set AUR_PUSH=0 to commit the AUR
 # update without pushing it.
@@ -103,6 +105,33 @@ compare_versions() {
     fi
 }
 
+# arch/PKGBUILD is what OBS builds from main, and OBS fetches the tag tarball
+# its pkgver names, so a new tag needs arch/ at that version and pushed
+check_arch_pkgbuild() {
+    local version=$1
+    local tag_status=$2
+    local arch_pkgver
+    arch_pkgver=$(sed -n 's/^pkgver=//p' "$ARCH_DIR/PKGBUILD" | head -n1)
+
+    local problem=""
+    if [ "$arch_pkgver" != "$version" ]; then
+        problem="$ARCH_DIR/PKGBUILD is at pkgver ${arch_pkgver:-<none>}, not $version"
+    elif ! git diff --quiet HEAD -- "$ARCH_DIR"; then
+        problem="$ARCH_DIR/ has uncommitted changes"
+    elif ! git branch -r --contains HEAD | grep -q "^  origin/"; then
+        problem="HEAD, with $ARCH_DIR/PKGBUILD at $version, is not pushed to origin"
+    fi
+    [ -z "$problem" ] && return 0
+
+    if [ "$tag_status" = "existing" ]; then
+        print_warning "$problem; OBS will not build $version until it is"
+        return 0
+    fi
+    print_error "$problem"
+    echo "Set pkgver=$version in $ARCH_DIR/PKGBUILD, commit and push it, then tag."
+    exit 1
+}
+
 # Prompt user for annotation
 prompt_annotation() {
     local version=$1
@@ -176,6 +205,15 @@ update_aur_package() {
 
     local pkgbuild="$AUR_DIR/PKGBUILD"
     local srcinfo="$AUR_DIR/.SRCINFO"
+
+    # aur/ only publishes arch/: start from the tracked files every time, so
+    # nothing edited in aur/ by hand can outlive a release
+    print_step "Copying $ARCH_DIR/PKGBUILD and install hook into $AUR_DIR..."
+    cp "$ARCH_DIR/PKGBUILD" "$pkgbuild"
+    local hook
+    for hook in "$ARCH_DIR"/*.install; do
+        [ -f "$hook" ] && cp "$hook" "$AUR_DIR/"
+    done
 
     # Update PKGBUILD pkgver to match tag and remove pkgver() if present
     if [ -f "$pkgbuild" ]; then
@@ -407,6 +445,7 @@ main() {
     if tag_exists "$version"; then
         print_warning "Tag '$version' already exists; no new tag will be created"
         tag_status="existing"
+        check_arch_pkgbuild "$version" "$tag_status"
         ANNOTATION=$(get_tag_annotation "$version")
         if [ -z "$ANNOTATION" ]; then
             ANNOTATION="Update AUR package to $version"
@@ -424,6 +463,7 @@ main() {
         if [ -n "$latest_tag" ]; then
             print_success "Version $version > ${latest_tag#v}"
         fi
+        check_arch_pkgbuild "$version" "$tag_status"
         prompt_annotation "$version"
     fi
     local annotation="$ANNOTATION"

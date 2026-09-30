@@ -630,7 +630,6 @@ void MainWindow::pushEditShare_clicked()
             groupBox->setProperty("principal", principal);
             editshare.addRemoveButton(groupBox);
         }
-        groupBox->setProperty("originalPermission", parts.at(1));
         if (!knownLocal) {
             groupBox->setTitle(principal);
         }

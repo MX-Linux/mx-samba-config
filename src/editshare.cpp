@@ -115,10 +115,6 @@ QStringList EditShare::permissions() const
         } else {
             continue;
         }
-        const QString originalPermission = groupBox->property("originalPermission").toString();
-        if (permission == originalPermission.toLower()) {
-            permission = originalPermission;
-        }
         const QString principal = groupBox->property("principal").isValid()
                                       ? groupBox->property("principal").toString() : name;
         result << principal + ':' + permission;

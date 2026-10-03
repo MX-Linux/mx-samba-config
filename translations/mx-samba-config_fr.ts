@@ -59,7 +59,7 @@
     <message>
         <location filename="../src/editshare.ui" line="91"/>
         <source>&amp;Guest OK</source>
-        <translation>&amp;Autoriser l’accès aux invités</translation>
+        <translation>Autoriser l’accès aux &amp;invités</translation>
     </message>
     <message>
         <location filename="../src/editshare.ui" line="101"/>
@@ -67,22 +67,37 @@
         <translation>Description facultative affichée aux clients</translation>
     </message>
     <message>
-        <location filename="../src/editshare.ui" line="129"/>
+        <location filename="../src/editshare.ui" line="111"/>
+        <source>Changes apply to new connections. Clients that are already connected keep their current access until they reconnect. Restart Samba to apply the change to everyone immediately.</source>
+        <translation>Les modifications s’appliquent aux nouvelles connexions. Les clients déjà connectés conservent leur accès actuel jusqu’à ce qu’ils se reconnectent. Redémarrez Samba pour appliquer immédiatement la modification à tout le monde.</translation>
+    </message>
+    <message>
+        <location filename="../src/editshare.ui" line="142"/>
         <source>Access rights for valid users</source>
         <translation>Droits d’accès pour les utilisateurs autorisés</translation>
     </message>
     <message>
-        <location filename="../src/editshare.cpp" line="55"/>
+        <location filename="../src/editshare.cpp" line="78"/>
+        <source>Remove</source>
+        <translation>Supprimer</translation>
+    </message>
+    <message>
+        <location filename="../src/editshare.cpp" line="80"/>
+        <source>Remove this access rule</source>
+        <translation>Supprimer cette règle d’accès</translation>
+    </message>
+    <message>
+        <location filename="../src/editshare.cpp" line="133"/>
         <source>Select directory to share</source>
         <translation>Choisir le répertoire à partager</translation>
     </message>
     <message>
-        <location filename="../src/editshare.cpp" line="81"/>
+        <location filename="../src/editshare.cpp" line="142"/>
         <source>Warning</source>
         <translation>Attention</translation>
     </message>
     <message>
-        <location filename="../src/editshare.cpp" line="81"/>
+        <location filename="../src/editshare.cpp" line="142"/>
         <source>Select access for at least one user before continuing.</source>
         <translation>Veuillez sélectionner l’accès d’au moins un utilisateur avant de continuer.</translation>
     </message>
@@ -189,141 +204,142 @@
     <message>
         <location filename="../src/mainwindow.ui" line="189"/>
         <source>&amp;Password</source>
-        <translation>&amp;Mot de passe</translation>
+        <translation>M&amp;ot de passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="212"/>
+        <location filename="../src/mainwindow.ui" line="225"/>
         <source>Users</source>
         <translation>Utilisateurs</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="237"/>
+        <location filename="../src/mainwindow.ui" line="250"/>
         <source>Enable or disable starting Samba automatically at boot</source>
         <translation>Activer ou désactiver le démarrage automatique de Samba au boot</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="240"/>
-        <location filename="../src/mainwindow.cpp" line="324"/>
-        <location filename="../src/mainwindow.cpp" line="371"/>
+        <location filename="../src/mainwindow.ui" line="253"/>
+        <location filename="../src/mainwindow.cpp" line="358"/>
+        <location filename="../src/mainwindow.cpp" line="405"/>
         <source>E&amp;nable Automatic Samba Startup</source>
-        <translation>&amp;Activer le démarrage automatique de Samba</translation>
+        <translation>Ac&amp;tiver le démarrage automatique de Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="247"/>
+        <location filename="../src/mainwindow.ui" line="260"/>
         <source>Start or stop the Samba service</source>
         <translation>Démarrer ou arrêter le service Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="250"/>
-        <location filename="../src/mainwindow.cpp" line="320"/>
-        <location filename="../src/mainwindow.cpp" line="381"/>
+        <location filename="../src/mainwindow.ui" line="263"/>
+        <location filename="../src/mainwindow.cpp" line="354"/>
+        <location filename="../src/mainwindow.cpp" line="415"/>
         <source>Star&amp;t Samba</source>
-        <translation>&amp;Démarrer Samba</translation>
+        <translation>Dé&amp;marrer Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="278"/>
+        <location filename="../src/mainwindow.ui" line="291"/>
         <source>Samba autostart service is disabled</source>
         <translation>Le service de démarrage automatique Samba est désactivé</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="309"/>
-        <location filename="../src/mainwindow.cpp" line="321"/>
+        <location filename="../src/mainwindow.ui" line="322"/>
+        <location filename="../src/mainwindow.cpp" line="355"/>
         <source>Samba is running</source>
         <translation>Samba est en cours d’exécution</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="348"/>
+        <location filename="../src/mainwindow.ui" line="361"/>
         <source>About this application</source>
         <translation>À propos de cette application</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="351"/>
+        <location filename="../src/mainwindow.ui" line="364"/>
         <source>A&amp;bout...</source>
-        <translation>À&amp;propos de…</translation>
+        <translation>À pr&amp;opos de…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="357"/>
+        <location filename="../src/mainwindow.ui" line="370"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="389"/>
+        <location filename="../src/mainwindow.ui" line="402"/>
         <source>Display help </source>
         <translation>Afficher l’aide </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="392"/>
+        <location filename="../src/mainwindow.ui" line="405"/>
         <source>&amp;Help</source>
         <translation>A&amp;ide</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="398"/>
+        <location filename="../src/mainwindow.ui" line="411"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="433"/>
+        <location filename="../src/mainwindow.ui" line="446"/>
         <source>Quit application</source>
         <translation>Quitter l’application</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="436"/>
+        <location filename="../src/mainwindow.ui" line="449"/>
         <source>&amp;Close</source>
         <translation>&amp;Quitter</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="442"/>
+        <location filename="../src/mainwindow.ui" line="455"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="104"/>
-        <location filename="../src/mainwindow.cpp" line="109"/>
-        <location filename="../src/mainwindow.cpp" line="137"/>
-        <location filename="../src/mainwindow.cpp" line="151"/>
-        <location filename="../src/mainwindow.cpp" line="162"/>
-        <location filename="../src/mainwindow.cpp" line="218"/>
-        <location filename="../src/mainwindow.cpp" line="304"/>
-        <location filename="../src/mainwindow.cpp" line="315"/>
-        <location filename="../src/mainwindow.cpp" line="420"/>
-        <location filename="../src/mainwindow.cpp" line="452"/>
-        <location filename="../src/mainwindow.cpp" line="456"/>
-        <location filename="../src/mainwindow.cpp" line="462"/>
-        <location filename="../src/mainwindow.cpp" line="469"/>
-        <location filename="../src/mainwindow.cpp" line="507"/>
-        <location filename="../src/mainwindow.cpp" line="512"/>
-        <location filename="../src/mainwindow.cpp" line="520"/>
-        <location filename="../src/mainwindow.cpp" line="541"/>
-        <location filename="../src/mainwindow.cpp" line="558"/>
-        <location filename="../src/mainwindow.cpp" line="577"/>
-        <location filename="../src/mainwindow.cpp" line="592"/>
-        <location filename="../src/mainwindow.cpp" line="607"/>
-        <location filename="../src/mainwindow.cpp" line="613"/>
+        <location filename="../src/mainwindow.cpp" line="118"/>
+        <location filename="../src/mainwindow.cpp" line="123"/>
+        <location filename="../src/mainwindow.cpp" line="130"/>
+        <location filename="../src/mainwindow.cpp" line="144"/>
+        <location filename="../src/mainwindow.cpp" line="155"/>
+        <location filename="../src/mainwindow.cpp" line="193"/>
+        <location filename="../src/mainwindow.cpp" line="338"/>
+        <location filename="../src/mainwindow.cpp" line="349"/>
+        <location filename="../src/mainwindow.cpp" line="515"/>
+        <location filename="../src/mainwindow.cpp" line="534"/>
+        <location filename="../src/mainwindow.cpp" line="568"/>
+        <location filename="../src/mainwindow.cpp" line="572"/>
+        <location filename="../src/mainwindow.cpp" line="578"/>
+        <location filename="../src/mainwindow.cpp" line="585"/>
+        <location filename="../src/mainwindow.cpp" line="623"/>
+        <location filename="../src/mainwindow.cpp" line="628"/>
+        <location filename="../src/mainwindow.cpp" line="636"/>
+        <location filename="../src/mainwindow.cpp" line="657"/>
+        <location filename="../src/mainwindow.cpp" line="677"/>
+        <location filename="../src/mainwindow.cpp" line="713"/>
+        <location filename="../src/mainwindow.cpp" line="723"/>
+        <location filename="../src/mainwindow.cpp" line="765"/>
+        <location filename="../src/mainwindow.cpp" line="771"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="104"/>
+        <location filename="../src/mainwindow.cpp" line="118"/>
         <source>Error, could not add share. Empty share name</source>
         <translation>Erreur, impossible d’ajouter un partage. Nom de partage vide</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="101"/>
+        <location filename="../src/mainwindow.cpp" line="115"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="109"/>
+        <location filename="../src/mainwindow.cpp" line="123"/>
         <source>Path: %1 does not exist.</source>
         <translation>Le chemin : %1 n’existe pas.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="137"/>
+        <location filename="../src/mainwindow.cpp" line="130"/>
         <source>Please set access for at least one user.</source>
         <translation>Veuillez définir l’accès pour au moins un utilisateur.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="152"/>
+        <location filename="../src/mainwindow.cpp" line="145"/>
         <source>Could not add share. Error message:
 
 %1</source>
@@ -332,218 +348,288 @@
 %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="162"/>
+        <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Error listing users</source>
         <translation>Erreur dans la liste des utilisateurs</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="201"/>
+        <location filename="../src/editshare.cpp" line="60"/>
         <source>&amp;Deny</source>
         <translation>&amp;Refuser</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="202"/>
+        <location filename="../src/editshare.cpp" line="61"/>
         <source>&amp;Read Only</source>
         <translation>&amp;Lecture seulement</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="203"/>
+        <location filename="../src/editshare.cpp" line="62"/>
         <source>&amp;Full Access</source>
-        <translation>&amp;Accès complet</translation>
+        <translation>Accè&amp;s complet</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="218"/>
+        <location filename="../src/mainwindow.cpp" line="193"/>
         <source>Error listing shares</source>
         <translation>Erreur de listing des partages</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="305"/>
+        <location filename="../src/mainwindow.cpp" line="312"/>
+        <source>Each Samba user can also open their own home folder, read-only, as \\%1\&lt;user name&gt;.</source>
+        <translation>Chaque utilisateur Samba peut également ouvrir son propre dossier personnel, en lecture seule, sous la forme \\%1\&lt;user name&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="313"/>
+        <source>Each Samba user can also open their own home folder, with write access, as \\%1\&lt;user name&gt;.</source>
+        <translation>Chaque utilisateur Samba peut également ouvrir son propre dossier personnel, avec accès en écriture, sous la forme \\%1\&lt;user name&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="315"/>
+        <source>This is set by the [homes] section in /etc/samba/smb.conf.</source>
+        <translation>Ceci est défini par la section [homes] dans /etc/samba/smb.conf.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="339"/>
         <source>Your user doesn&apos;t belong to &apos;sambashare&apos; group  if you just installed the app you might need to restart the system first.</source>
         <translation>Votre utilisateur n’appartient pas au groupe « sambashare ». Si vous venez d’installer l’application, vous devrez peut-être redémarrer le système.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="315"/>
+        <location filename="../src/mainwindow.cpp" line="349"/>
         <source>Samba is not installed</source>
         <translation>Samba n’est pas installé</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="320"/>
+        <location filename="../src/mainwindow.cpp" line="354"/>
         <source>Sto&amp;p Samba</source>
         <translation>Sto&amp;p Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="321"/>
+        <location filename="../src/mainwindow.cpp" line="355"/>
         <source>Samba is not running</source>
         <translation>Samba est inactif</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="322"/>
+        <location filename="../src/mainwindow.cpp" line="356"/>
         <source>Samba autostart is enabled</source>
         <translation>Le démarrage automatique Samba est activé</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="322"/>
+        <location filename="../src/mainwindow.cpp" line="356"/>
         <source>Samba autostart is disabled</source>
         <translation>Le démarrage automatique Samba est désactivé</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="323"/>
+        <location filename="../src/mainwindow.cpp" line="357"/>
         <source>&amp;Disable Automatic Samba Startup</source>
-        <translation>&amp;Désactiver le démarrage automatique Samba</translation>
+        <translation>Désacti&amp;ver le démarrage automatique Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="397"/>
+        <location filename="../src/mainwindow.cpp" line="431"/>
         <source>About %1</source>
         <translation>À propos de %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="397"/>
+        <location filename="../src/mainwindow.cpp" line="431"/>
         <source>MX Samba Config</source>
         <translation>MX Samba configuration</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="398"/>
+        <location filename="../src/mainwindow.cpp" line="432"/>
         <source>Version: </source>
         <translation>Version : </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="400"/>
+        <location filename="../src/mainwindow.cpp" line="434"/>
         <source>Program for configuring Samba shares and users.</source>
         <translation>Programme pour la configuration des partages et des utilisateurs Samba.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="402"/>
+        <location filename="../src/mainwindow.cpp" line="436"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="403"/>
+        <location filename="../src/mainwindow.cpp" line="437"/>
         <source>%1 License</source>
         <translation>%1 Licence</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="409"/>
+        <location filename="../src/mainwindow.cpp" line="443"/>
         <source>%1 Help</source>
         <translation>%1 Aide</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="420"/>
+        <location filename="../src/mainwindow.cpp" line="495"/>
+        <source>%1 is listed on these shares:</source>
+        <translation>%1 figure dans ces partages :</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="497"/>
+        <source>Remove %1&apos;s access from: %2</source>
+        <translation>Supprimer l’accès de %1 depuis : %2</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="500"/>
+        <source>Remove these shares, which no one else can access: %1</source>
+        <translation>Supprimer ces partages, auxquels personne d’autre ne peut accéder : %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="502"/>
+        <source>Remove User</source>
+        <translation>Supprimer l’utilisateur</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="503"/>
+        <source>Remove from Shares</source>
+        <translation>Supprimer de Partages</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="504"/>
+        <source>Keep Entries</source>
+        <translation>Conserver les entrées</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="515"/>
         <source>Cannot delete user: </source>
         <translation>Impossible de supprimer l’utilisateur : </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="429"/>
+        <location filename="../src/mainwindow.cpp" line="535"/>
+        <source>%1 was removed, but these shares could not be updated: %2</source>
+        <translation>%1 a été supprimé, mais ces partages n’ont pas pu être mis à jour : %2</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="545"/>
         <source>Enter the username and password:</source>
         <translation>Entrez le nom d’utilisateur et le mot de passe :</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="436"/>
+        <location filename="../src/mainwindow.cpp" line="552"/>
         <source>Username:</source>
         <translation>Nom d’utilisateur :</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="437"/>
-        <location filename="../src/mainwindow.cpp" line="493"/>
+        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="609"/>
         <source>Password:</source>
         <translation>Mot de passe :</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="438"/>
-        <location filename="../src/mainwindow.cpp" line="494"/>
+        <location filename="../src/mainwindow.cpp" line="554"/>
+        <location filename="../src/mainwindow.cpp" line="610"/>
         <source>Confirm password:</source>
         <translation>Confirmer le mot de passe :</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow.cpp" line="568"/>
         <source>Empty username, please enter a name.</source>
         <translation>Nom d’utilisateur vide, veuillez entrer un nom.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="457"/>
+        <location filename="../src/mainwindow.cpp" line="573"/>
         <source>Matching linux user not found on system, make sure you enter a valid username.</source>
         <translation>Utilisateur linux non trouvé sur le système, veuillez entrer un nom d’utilisateur valide.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="462"/>
-        <location filename="../src/mainwindow.cpp" line="512"/>
+        <location filename="../src/mainwindow.cpp" line="578"/>
+        <location filename="../src/mainwindow.cpp" line="628"/>
         <source>Passwords don&apos;t match, please enter again.</source>
         <translation>Les mots de passe ne correspondent pas, veuillez entrer à nouveau.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="469"/>
+        <location filename="../src/mainwindow.cpp" line="585"/>
         <source>Could not add user.</source>
         <translation>Impossible d’ajouter un utilisateur.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="480"/>
-        <location filename="../src/mainwindow.cpp" line="530"/>
-        <location filename="../src/mainwindow.cpp" line="536"/>
-        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="596"/>
+        <location filename="../src/mainwindow.cpp" line="646"/>
+        <location filename="../src/mainwindow.cpp" line="652"/>
+        <location filename="../src/mainwindow.cpp" line="672"/>
         <source>Warning</source>
         <translation>Attention</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="480"/>
+        <location filename="../src/mainwindow.cpp" line="596"/>
         <source>No user selected.</source>
         <translation>Aucun utilisateur sélectionné.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="487"/>
+        <location filename="../src/mainwindow.cpp" line="603"/>
         <source>Change the password for &apos;%1&apos;</source>
         <translation>Changer le mot de passe de « %1 »</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="507"/>
+        <location filename="../src/mainwindow.cpp" line="623"/>
         <source>Password fields cannot be empty.</source>
         <translation>Les champs du mot de passe ne peuvent pas être vides.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="520"/>
+        <location filename="../src/mainwindow.cpp" line="636"/>
         <source>Could not change password.</source>
         <translation>Impossible de changer le mot de passe.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="530"/>
-        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="646"/>
+        <location filename="../src/mainwindow.cpp" line="672"/>
         <source>No share selected.</source>
         <translation>Aucun partage sélectionné.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="536"/>
+        <location filename="../src/mainwindow.cpp" line="652"/>
         <source>Selected share is empty.</source>
         <translation>Le partage sélectionné est vide.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="541"/>
+        <location filename="../src/mainwindow.cpp" line="657"/>
         <source>Cannot delete share: </source>
         <translation>Impossible de supprimer le partage : </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="546"/>
+        <location filename="../src/mainwindow.cpp" line="662"/>
         <source>Success</source>
         <translation>Installation réussie</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="546"/>
+        <location filename="../src/mainwindow.cpp" line="662"/>
         <source>Share deleted successfully: </source>
         <translation>Le partage a bien été supprimé : </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="559"/>
-        <location filename="../src/mainwindow.cpp" line="608"/>
+        <location filename="../src/mainwindow.cpp" line="678"/>
+        <location filename="../src/mainwindow.cpp" line="766"/>
         <source>Samba service is not running. Please start Samba before adding or editing shares</source>
         <translation>Le service Samba est inactif. Veuillez démarrer Samba avant d’ajouter ou de modifier des partages</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="577"/>
-        <location filename="../src/mainwindow.cpp" line="592"/>
+        <location filename="../src/mainwindow.cpp" line="683"/>
+        <source>Edit Share</source>
+        <translation>Modifier Partage</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="689"/>
+        <source>Share names cannot be changed when editing an existing share.</source>
+        <translation>Les noms de partage ne peuvent pas être modifiés lors de la modification d’un partage existant.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="713"/>
+        <location filename="../src/mainwindow.cpp" line="723"/>
         <source>Error processing permissions: </source>
         <translation>Erreur dans le traitement des autorisations : </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="613"/>
+        <location filename="../src/mainwindow.cpp" line="755"/>
+        <source>Several existing rules refer to this name; edit them individually.</source>
+        <translation>Plusieurs règles existantes font référence à ce nom ; modifiez-les individuellement.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="771"/>
         <source>Please add a Samba user before creating a share.</source>
         <translation>Veuillez ajouter un utilisateur Samba avant de créer un partage.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="776"/>
+        <source>Add Share</source>
+        <translation>Ajouter un partage.</translation>
     </message>
 </context>
 <context>
@@ -576,7 +662,7 @@
         <translation>&amp;Quitter</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="76"/>
+        <location filename="../src/main.cpp" line="83"/>
         <source>You must run this program as normal user.</source>
         <translation>Vous devez exécuter cette application en tant qu’utilisateur normal.</translation>
     </message>

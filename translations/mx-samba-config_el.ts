@@ -67,22 +67,37 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/editshare.ui" line="129"/>
+        <location filename="../src/editshare.ui" line="111"/>
+        <source>Changes apply to new connections. Clients that are already connected keep their current access until they reconnect. Restart Samba to apply the change to everyone immediately.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/editshare.ui" line="142"/>
         <source>Access rights for valid users</source>
         <translation>Δικαιώματα πρόσβασης για έγκυρους χρήστες</translation>
     </message>
     <message>
-        <location filename="../src/editshare.cpp" line="55"/>
+        <location filename="../src/editshare.cpp" line="78"/>
+        <source>Remove</source>
+        <translation>Αφαίρεση</translation>
+    </message>
+    <message>
+        <location filename="../src/editshare.cpp" line="80"/>
+        <source>Remove this access rule</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/editshare.cpp" line="133"/>
         <source>Select directory to share</source>
         <translation>Επιλογή καταλόγου κοινής χρήσης</translation>
     </message>
     <message>
-        <location filename="../src/editshare.cpp" line="81"/>
+        <location filename="../src/editshare.cpp" line="142"/>
         <source>Warning</source>
         <translation>Προσοχή</translation>
     </message>
     <message>
-        <location filename="../src/editshare.cpp" line="81"/>
+        <location filename="../src/editshare.cpp" line="142"/>
         <source>Select access for at least one user before continuing.</source>
         <translation type="unfinished"/>
     </message>
@@ -192,138 +207,139 @@
         <translation>&amp;Κωδικός πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="212"/>
+        <location filename="../src/mainwindow.ui" line="225"/>
         <source>Users</source>
         <translation>Χρήστες</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="237"/>
+        <location filename="../src/mainwindow.ui" line="250"/>
         <source>Enable or disable starting Samba automatically at boot</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="240"/>
-        <location filename="../src/mainwindow.cpp" line="324"/>
-        <location filename="../src/mainwindow.cpp" line="371"/>
+        <location filename="../src/mainwindow.ui" line="253"/>
+        <location filename="../src/mainwindow.cpp" line="358"/>
+        <location filename="../src/mainwindow.cpp" line="405"/>
         <source>E&amp;nable Automatic Samba Startup</source>
         <translation>Ε&amp;νεργοποίηση αυτόματης εκκίνησης Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="247"/>
+        <location filename="../src/mainwindow.ui" line="260"/>
         <source>Start or stop the Samba service</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="250"/>
-        <location filename="../src/mainwindow.cpp" line="320"/>
-        <location filename="../src/mainwindow.cpp" line="381"/>
+        <location filename="../src/mainwindow.ui" line="263"/>
+        <location filename="../src/mainwindow.cpp" line="354"/>
+        <location filename="../src/mainwindow.cpp" line="415"/>
         <source>Star&amp;t Samba</source>
         <translation>Ε&amp;κκίνηση Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="278"/>
+        <location filename="../src/mainwindow.ui" line="291"/>
         <source>Samba autostart service is disabled</source>
         <translation>Η υπηρεσία αυτόματης εκκίνησης Samba είναι απενεργοποιημένη</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="309"/>
-        <location filename="../src/mainwindow.cpp" line="321"/>
+        <location filename="../src/mainwindow.ui" line="322"/>
+        <location filename="../src/mainwindow.cpp" line="355"/>
         <source>Samba is running</source>
         <translation>Η υπηρεσία Samba βρίσκεται σε λειτουργία</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="348"/>
+        <location filename="../src/mainwindow.ui" line="361"/>
         <source>About this application</source>
         <translation>Περί της εφαρμογής</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="351"/>
+        <location filename="../src/mainwindow.ui" line="364"/>
         <source>A&amp;bout...</source>
         <translation>&amp;Περί...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="357"/>
+        <location filename="../src/mainwindow.ui" line="370"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="389"/>
+        <location filename="../src/mainwindow.ui" line="402"/>
         <source>Display help </source>
         <translation>Εμφάνιση βοήθειας </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="392"/>
+        <location filename="../src/mainwindow.ui" line="405"/>
         <source>&amp;Help</source>
         <translation>&amp;Βοήθεια</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="398"/>
+        <location filename="../src/mainwindow.ui" line="411"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="433"/>
+        <location filename="../src/mainwindow.ui" line="446"/>
         <source>Quit application</source>
         <translation>Κλείσιμο εφαρμογής</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="436"/>
+        <location filename="../src/mainwindow.ui" line="449"/>
         <source>&amp;Close</source>
         <translation>&amp;Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="442"/>
+        <location filename="../src/mainwindow.ui" line="455"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="104"/>
-        <location filename="../src/mainwindow.cpp" line="109"/>
-        <location filename="../src/mainwindow.cpp" line="137"/>
-        <location filename="../src/mainwindow.cpp" line="151"/>
-        <location filename="../src/mainwindow.cpp" line="162"/>
-        <location filename="../src/mainwindow.cpp" line="218"/>
-        <location filename="../src/mainwindow.cpp" line="304"/>
-        <location filename="../src/mainwindow.cpp" line="315"/>
-        <location filename="../src/mainwindow.cpp" line="420"/>
-        <location filename="../src/mainwindow.cpp" line="452"/>
-        <location filename="../src/mainwindow.cpp" line="456"/>
-        <location filename="../src/mainwindow.cpp" line="462"/>
-        <location filename="../src/mainwindow.cpp" line="469"/>
-        <location filename="../src/mainwindow.cpp" line="507"/>
-        <location filename="../src/mainwindow.cpp" line="512"/>
-        <location filename="../src/mainwindow.cpp" line="520"/>
-        <location filename="../src/mainwindow.cpp" line="541"/>
-        <location filename="../src/mainwindow.cpp" line="558"/>
-        <location filename="../src/mainwindow.cpp" line="577"/>
-        <location filename="../src/mainwindow.cpp" line="592"/>
-        <location filename="../src/mainwindow.cpp" line="607"/>
-        <location filename="../src/mainwindow.cpp" line="613"/>
+        <location filename="../src/mainwindow.cpp" line="118"/>
+        <location filename="../src/mainwindow.cpp" line="123"/>
+        <location filename="../src/mainwindow.cpp" line="130"/>
+        <location filename="../src/mainwindow.cpp" line="144"/>
+        <location filename="../src/mainwindow.cpp" line="155"/>
+        <location filename="../src/mainwindow.cpp" line="193"/>
+        <location filename="../src/mainwindow.cpp" line="338"/>
+        <location filename="../src/mainwindow.cpp" line="349"/>
+        <location filename="../src/mainwindow.cpp" line="515"/>
+        <location filename="../src/mainwindow.cpp" line="534"/>
+        <location filename="../src/mainwindow.cpp" line="568"/>
+        <location filename="../src/mainwindow.cpp" line="572"/>
+        <location filename="../src/mainwindow.cpp" line="578"/>
+        <location filename="../src/mainwindow.cpp" line="585"/>
+        <location filename="../src/mainwindow.cpp" line="623"/>
+        <location filename="../src/mainwindow.cpp" line="628"/>
+        <location filename="../src/mainwindow.cpp" line="636"/>
+        <location filename="../src/mainwindow.cpp" line="657"/>
+        <location filename="../src/mainwindow.cpp" line="677"/>
+        <location filename="../src/mainwindow.cpp" line="713"/>
+        <location filename="../src/mainwindow.cpp" line="723"/>
+        <location filename="../src/mainwindow.cpp" line="765"/>
+        <location filename="../src/mainwindow.cpp" line="771"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="104"/>
+        <location filename="../src/mainwindow.cpp" line="118"/>
         <source>Error, could not add share. Empty share name</source>
         <translation>Σφάλμα, δεν κατέστη δυνατή η προσθήκη κοινής χρήσης. Κενό όνομα</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="101"/>
+        <location filename="../src/mainwindow.cpp" line="115"/>
         <source>Yes</source>
         <translation>Ναι</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="109"/>
+        <location filename="../src/mainwindow.cpp" line="123"/>
         <source>Path: %1 does not exist.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="137"/>
+        <location filename="../src/mainwindow.cpp" line="130"/>
         <source>Please set access for at least one user.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="152"/>
+        <location filename="../src/mainwindow.cpp" line="145"/>
         <source>Could not add share. Error message:
 
 %1</source>
@@ -332,217 +348,287 @@
 %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="162"/>
+        <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Error listing users</source>
         <translation>Σφάλμα καταχώρισης χρηστών</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="201"/>
+        <location filename="../src/editshare.cpp" line="60"/>
         <source>&amp;Deny</source>
         <translation>Ά&amp;ρνηση</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="202"/>
+        <location filename="../src/editshare.cpp" line="61"/>
         <source>&amp;Read Only</source>
         <translation>&amp;Μόνο για ανάγνωση</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="203"/>
+        <location filename="../src/editshare.cpp" line="62"/>
         <source>&amp;Full Access</source>
         <translation>&amp;Πλήρης πρόσβαση</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="218"/>
+        <location filename="../src/mainwindow.cpp" line="193"/>
         <source>Error listing shares</source>
         <translation>Σφάλμα καταχώρισης κοινής χρήσης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="305"/>
+        <location filename="../src/mainwindow.cpp" line="312"/>
+        <source>Each Samba user can also open their own home folder, read-only, as \\%1\&lt;user name&gt;.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="313"/>
+        <source>Each Samba user can also open their own home folder, with write access, as \\%1\&lt;user name&gt;.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="315"/>
+        <source>This is set by the [homes] section in /etc/samba/smb.conf.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="339"/>
         <source>Your user doesn&apos;t belong to &apos;sambashare&apos; group  if you just installed the app you might need to restart the system first.</source>
         <translation>Ο χρήστης σας δεν ανήκει στην ομάδα &apos;sambasshare&apos; εάν εγκαταστήσατε τώρα την εφαρμογή, ίσως χρειαστεί να κάνετε πρώτα επανεκκίνηση του συστήματος.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="315"/>
+        <location filename="../src/mainwindow.cpp" line="349"/>
         <source>Samba is not installed</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="320"/>
+        <location filename="../src/mainwindow.cpp" line="354"/>
         <source>Sto&amp;p Samba</source>
         <translation>&amp;Διακοπή του Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="321"/>
+        <location filename="../src/mainwindow.cpp" line="355"/>
         <source>Samba is not running</source>
         <translation>Το Samba δεν λειτουργεί</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="322"/>
+        <location filename="../src/mainwindow.cpp" line="356"/>
         <source>Samba autostart is enabled</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="322"/>
+        <location filename="../src/mainwindow.cpp" line="356"/>
         <source>Samba autostart is disabled</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="323"/>
+        <location filename="../src/mainwindow.cpp" line="357"/>
         <source>&amp;Disable Automatic Samba Startup</source>
         <translation>&amp;Απενεργοποίηση αυτόματης εκκίνησης του Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="397"/>
+        <location filename="../src/mainwindow.cpp" line="431"/>
         <source>About %1</source>
         <translation>Περί του %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="397"/>
+        <location filename="../src/mainwindow.cpp" line="431"/>
         <source>MX Samba Config</source>
         <translation>MX Ρυθμίσεις Samba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="398"/>
+        <location filename="../src/mainwindow.cpp" line="432"/>
         <source>Version: </source>
         <translation>Έκδοση: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="400"/>
+        <location filename="../src/mainwindow.cpp" line="434"/>
         <source>Program for configuring Samba shares and users.</source>
         <translation>Πρόγραμμα για τη ρύθμιση κοινών χρήσεων και χρηστών του Samba.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="402"/>
+        <location filename="../src/mainwindow.cpp" line="436"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Πνευματικά δικαιώματα (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="403"/>
+        <location filename="../src/mainwindow.cpp" line="437"/>
         <source>%1 License</source>
         <translation>Άδεια %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="409"/>
+        <location filename="../src/mainwindow.cpp" line="443"/>
         <source>%1 Help</source>
         <translation>Βοήθεια %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="420"/>
+        <location filename="../src/mainwindow.cpp" line="495"/>
+        <source>%1 is listed on these shares:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="497"/>
+        <source>Remove %1&apos;s access from: %2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="500"/>
+        <source>Remove these shares, which no one else can access: %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="502"/>
+        <source>Remove User</source>
+        <translation>Απομάκρυνση Χρήστη</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="503"/>
+        <source>Remove from Shares</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="504"/>
+        <source>Keep Entries</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="515"/>
         <source>Cannot delete user: </source>
         <translation>Δεν κατέστη δυνατή η διαγραφή του χρήστη: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="429"/>
+        <location filename="../src/mainwindow.cpp" line="535"/>
+        <source>%1 was removed, but these shares could not be updated: %2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="545"/>
         <source>Enter the username and password:</source>
         <translation>Εισαγωγή ονόματος και κωδικού πρόσβασης χρήστη:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="436"/>
+        <location filename="../src/mainwindow.cpp" line="552"/>
         <source>Username:</source>
         <translation>Όνομα:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="437"/>
-        <location filename="../src/mainwindow.cpp" line="493"/>
+        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="609"/>
         <source>Password:</source>
         <translation>Κωδικός πρόσβασης:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="438"/>
-        <location filename="../src/mainwindow.cpp" line="494"/>
+        <location filename="../src/mainwindow.cpp" line="554"/>
+        <location filename="../src/mainwindow.cpp" line="610"/>
         <source>Confirm password:</source>
         <translation>Επιβεβαίωση κωδικού:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow.cpp" line="568"/>
         <source>Empty username, please enter a name.</source>
         <translation>Κενό όνομα χρήστη, παρακαλώ πληκτρολογείστε ένα όνομα.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="457"/>
+        <location filename="../src/mainwindow.cpp" line="573"/>
         <source>Matching linux user not found on system, make sure you enter a valid username.</source>
         <translation>Δεν βρέθηκε αντιστοίχιση με χρήστη του συστήματος, βεβαιωθείτε ότι έχετε εισαγάγει ένα έγκυρο όνομα χρήστη.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="462"/>
-        <location filename="../src/mainwindow.cpp" line="512"/>
+        <location filename="../src/mainwindow.cpp" line="578"/>
+        <location filename="../src/mainwindow.cpp" line="628"/>
         <source>Passwords don&apos;t match, please enter again.</source>
         <translation>Οι κωδικοί πρόσβασης δεν ταιριάζουν, παρακαλώ δοκιμάστε πάλι.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="469"/>
+        <location filename="../src/mainwindow.cpp" line="585"/>
         <source>Could not add user.</source>
         <translation>Δεν κατέστη δυνατή η προσθήκη χρήστη.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="480"/>
-        <location filename="../src/mainwindow.cpp" line="530"/>
-        <location filename="../src/mainwindow.cpp" line="536"/>
-        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="596"/>
+        <location filename="../src/mainwindow.cpp" line="646"/>
+        <location filename="../src/mainwindow.cpp" line="652"/>
+        <location filename="../src/mainwindow.cpp" line="672"/>
         <source>Warning</source>
         <translation>Προσοχή</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="480"/>
+        <location filename="../src/mainwindow.cpp" line="596"/>
         <source>No user selected.</source>
         <translation>Δεν επιλέξατε κανέναν Χρήστη.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="487"/>
+        <location filename="../src/mainwindow.cpp" line="603"/>
         <source>Change the password for &apos;%1&apos;</source>
         <translation>Αλλαγή κωδικού πρόσβασης για τον &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="507"/>
+        <location filename="../src/mainwindow.cpp" line="623"/>
         <source>Password fields cannot be empty.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="520"/>
+        <location filename="../src/mainwindow.cpp" line="636"/>
         <source>Could not change password.</source>
         <translation>Δεν κατέστη δυνατή η αλλαγή του κωδικού πρόσβασης.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="530"/>
-        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="646"/>
+        <location filename="../src/mainwindow.cpp" line="672"/>
         <source>No share selected.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="536"/>
+        <location filename="../src/mainwindow.cpp" line="652"/>
         <source>Selected share is empty.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="541"/>
+        <location filename="../src/mainwindow.cpp" line="657"/>
         <source>Cannot delete share: </source>
         <translation>Δεν κατέστη δυνατή η διαγραφή της κοινής χρήσης: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="546"/>
+        <location filename="../src/mainwindow.cpp" line="662"/>
         <source>Success</source>
         <translation>Επιτυχία</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="546"/>
+        <location filename="../src/mainwindow.cpp" line="662"/>
         <source>Share deleted successfully: </source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="559"/>
-        <location filename="../src/mainwindow.cpp" line="608"/>
+        <location filename="../src/mainwindow.cpp" line="678"/>
+        <location filename="../src/mainwindow.cpp" line="766"/>
         <source>Samba service is not running. Please start Samba before adding or editing shares</source>
         <translation>Η υπηρεσία Samba δεν λειτουργεί. Ξεκινήστε το Samba πριν προσθέσετε ή επεξεργαστείτε κοινές χρήσεις</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="577"/>
-        <location filename="../src/mainwindow.cpp" line="592"/>
+        <location filename="../src/mainwindow.cpp" line="683"/>
+        <source>Edit Share</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="689"/>
+        <source>Share names cannot be changed when editing an existing share.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="713"/>
+        <location filename="../src/mainwindow.cpp" line="723"/>
         <source>Error processing permissions: </source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="613"/>
+        <location filename="../src/mainwindow.cpp" line="755"/>
+        <source>Several existing rules refer to this name; edit them individually.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="771"/>
         <source>Please add a Samba user before creating a share.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="776"/>
+        <source>Add Share</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -576,7 +662,7 @@
         <translation>&amp;Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="76"/>
+        <location filename="../src/main.cpp" line="83"/>
         <source>You must run this program as normal user.</source>
         <translation>Πρέπει να τρέξετε αυτή την εφαρμογή ως απλός χρήστης.</translation>
     </message>

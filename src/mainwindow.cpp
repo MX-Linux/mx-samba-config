@@ -574,6 +574,10 @@ void MainWindow::pushAddUser_clicked()
                                      "make sure you enter a valid username."));
             return;
         }
+        if (passText.isEmpty() || passText2.isEmpty()) {
+            QMessageBox::critical(this, tr("Error"), tr("Password fields cannot be empty."));
+            return;
+        }
         if (passText != passText2) {
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;

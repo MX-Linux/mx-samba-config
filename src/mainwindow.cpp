@@ -445,10 +445,11 @@ void MainWindow::pushHelp_clicked()
 
 void MainWindow::pushRemoveUser_clicked()
 {
-    if (ui->listWidgetUsers->currentItem() == nullptr) {
+    const auto selectedItems = ui->listWidgetUsers->selectedItems();
+    if (selectedItems.isEmpty()) {
         return;
     }
-    const QString user = ui->listWidgetUsers->currentItem()->text();
+    const QString user = selectedItems.first()->text();
 
     // Find shares whose ACL names this local user, plain or qualified with the
     // local NetBIOS name. Domain accounts and SIDs may be other accounts.

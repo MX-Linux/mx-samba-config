@@ -641,13 +641,13 @@ void MainWindow::pushUserPassword_clicked()
 
 void MainWindow::pushRemoveShare_clicked()
 {
-    auto *currentItem = ui->treeWidgetShares->currentItem();
-    if (!currentItem) {
+    const auto selectedItems = ui->treeWidgetShares->selectedItems();
+    if (selectedItems.isEmpty()) {
         QMessageBox::warning(this, tr("Warning"), tr("No share selected."));
         return;
     }
 
-    const QString share = currentItem->text(0);
+    const QString share = selectedItems.first()->text(0);
     if (share.isEmpty()) {
         QMessageBox::warning(this, tr("Warning"), tr("Selected share is empty."));
         return;
@@ -667,8 +667,8 @@ void MainWindow::pushEditShare_clicked()
     if (commandRunning) {
         return;
     }
-    auto *currentItem = ui->treeWidgetShares->currentItem();
-    if (!currentItem) {
+    const auto selectedItems = ui->treeWidgetShares->selectedItems();
+    if (selectedItems.isEmpty()) {
         QMessageBox::warning(this, tr("Warning"), tr("No share selected."));
         return;
     }
@@ -683,7 +683,7 @@ void MainWindow::pushEditShare_clicked()
     editshare.setWindowTitle(tr("Edit Share"));
     buildUserList(&editshare);
 
-    auto selectedItem = ui->treeWidgetShares->selectedItems().at(0);
+    auto *selectedItem = selectedItems.first();
     editshare.ui->textShareName->setText(selectedItem->text(0));
     editshare.ui->textShareName->setReadOnly(true);
     editshare.ui->textShareName->setToolTip(tr("Share names cannot be changed when editing an existing share."));

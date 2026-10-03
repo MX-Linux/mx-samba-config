@@ -646,6 +646,7 @@ void MainWindow::pushUserPassword_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Could not change password."));
             return;
         }
+        QMessageBox::information(this, tr("Success"), tr("Password changed successfully for '%1'.").arg(currentUser));
     }
 }
 

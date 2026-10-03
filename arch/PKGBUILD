@@ -17,7 +17,7 @@
 # file itself and only expands plain variables.
 
 pkgname=mx-samba-config
-pkgver=26.09
+pkgver=26.10
 pkgrel=1
 pkgdesc="Samba configuration GUI tool"
 arch=('x86_64' 'i686')

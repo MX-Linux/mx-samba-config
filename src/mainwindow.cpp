@@ -568,7 +568,9 @@ void MainWindow::pushAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Empty username, please enter a name."));
             return;
         }
-        if (run("grep", {"^" + userText + ":", "/etc/passwd"}) != 0) {
+        if (run("getent", {"passwd", "--", userText}) != 0
+            || QString::fromLocal8Bit(proc.readAllStandardOutput()).section(':', 0, 0)
+                   .compare(userText, Qt::CaseInsensitive) != 0) {
             QMessageBox::critical(this, tr("Error"),
                                   tr("Matching linux user not found on system, "
                                      "make sure you enter a valid username."));

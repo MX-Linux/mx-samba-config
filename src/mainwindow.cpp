@@ -569,9 +569,12 @@ void MainWindow::pushAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Empty username, please enter a name."));
             return;
         }
-        if (run("getent", {"passwd", "--", userText}) != 0
-            || QString::fromLocal8Bit(proc.readAllStandardOutput()).section(':', 0, 0)
-                   .compare(userText, Qt::CaseInsensitive) != 0) {
+        // getent also matches numeric UIDs; accept only a name match and use the
+        // canonical spelling NSS reports
+        const QString accountName = run("getent", {"passwd", "--", userText}) == 0
+            ? QString::fromLocal8Bit(proc.readAllStandardOutput()).section(':', 0, 0)
+            : QString();
+        if (accountName.compare(userText, Qt::CaseInsensitive) != 0) {
             QMessageBox::critical(this, tr("Error"),
                                   tr("Matching linux user not found on system, "
                                      "make sure you enter a valid username."));
@@ -585,7 +588,7 @@ void MainWindow::pushAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        QStringList args {"/usr/lib/mx-samba-config/mx-samba-config-lib", "addsambauser", userText};
+        QStringList args {"/usr/lib/mx-samba-config/mx-samba-config-lib", "addsambauser", accountName};
         QByteArray passwordInput = passText.toUtf8();
         passwordInput.append('\n');
         if (run("pkexec", args, passwordInput) != 0) {

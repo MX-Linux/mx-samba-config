@@ -598,13 +598,13 @@ void MainWindow::pushAddUser_clicked()
 
 void MainWindow::pushUserPassword_clicked()
 {
-    auto *currentItem = ui->listWidgetUsers->currentItem();
-    if (!currentItem) {
+    const auto selectedItems = ui->listWidgetUsers->selectedItems();
+    if (selectedItems.isEmpty()) {
         QMessageBox::warning(this, tr("Warning"), tr("No user selected."));
         return;
     }
 
-    const QString currentUser = currentItem->text();
+    const QString currentUser = selectedItems.first()->text();
     QDialog dialog(this);
     QFormLayout form(&dialog);
     form.addRow(new QLabel(tr("Change the password for '%1'").arg(currentUser)));

@@ -189,8 +189,17 @@ void MainWindow::refreshShareList()
     ui->treeWidgetShares->clear();
     ui->labelSambaSharesFound->hide();
 
-    if (run("net", {"usershare", "info"}) != 0) {
-        QMessageBox::critical(this, tr("Error"), tr("Error listing shares"));
+    const int result = run("net", {"usershare", "info"});
+    if (result != 0) {
+        QString details = QString::fromLocal8Bit(proc.readAllStandardError()).trimmed();
+        if (details.isEmpty()) {
+            details = result == -1 ? proc.errorString() : tr("Command exited with status %1.").arg(result);
+        }
+        QMessageBox box(QMessageBox::Critical, tr("Error"), tr("Error listing shares"), QMessageBox::Ok, this);
+        box.setInformativeText(tr("Could not read Samba usershares. Shares defined in /etc/samba/smb.conf "
+                                  "are managed separately and are not listed here."));
+        box.setDetailedText("net usershare info\n\n" + details);
+        box.exec();
         return;
     }
 

@@ -754,11 +754,18 @@ void MainWindow::pushEditShare_clicked()
         }
 
         const QString controlName = groupBox->objectName();
-        if (!editshare.permissionOrder.contains(controlName)) {
-            editshare.permissionOrder << controlName;
-            groupBox->setProperty("principal", principal);
-            editshare.addRemoveButton(groupBox);
+        // Each control holds a single permission, so several rules for one
+        // account cannot be represented without dropping or reordering them.
+        if (editshare.permissionOrder.contains(controlName)) {
+            QMessageBox::critical(this, tr("Error"),
+                                  tr("This share has more than one permission rule for %1 and cannot be edited "
+                                     "here without changing its access. Use 'net usershare' to edit it.")
+                                      .arg(groupBox->property("principal").toString()));
+            return;
         }
+        editshare.permissionOrder << controlName;
+        groupBox->setProperty("principal", principal);
+        editshare.addRemoveButton(groupBox);
         if (!knownLocal) {
             groupBox->setTitle(principal);
         }

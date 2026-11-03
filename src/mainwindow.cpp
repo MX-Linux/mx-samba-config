@@ -173,12 +173,18 @@ QStringList MainWindow::listUsers()
 void MainWindow::buildUserList(EditShare *editshare)
 {
     auto *layout = editshare->ui->frameUsers->layout();
-    QStringList userList {":Everyone"}; // Add Everyone with a column in front to follow general format of getent
-    run("getent", {"group", "users"});
-    userList << QString(proc.readAllStandardOutput()).trimmed().split(',');
+    // Offer the Samba accounts shown in the Users tab; principals that only
+    // appear in an existing ACL are added when the share is loaded.
+    QStringList userList {"Everyone"};
+    for (int i = 0; i < ui->listWidgetUsers->count(); ++i) {
+        const QString user = ui->listWidgetUsers->item(i)->text();
+        if (!user.isEmpty() && !userList.contains(user)) {
+            userList << user;
+        }
+    }
 
     for (const QString &user : userList) {
-        editshare->addUser(user.section(':', -1));
+        editshare->addUser(user);
     }
 
     layout->addItem(new QSpacerItem(0, 10, QSizePolicy::Ignored, QSizePolicy::Expanding));

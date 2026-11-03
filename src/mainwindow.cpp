@@ -26,6 +26,7 @@
 #include <algorithm>
 
 #include <QDebug>
+#include <QDir>
 #include <QDialogButtonBox>
 #include <QFileDialog>
 #include <QFormLayout>
@@ -387,8 +388,13 @@ void MainWindow::checksamba()
             enabled = true;
         }
     } else {
-        if (run("grep", {"-q", "smbd", "/etc/init.d/.depend.start"}) == 0) {
-            enabled = true;
+        // Disabled services keep K links, so look for an S link in the
+        // multi-user runlevels
+        for (const QString runlevel : {"2", "3", "4", "5"}) {
+            if (!QDir("/etc/rc" + runlevel + ".d").entryList({"S??smbd"}, QDir::Files | QDir::System).isEmpty()) {
+                enabled = true;
+                break;
+            }
         }
     }
 

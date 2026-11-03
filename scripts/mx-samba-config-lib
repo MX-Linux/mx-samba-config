@@ -61,7 +61,7 @@ exit $?
 changesambapasswd()
 {
 read_password
-printf '%s\n%s\n' "$pass" "$pass" | smbpasswd -U "$user"
+printf '%s\n%s\n' "$pass" "$pass" | smbpasswd -s "$user"
 exit $?
 }
 

@@ -813,6 +813,9 @@ void MainWindow::pushAddShare_clicked()
 
     EditShare editshare(this);
     editshare.setWindowTitle(tr("Add Share"));
+    for (int i = 0; i < ui->treeWidgetShares->topLevelItemCount(); ++i) {
+        editshare.existingShareNames << ui->treeWidgetShares->topLevelItem(i)->text(0);
+    }
     buildUserList(&editshare);
     addEditShares(&editshare);
 }

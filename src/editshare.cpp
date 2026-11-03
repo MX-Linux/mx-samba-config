@@ -138,6 +138,16 @@ void EditShare::pushChooseDirectory_clicked()
 
 void EditShare::accept()
 {
+    // net usershare add replaces a share of the same name, and share names
+    // are case-insensitive
+    const QString shareName = ui->textShareName->text();
+    if (existingShareNames.contains(shareName, Qt::CaseInsensitive)) {
+        QMessageBox::warning(this, tr("Warning"),
+                             tr("A share named '%1' already exists. Choose another name or edit the existing share.")
+                                 .arg(shareName));
+        return;
+    }
+
     if (permissions().isEmpty()) {
         QMessageBox::warning(this, tr("Warning"), tr("Select access for at least one user before continuing."));
         return;

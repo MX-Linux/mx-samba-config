@@ -47,6 +47,7 @@ public:
 
     Ui::EditShare *ui;
     QStringList permissionOrder;
+    QStringList existingShareNames; // Names a new share must not reuse
 private slots:
     void pushChooseDirectory_clicked();
 };

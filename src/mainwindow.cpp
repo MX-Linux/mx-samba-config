@@ -214,7 +214,7 @@ void MainWindow::refreshShareList()
 
     for (const QString &share : listShares) {
         QStringList shareDetails = share.split('\n');
-        if (shareDetails.isEmpty()) {
+        if (shareDetails.size() < 5) {
             continue;
         }
 

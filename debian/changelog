@@ -1,3 +1,22 @@
+mx-samba-config (26.11) mx; urgency=medium
+
+  * When the share list can't be read, the error now explains why and
+    offers the full error details
+  * A damaged share entry no longer stops the other shares from listing
+  * Changing a Samba user's password now works when the app is started
+    from the menu
+  * The share window now offers every Samba user, not only members of
+    the "users" group
+  * A share with more than one access rule for the same user is no longer
+    opened for editing, because saving it would have changed who can
+    access it
+  * Adding a share with a name already in use is refused, instead of
+    replacing the existing share
+  * On systems started without systemd, turning off Samba autostart now
+    stays off after Samba is updated
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 03 Nov 2026 10:59:55 -0500
+
 mx-samba-config (26.10) mx; urgency=medium
 
   * Network accounts, such as LDAP or domain users, can now be added as

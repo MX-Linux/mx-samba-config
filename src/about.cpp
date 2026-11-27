@@ -1,3 +1,5 @@
+#include "apppaths.h"
+
 #include "about.h"
 
 #include <QApplication>
@@ -17,7 +19,7 @@
 QString docPath(const QString &fileName)
 {
     const QString installedPath =
-        QStringLiteral("/usr/share/doc/") + QFileInfo(QCoreApplication::applicationFilePath()).fileName() + "/"
+        sharePath(QStringLiteral("doc/")) + QFileInfo(QCoreApplication::applicationFilePath()).fileName() + "/"
         + fileName;
     const QString appDirPath = QCoreApplication::applicationDirPath();
     const QStringList candidates {
@@ -109,8 +111,8 @@ void displayAboutMsgBox(QWidget *parent, const QString &title, const QString &me
         text->setReadOnly(true);
         QProcess proc;
         proc.start(
-            QStringLiteral("zless"),
-            {"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName() + "/changelog.gz"});
+            QStringLiteral("zcat"),
+            {sharePath(QStringLiteral("doc/")) + QFileInfo(QCoreApplication::applicationFilePath()).fileName() + "/changelog.gz"});
         proc.waitForFinished();
         text->setText(QString::fromLatin1(proc.readAllStandardOutput()));
 

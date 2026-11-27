@@ -152,7 +152,7 @@ void MainWindow::addEditShares(EditShare *editshare)
 
 QStringList MainWindow::listUsers()
 {
-    if (run("pkexec", {"/usr/lib/mx-samba-config/mx-samba-config-list-users"}) != 0) {
+    if (runSambaHelper() != 0) {
         QMessageBox::critical(this, tr("Error"), tr("Error listing users"));
         return {};
     }
@@ -259,6 +259,19 @@ void MainWindow::refreshUserList()
     } else {
         ui->listWidgetUsers->addItems(users);
     }
+}
+
+int MainWindow::runSambaHelper(const QStringList &args, const QByteArray &input)
+{
+    QStringList command = args;
+#ifdef APPIMAGE_BUILD
+    command.prepend(args.isEmpty() ? "--list-samba-users" : "--manage-samba");
+    command.prepend(qEnvironmentVariable("APPIMAGE"));
+#else
+    command.prepend(args.isEmpty() ? "/usr/lib/mx-samba-config/mx-samba-config-list-users"
+                                   : "/usr/lib/mx-samba-config/mx-samba-config-lib");
+#endif
+    return run("pkexec", command, input);
 }
 
 /* Convenience function for running an external command that takes a considerable amount of time
@@ -403,22 +416,22 @@ void MainWindow::checksamba()
 
 void MainWindow::disablesamba()
 {
-    run("pkexec", {"/usr/lib/mx-samba-config/mx-samba-config-lib", "disablesamba"});
+    runSambaHelper({"disablesamba"});
 }
 
 void MainWindow::enablesamba()
 {
-    run("pkexec", {"/usr/lib/mx-samba-config/mx-samba-config-lib", "enablesamba"});
+    runSambaHelper({"enablesamba"});
 }
 
 void MainWindow::startsamba()
 {
-    run("pkexec", {"/usr/lib/mx-samba-config/mx-samba-config-lib", "startsamba"});
+    runSambaHelper({"startsamba"});
 }
 
 void MainWindow::stopsamba()
 {
-    run("pkexec", {"/usr/lib/mx-samba-config/mx-samba-config-lib", "stopsamba"});
+    runSambaHelper({"stopsamba"});
 }
 
 void MainWindow::pushEnableDisableSamba_clicked()
@@ -533,7 +546,7 @@ void MainWindow::pushRemoveUser_clicked()
         updateShares = box.clickedButton() == removeButton;
     }
 
-    if (run("pkexec", {"/usr/lib/mx-samba-config/mx-samba-config-lib", "removesambauser", user}) != 0) {
+    if (runSambaHelper({"removesambauser", user}) != 0) {
         QMessageBox::critical(this, tr("Error"), tr("Cannot delete user: ") + user);
         refreshUserList();
         return;
@@ -609,10 +622,10 @@ void MainWindow::pushAddUser_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Passwords don't match, please enter again."));
             return;
         }
-        QStringList args {"/usr/lib/mx-samba-config/mx-samba-config-lib", "addsambauser", accountName};
+        QStringList args {"addsambauser", accountName};
         QByteArray passwordInput = passText.toUtf8();
         passwordInput.append('\n');
-        if (run("pkexec", args, passwordInput) != 0) {
+        if (runSambaHelper(args, passwordInput) != 0) {
             QMessageBox::critical(this, tr("Error"), tr("Could not add user."));
             return;
         }
@@ -660,10 +673,10 @@ void MainWindow::pushUserPassword_clicked()
             return;
         }
 
-        QStringList args {"/usr/lib/mx-samba-config/mx-samba-config-lib", "changesambapasswd", currentUser};
+        QStringList args {"changesambapasswd", currentUser};
         QByteArray passwordInput = passwordText.toUtf8();
         passwordInput.append('\n');
-        if (run("pkexec", args, passwordInput) != 0) {
+        if (runSambaHelper(args, passwordInput) != 0) {
             QMessageBox::critical(this, tr("Error"), tr("Could not change password."));
             return;
         }

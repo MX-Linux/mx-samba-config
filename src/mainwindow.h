@@ -64,6 +64,7 @@ private:
     bool commandRunning = false;
     QSettings settings;
     QStringList listUsers();
+    int runSambaHelper(const QStringList &args = {}, const QByteArray &input = {});
     int run(const QString &, const QStringList &, const QByteArray &input = {});
     void buildUserList(EditShare *);
     QString netbiosName();

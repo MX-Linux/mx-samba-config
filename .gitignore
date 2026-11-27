@@ -68,3 +68,4 @@ cmake_install.cmake
 
 # AUR package (separate git repo)
 aur/
+/build-appimage/

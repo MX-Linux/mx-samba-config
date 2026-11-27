@@ -21,6 +21,8 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
+#include "apppaths.h"
+
 #include <QApplication>
 #include <QDebug>
 #include <QIcon>
@@ -35,8 +37,16 @@
     #define VERSION "0.0.0"
 #endif
 
+#include <cstdio>
+#include <cstring>
+
 int main(int argc, char *argv[])
 {
+    if (argc == 2 && std::strcmp(argv[1], "--version") == 0) {
+        std::puts("mx-samba-config " VERSION);
+        return EXIT_SUCCESS;
+    }
+
     if (qEnvironmentVariableIsEmpty("DISPLAY") && qEnvironmentVariableIsEmpty("WAYLAND_DISPLAY")
         && qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM")) {
         qWarning("mx-samba-config: no display available (DISPLAY and WAYLAND_DISPLAY are both unset); "
@@ -70,7 +80,7 @@ int main(int argc, char *argv[])
 
     QTranslator appTran;
     if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(),
-                     "/usr/share/" + QApplication::applicationName() + "/locale")) {
+                     sharePath(QApplication::applicationName() + "/locale"))) {
         QApplication::installTranslator(&appTran);
     }
 
